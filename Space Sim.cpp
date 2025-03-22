@@ -35,7 +35,7 @@ int main()
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glColor3f(1.0f, 1.0f, 1.0f); // Set color to white
+        glColor3f(1.0f, 1.0f, 1.0f);
 
         Shapes::CreateCircle(centerX, centerY, radius, res);
 
