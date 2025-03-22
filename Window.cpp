@@ -16,7 +16,7 @@ GLFWwindow* Window::StartGLFW()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_ANY_PROFILE);
 
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Space Sim", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(800, 800, "Space Sim", NULL, NULL);
     if (!window)
     {
         std::cerr << "Failed to create GLFW window..." << std::endl;

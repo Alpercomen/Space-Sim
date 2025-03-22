@@ -1,5 +1,2 @@
-﻿  Shapes.cpp
-D:\Documents\Projects\Space-Sim\Shapes.cpp(15,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Window.cpp
-  Generating Code...
+﻿  Window.cpp
   Space Sim.vcxproj -> D:\Documents\Projects\Space-Sim\Debug\Space Sim.exe
