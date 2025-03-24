@@ -2,6 +2,6 @@
 
 namespace Shapes
 {
-	void CreateCircle(float centerX, float centerY, float radius, int res);
+	GLuint CreateCircle(float centerX, float centerY, float radius, int res);
 };
 

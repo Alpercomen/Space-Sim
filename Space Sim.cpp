@@ -7,6 +7,7 @@
 
 #include "Window.h"
 #include "Shapes.h"
+#include "ShaderUtils.h"
 
 int main()
 {
@@ -20,24 +21,25 @@ int main()
 
     glfwMakeContextCurrent(window);
     glewExperimental = GL_TRUE;
+    glewInit();
 
     glViewport(0, 0, screenWidth, screenHeight);
 
-    float centerX = 0.0f;  // OpenGL Normalized coordinate system
-    float centerY = 0.0f;
-    float radius = 0.2f;  // Normalized radius
-    int res = 100;
+    GLuint shaderProgram = CreateShaderProgram("Shaders/shader.vert", "Shaders/shader.frag");
 
+    int res = 100;
+    GLuint circleVAO = Shapes::CreateCircle(0.0f, 0.0f, 0.2f, res);
+
+    // Render loop
     while (!glfwWindowShouldClose(window))
     {
         glfwPollEvents();
-
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glColor3f(1.0f, 1.0f, 1.0f);
-
-        Shapes::CreateCircle(centerX, centerY, radius, res);
+        glUseProgram(shaderProgram);
+        glBindVertexArray(circleVAO);
+        glDrawArrays(GL_TRIANGLE_FAN, 0, res + 2);
 
         glfwSwapBuffers(window);
     }
