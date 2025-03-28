@@ -1,2 +1,8 @@
-﻿  Window.cpp
+﻿  Circle.cpp
+D:\Documents\Projects\Space-Sim\Circle.cpp(18,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Engine.cpp
+D:\Documents\Projects\Space-Sim\Engine.cpp(35,38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Space Sim.cpp
+  SpaceUtils.cpp
+  Generating Code...
   Space Sim.vcxproj -> D:\Documents\Projects\Space-Sim\Debug\Space Sim.exe

@@ -6,8 +6,11 @@
 #include <cmath>
 
 #include "Window.h"
-#include "Shapes.h"
+#include "Circle.h"
 #include "ShaderUtils.h"
+#include "SpaceUtils.h"
+#include "Constants.h"
+#include "Engine.h"
 
 int main()
 {
@@ -27,22 +30,8 @@ int main()
 
     GLuint shaderProgram = CreateShaderProgram("Shaders/shader.vert", "Shaders/shader.frag");
 
-    int res = 100;
-    GLuint circleVAO = Shapes::CreateCircle(0.0f, 0.0f, 0.2f, res);
-
-    // Render loop
-    while (!glfwWindowShouldClose(window))
-    {
-        glfwPollEvents();
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
-
-        glUseProgram(shaderProgram);
-        glBindVertexArray(circleVAO);
-        glDrawArrays(GL_TRIANGLE_FAN, 0, res + 2);
-
-        glfwSwapBuffers(window);
-    }
+    //Render
+    Render(shaderProgram, window);
 
     glfwDestroyWindow(window);
     glfwTerminate();
