@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,7 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,20 +139,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Engine.cpp" />
-    <ClCompile Include="ShaderUtils.cpp" />
-    <ClCompile Include="Circle.cpp" />
-    <ClCompile Include="Space Sim.cpp" />
-    <ClCompile Include="SpaceUtils.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="Core\Engine\Engine.cpp" />
+    <ClCompile Include="Main\Space Sim.cpp" />
+    <ClCompile Include="Shapes\Circle\Circle.cpp" />
+    <ClCompile Include="Utils\ShaderUtils\ShaderUtils.cpp" />
+    <ClCompile Include="Utils\SpaceUtils\SpaceUtils.cpp" />
+    <ClCompile Include="Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Constants.h" />
-    <ClInclude Include="Engine.h" />
-    <ClInclude Include="ShaderUtils.h" />
-    <ClInclude Include="Circle.h" />
-    <ClInclude Include="SpaceUtils.h" />
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="Constants\Constants.h" />
+    <ClInclude Include="Core\Engine\Engine.h" />
+    <ClInclude Include="Shapes\Circle\Circle.h" />
+    <ClInclude Include="Utils\Acceleration\Acceleration.h" />
+    <ClInclude Include="Utils\Meter\Meter.h" />
+    <ClInclude Include="Utils\Position\Position.h" />
+    <ClInclude Include="Utils\ShaderUtils\ShaderUtils.h" />
+    <ClInclude Include="Utils\SpaceUtils\SpaceUtils.h" />
+    <ClInclude Include="Utils\Vector\Vector.h" />
+    <ClInclude Include="Utils\Velocity\Velocity.h" />
+    <ClInclude Include="Window\Window.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Shaders\shader.frag" />

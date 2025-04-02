@@ -1,8 +1,14 @@
-﻿  Circle.cpp
-D:\Documents\Projects\Space-Sim\Circle.cpp(18,21): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Engine.cpp
-D:\Documents\Projects\Space-Sim\Engine.cpp(35,38): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  Space Sim.cpp
-  SpaceUtils.cpp
-  Generating Code...
+﻿  Engine.cpp
+D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(15,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Core/Engine/Engine.cpp')
+  
+D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(16,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Core/Engine/Engine.cpp')
+  
+D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(20,12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Core/Engine/Engine.cpp')
+  
+D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(21,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  (compiling source file 'Core/Engine/Engine.cpp')
+  
   Space Sim.vcxproj -> D:\Documents\Projects\Space-Sim\Debug\Space Sim.exe

@@ -21,45 +21,90 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
+    <Filter Include="Utils\ShaderUtils">
+      <UniqueIdentifier>{017c6813-1176-4fad-9678-2cbcddb5b546}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\SpaceUtils">
+      <UniqueIdentifier>{46f71f95-2726-46ea-b0b4-96d52b78f764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Engine">
+      <UniqueIdentifier>{dbf68517-7feb-4d5b-8431-327e63752c77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Position">
+      <UniqueIdentifier>{51e9dd95-4431-4b82-a554-df8dac07a4f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Velocity">
+      <UniqueIdentifier>{643bd0a0-d7c2-4085-928f-5431596e4768}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Acceleration">
+      <UniqueIdentifier>{5728d95b-8da3-4990-b61a-973015110a46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Meter">
+      <UniqueIdentifier>{0c0497f8-7387-4a29-b5c0-0f966484c420}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\Vector">
+      <UniqueIdentifier>{f9e12034-7661-4876-bec6-65e52c003f81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Constants">
+      <UniqueIdentifier>{a10032d9-d42b-4f5b-9af0-f8284ccddad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Circle">
+      <UniqueIdentifier>{17c85de9-55b8-45e0-951a-a0f83ef35611}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Space Sim.cpp">
+    <ClCompile Include="Core\Engine\Engine.cpp">
+      <Filter>Core\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\Space Sim.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="ShaderUtils.cpp">
-      <Filter>Utils</Filter>
+    <ClCompile Include="Shapes\Circle\Circle.cpp">
+      <Filter>Shapes\Circle</Filter>
     </ClCompile>
-    <ClCompile Include="Window.cpp">
+    <ClCompile Include="Utils\ShaderUtils\ShaderUtils.cpp">
+      <Filter>Utils\ShaderUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\SpaceUtils\SpaceUtils.cpp">
+      <Filter>Utils\SpaceUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Window.cpp">
       <Filter>Window</Filter>
-    </ClCompile>
-    <ClCompile Include="Circle.cpp">
-      <Filter>Shapes</Filter>
-    </ClCompile>
-    <ClCompile Include="SpaceUtils.cpp">
-      <Filter>Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Engine.cpp">
-      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Constants.h">
-      <Filter>Core</Filter>
+    <ClInclude Include="Constants\Constants.h">
+      <Filter>Constants</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderUtils.h">
-      <Filter>Utils</Filter>
+    <ClInclude Include="Core\Engine\Engine.h">
+      <Filter>Core\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Window.h">
+    <ClInclude Include="Shapes\Circle\Circle.h">
+      <Filter>Shapes\Circle</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Acceleration\Acceleration.h">
+      <Filter>Utils\Acceleration</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Meter\Meter.h">
+      <Filter>Utils\Meter</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Position\Position.h">
+      <Filter>Utils\Position</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\ShaderUtils\ShaderUtils.h">
+      <Filter>Utils\ShaderUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\SpaceUtils\SpaceUtils.h">
+      <Filter>Utils\SpaceUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Vector\Vector.h">
+      <Filter>Utils\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Velocity\Velocity.h">
+      <Filter>Utils\Velocity</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Window.h">
       <Filter>Window</Filter>
-    </ClInclude>
-    <ClInclude Include="Circle.h">
-      <Filter>Shapes</Filter>
-    </ClInclude>
-    <ClInclude Include="SpaceUtils.h">
-      <Filter>Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Engine.h">
-      <Filter>Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
