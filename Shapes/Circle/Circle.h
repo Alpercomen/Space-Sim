@@ -1,5 +1,7 @@
 #pragma once
 
+#include <GL/glew.h>
+
 #include "Position.h"
 #include "Velocity.h"
 #include "Acceleration.h"
@@ -13,7 +15,9 @@ public:
 	Acceleration acc;
 
 	Meter radius;
-	int res;
+	int res = 50;
+
+	double mass = 1.0;
 };
 
 class Circle {

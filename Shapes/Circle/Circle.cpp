@@ -1,5 +1,4 @@
 #include <iostream>
-#include <GL/glew.h>
 
 #include "Circle.h"
 #include "Constants.h"
@@ -57,12 +56,12 @@ void Circle::UpdatePos()
         // Mirror position relative to wall
         double overshoot = -METERS_PER_UNIT - (nextY - circleDesc.radius.get());
         circleDesc.pos.setY(-METERS_PER_UNIT + circleDesc.radius.get() + overshoot);
-        circleDesc.vel.setY(std::abs(circleDesc.vel.getY()));  // Going upward
+        circleDesc.vel.setY(std::abs(circleDesc.vel.getY() * 0.95));  // Going upward
     }
     else if (nextY + circleDesc.radius.get() >= METERS_PER_UNIT) {
         double overshoot = (nextY + circleDesc.radius.get()) - METERS_PER_UNIT;
         circleDesc.pos.setY(METERS_PER_UNIT - circleDesc.radius.get() - overshoot);
-        circleDesc.vel.setY(-std::abs(circleDesc.vel.getY()));  // Going downward
+        circleDesc.vel.setY(-std::abs(circleDesc.vel.getY() * 0.95));  // Going downward
     }
     else {
         circleDesc.pos.setY(nextY);
@@ -73,14 +72,14 @@ void Circle::UpdatePos()
 
     if (nextX - circleDesc.radius.get() <= -METERS_PER_UNIT) {
         // Mirror position relative to wall
-        double overshoot = -METERS_PER_UNIT - (nextY - circleDesc.radius.get());
+        double overshoot = -METERS_PER_UNIT - (nextX - circleDesc.radius.get());
         circleDesc.pos.setX(-METERS_PER_UNIT + circleDesc.radius.get() + overshoot);
-        circleDesc.vel.setX(std::abs(circleDesc.vel.getX()));  // Going upward
+        circleDesc.vel.setX(std::abs(circleDesc.vel.getX() * 0.95));  // Going upward
     }
     else if (nextX + circleDesc.radius.get() >= METERS_PER_UNIT) {
         double overshoot = (nextX + circleDesc.radius.get()) - METERS_PER_UNIT;
         circleDesc.pos.setX(METERS_PER_UNIT - circleDesc.radius.get() - overshoot);
-        circleDesc.vel.setX(-std::abs(circleDesc.vel.getX()));  // Going downward
+        circleDesc.vel.setX(-std::abs(circleDesc.vel.getX() * 0.95));  // Going downward
     }
     else {
         circleDesc.pos.setX(nextX);

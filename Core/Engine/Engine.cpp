@@ -9,28 +9,31 @@
 
 void Render(GLuint shader, GLFWwindow* windowPtr, int screenWidth, int screenHeight)
 {
-    double r = EARTH_RADIUS_EQUATORAL;
-    Acceleration acceleration(GravitationalForce(MU, r), -GravitationalForce(MU, r), 0.0);
+    CircleDesc moonDesc;
+    moonDesc.pos.setY(0.0);
+    moonDesc.pos.setX(0.0);
+    moonDesc.radius.set(7000.0f);
+    moonDesc.res = 50;
+    moonDesc.mass = 730000000000000000000.0; // Moon mass
+    moonDesc.vel.setX(0.0);
+    moonDesc.vel.setY(0.0);
 
-    CircleDesc circleDesc;
-    circleDesc.pos.setY(7.5);
-    circleDesc.pos.setX(2.5);
-    circleDesc.radius.set(1.0f);
-    circleDesc.res = 50;
+    CircleDesc asteroidDesc;
+    asteroidDesc.pos.setY(-50000.0);
+    asteroidDesc.pos.setX(0.0);
+    asteroidDesc.radius.set(1500.0f);
+    asteroidDesc.res = 50;
+    asteroidDesc.mass = 500000000.0;
+    asteroidDesc.vel.setX(50000.0);
+    asteroidDesc.vel.setY(0.0);
 
-    CircleDesc circleDesc2;
-    circleDesc2.pos.setY(7.5);
-    circleDesc2.pos.setX(-2.5);
-    circleDesc2.radius.set(1.0f);
-    circleDesc2.res = 50;
+    Circle moon(moonDesc);
+    Circle asteroid(asteroidDesc);
 
-    Circle circle1(circleDesc);
-    Circle circle2(circleDesc2);
+    std::vector<Circle> objects;
 
-    std::vector<Circle> circles;
-
-    circles.push_back(circle1);
-    circles.push_back(circle2);
+    objects.push_back(moon);
+    objects.push_back(asteroid);
 
     // Render loop
     while (!glfwWindowShouldClose(windowPtr))
@@ -39,11 +42,12 @@ void Render(GLuint shader, GLFWwindow* windowPtr, int screenWidth, int screenHei
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        for (auto& circle : circles)
+        for (auto& object : objects)
         {
-            circle.Accelerate(acceleration);
-            circle.UpdatePos();
-            circle.Draw();
+            Attract(object, objects);
+
+            object.UpdatePos();
+            object.Draw();
         }
 
         glUseProgram(shader);
