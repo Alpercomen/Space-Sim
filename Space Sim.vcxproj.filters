@@ -51,6 +51,12 @@
     <Filter Include="Shapes\Circle">
       <UniqueIdentifier>{17c85de9-55b8-45e0-951a-a0f83ef35611}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Externals">
+      <UniqueIdentifier>{05cf6d3e-a0fc-4c06-b503-e070c93f6dce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\ImGUIUtils">
+      <UniqueIdentifier>{2a2d3480-7ce1-4825-8672-b31fb3a53f66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core\Engine\Engine.cpp">
@@ -70,6 +76,27 @@
     </ClCompile>
     <ClCompile Include="Window\Window.cpp">
       <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_draw.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_tables.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_widgets.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\backends\imgui_impl_glfw.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\backends\imgui_impl_opengl3.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\ImGUIUtils\ImGUIUtils.cpp">
+      <Filter>Utils\ImGUIUtils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +132,9 @@
     </ClInclude>
     <ClInclude Include="Window\Window.h">
       <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\ImGUIUtils\ImGUIUtils.h">
+      <Filter>Utils\ImGUIUtils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -11,6 +11,7 @@
 #include "SpaceUtils.h"
 #include "Constants.h"
 #include "Engine.h"
+#include "ImGUIUtils.h"
 
 int main()
 {
@@ -27,6 +28,8 @@ int main()
     glewInit();
 
     glViewport(0, 0, screenWidth, screenHeight);
+
+    ImGUIUtils::Initialize(window);
 
     GLuint shaderProgram = CreateShaderProgram("Shaders/shader.vert", "Shaders/shader.frag");
 

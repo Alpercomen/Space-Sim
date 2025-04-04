@@ -1,5 +1,6 @@
 #pragma once
 
+#include <string>
 #include <GL/glew.h>
 
 #include "Position.h"
@@ -10,6 +11,8 @@
 // Stores the attributes of a circle
 struct CircleDesc {
 public:
+	std::string name = "NO_NAME";
+
 	Position pos;
 	Velocity vel;
 	Acceleration acc;

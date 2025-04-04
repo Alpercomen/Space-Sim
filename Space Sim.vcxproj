@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(ProjectDir)Utils\ImGUIUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(ProjectDir)Utils\ImGUIUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(ProjectDir)Utils\ImGUIUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,7 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(ProjectDir)Utils\ImGUIUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,9 +139,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_draw.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_tables.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_widgets.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Core\Engine\Engine.cpp" />
     <ClCompile Include="Main\Space Sim.cpp" />
     <ClCompile Include="Shapes\Circle\Circle.cpp" />
+    <ClCompile Include="Utils\ImGUIUtils\ImGUIUtils.cpp" />
     <ClCompile Include="Utils\ShaderUtils\ShaderUtils.cpp" />
     <ClCompile Include="Utils\SpaceUtils\SpaceUtils.cpp" />
     <ClCompile Include="Window\Window.cpp" />
@@ -151,6 +178,7 @@
     <ClInclude Include="Core\Engine\Engine.h" />
     <ClInclude Include="Shapes\Circle\Circle.h" />
     <ClInclude Include="Utils\Acceleration\Acceleration.h" />
+    <ClInclude Include="Utils\ImGUIUtils\ImGUIUtils.h" />
     <ClInclude Include="Utils\Meter\Meter.h" />
     <ClInclude Include="Utils\Position\Position.h" />
     <ClInclude Include="Utils\ShaderUtils\ShaderUtils.h" />

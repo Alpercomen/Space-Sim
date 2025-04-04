@@ -3,13 +3,19 @@
 #include <vector>
 #include <cmath>
 
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
+
 #include "SpaceUtils.h"
 #include "Constants.h"
 #include "Circle.h"
+#include "ImGUIUtils.h"
 
 void Render(GLuint shader, GLFWwindow* windowPtr, int screenWidth, int screenHeight)
 {
     CircleDesc moonDesc;
+    moonDesc.name = "Moon";
     moonDesc.pos.setY(0.0);
     moonDesc.pos.setX(0.0);
     moonDesc.radius.set(7000.0f);
@@ -19,11 +25,12 @@ void Render(GLuint shader, GLFWwindow* windowPtr, int screenWidth, int screenHei
     moonDesc.vel.setY(0.0);
 
     CircleDesc asteroidDesc;
+    asteroidDesc.name = "Asteroid";
     asteroidDesc.pos.setY(-50000.0);
     asteroidDesc.pos.setX(0.0);
     asteroidDesc.radius.set(1500.0f);
     asteroidDesc.res = 50;
-    asteroidDesc.mass = 500000000.0;
+    asteroidDesc.mass = 50000.0;
     asteroidDesc.vel.setX(50000.0);
     asteroidDesc.vel.setY(0.0);
 
@@ -41,6 +48,8 @@ void Render(GLuint shader, GLFWwindow* windowPtr, int screenWidth, int screenHei
         glfwPollEvents();
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+
+        ImGUIUtils::DrawWindow(objects);
 
         for (auto& object : objects)
         {
