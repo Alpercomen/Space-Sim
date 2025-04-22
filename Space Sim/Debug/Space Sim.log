@@ -1,14 +1,15 @@
-﻿  ImGUIUtils.cpp
+﻿  Engine.cpp
 D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(15,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(16,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(20,12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(21,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Space Sim.vcxproj -> D:\Documents\Projects\Space-Sim\Debug\Space Sim.exe

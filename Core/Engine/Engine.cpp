@@ -49,8 +49,6 @@ void Render(GLuint shader, GLFWwindow* windowPtr, int screenWidth, int screenHei
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
-        ImGUIUtils::DrawWindow(objects);
-
         for (auto& object : objects)
         {
             Attract(object, objects);
@@ -58,6 +56,8 @@ void Render(GLuint shader, GLFWwindow* windowPtr, int screenWidth, int screenHei
             object.UpdatePos();
             object.Draw();
         }
+
+        ImGUIUtils::DrawWindow(objects);
 
         glUseProgram(shader);
 
