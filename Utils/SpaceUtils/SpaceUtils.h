@@ -2,9 +2,9 @@
 
 #include "vector"
 
-#include "Circle.h"
-#include "Vector.h"
+#include "Sphere/Sphere.h"
+#include "Vector/Vector.h"
 
 double GravitationalForce(double mu, double r);
 
-void Attract(Circle& obj, std::vector<Circle>& objects);
+void Attract(Sphere& obj, std::vector<Sphere>& objects);

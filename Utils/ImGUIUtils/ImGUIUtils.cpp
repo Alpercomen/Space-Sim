@@ -1,6 +1,6 @@
 #include <vector>
 
-#include "ImGUIUtils.h"
+#include "ImGUIUtils/ImGUIUtils.h"
 
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
@@ -17,7 +17,7 @@ void ImGUIUtils::Initialize(GLFWwindow* window)
     ImGui_ImplOpenGL3_Init("#version 330");  // Use your actual GLSL version
 }
 
-void ImGUIUtils::DrawWindow(std::vector<Circle>& objects)
+void ImGUIUtils::DrawWindow(std::vector<Sphere>& objects)
 {
     // Start new ImGui frame
     ImGui_ImplOpenGL3_NewFrame();
@@ -31,15 +31,20 @@ void ImGUIUtils::DrawWindow(std::vector<Circle>& objects)
 
         float currentVelocityX = static_cast<float>(obj.circleDesc.acc.getX());
         float currentVelocityY = static_cast<float>(obj.circleDesc.acc.getY());
+        float currentVelocityZ = static_cast<float>(obj.circleDesc.acc.getZ());
 
         std::string labelX = obj.circleDesc.name + " Velocity X";
         std::string labelY = obj.circleDesc.name + " Velocity Y";
+        std::string labelZ = obj.circleDesc.name + " Velocity Z";
 
         if (ImGui::SliderFloat(labelX.c_str(), &currentVelocityX, -20000.0f, 20000.0f)) {
             obj.circleDesc.vel.setX(static_cast<double>(currentVelocityX));
         }
         if (ImGui::SliderFloat(labelY.c_str(), &currentVelocityY, -20000.0f, 20000.0f)) {
             obj.circleDesc.vel.setY(static_cast<double>(currentVelocityY));
+        }
+        if (ImGui::SliderFloat(labelZ.c_str(), &currentVelocityZ, -20000.0f, 20000.0f)) {
+            obj.circleDesc.vel.setZ(static_cast<double>(currentVelocityZ));
         }
     }
 

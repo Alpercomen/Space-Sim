@@ -48,14 +48,20 @@
     <Filter Include="Constants">
       <UniqueIdentifier>{a10032d9-d42b-4f5b-9af0-f8284ccddad5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Shapes\Circle">
-      <UniqueIdentifier>{17c85de9-55b8-45e0-951a-a0f83ef35611}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Externals">
       <UniqueIdentifier>{05cf6d3e-a0fc-4c06-b503-e070c93f6dce}</UniqueIdentifier>
     </Filter>
     <Filter Include="Utils\ImGUIUtils">
       <UniqueIdentifier>{2a2d3480-7ce1-4825-8672-b31fb3a53f66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Camera">
+      <UniqueIdentifier>{c5692762-0760-415a-8575-2317ab48bb78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Input">
+      <UniqueIdentifier>{d2a443ea-1214-4a80-9d32-ac16b45114ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Sphere">
+      <UniqueIdentifier>{17c85de9-55b8-45e0-951a-a0f83ef35611}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -64,9 +70,6 @@
     </ClCompile>
     <ClCompile Include="Main\Space Sim.cpp">
       <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Shapes\Circle\Circle.cpp">
-      <Filter>Shapes\Circle</Filter>
     </ClCompile>
     <ClCompile Include="Utils\ShaderUtils\ShaderUtils.cpp">
       <Filter>Utils\ShaderUtils</Filter>
@@ -98,6 +101,15 @@
     <ClCompile Include="Utils\ImGUIUtils\ImGUIUtils.cpp">
       <Filter>Utils\ImGUIUtils</Filter>
     </ClCompile>
+    <ClCompile Include="Core\Camera\Camera.cpp">
+      <Filter>Core\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Input\Input.cpp">
+      <Filter>Core\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Shapes\Sphere\Sphere.cpp">
+      <Filter>Shapes\Sphere</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants\Constants.h">
@@ -105,9 +117,6 @@
     </ClInclude>
     <ClInclude Include="Core\Engine\Engine.h">
       <Filter>Core\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Shapes\Circle\Circle.h">
-      <Filter>Shapes\Circle</Filter>
     </ClInclude>
     <ClInclude Include="Utils\Acceleration\Acceleration.h">
       <Filter>Utils\Acceleration</Filter>
@@ -135,6 +144,15 @@
     </ClInclude>
     <ClInclude Include="Utils\ImGUIUtils\ImGUIUtils.h">
       <Filter>Utils\ImGUIUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Camera\Camera.h">
+      <Filter>Core\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Input\Input.h">
+      <Filter>Core\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Shapes\Sphere\Sphere.h">
+      <Filter>Shapes\Sphere</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

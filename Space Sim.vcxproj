@@ -76,12 +76,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(ProjectDir)Utils\ImGUIUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/lib/Release/Win32;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/lib/Release/Win32;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/lib-vc2022;$(SolutionDir)/../External Libs/GLM/glm-master/glm;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -93,14 +93,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(ProjectDir)Utils\ImGUIUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/lib/Release/Win32;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/lib/Release/Win32;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/lib-vc2022;$(SolutionDir)/../External Libs/GLM/glm-master/glm;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -110,12 +110,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(ProjectDir)Utils\ImGUIUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/lib/Release/Win32;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/lib/Release/Win32;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/lib-vc2022;$(SolutionDir)/../External Libs/GLM/glm-master/glm;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -127,14 +127,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils\SpaceUtils;$(ProjectDir)Utils\ShaderUtils;$(ProjectDir)Utils\Acceleration;$(ProjectDir)Utils\Velocity;$(ProjectDir)Utils\Vector;$(ProjectDir)Utils\Position;$(ProjectDir)Utils\Meter;$(ProjectDir)Core;$(ProjectDir)Core\Engine;$(ProjectDir)Constants;$(ProjectDir)Shapes\Circle;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(ProjectDir)Utils\ImGUIUtils;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/lib/Release/Win32;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/lib/Release/Win32;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/lib-vc2022;$(SolutionDir)/../External Libs/GLM/glm-master/glm;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glew32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -165,9 +165,11 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Core\Camera\Camera.cpp" />
     <ClCompile Include="Core\Engine\Engine.cpp" />
+    <ClCompile Include="Core\Input\Input.cpp" />
     <ClCompile Include="Main\Space Sim.cpp" />
-    <ClCompile Include="Shapes\Circle\Circle.cpp" />
+    <ClCompile Include="Shapes\Sphere\Sphere.cpp" />
     <ClCompile Include="Utils\ImGUIUtils\ImGUIUtils.cpp" />
     <ClCompile Include="Utils\ShaderUtils\ShaderUtils.cpp" />
     <ClCompile Include="Utils\SpaceUtils\SpaceUtils.cpp" />
@@ -175,8 +177,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constants\Constants.h" />
+    <ClInclude Include="Core\Camera\Camera.h" />
     <ClInclude Include="Core\Engine\Engine.h" />
-    <ClInclude Include="Shapes\Circle\Circle.h" />
+    <ClInclude Include="Core\Input\Input.h" />
+    <ClInclude Include="Shapes\Sphere\Sphere.h" />
     <ClInclude Include="Utils\Acceleration\Acceleration.h" />
     <ClInclude Include="Utils\ImGUIUtils\ImGUIUtils.h" />
     <ClInclude Include="Utils\Meter\Meter.h" />

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Vector.h"
+#include "Vector/Vector.h"
 #include "Constants.h"
 
 class Position {

@@ -6,12 +6,13 @@
 #include <cmath>
 
 #include "Window.h"
-#include "Circle.h"
-#include "ShaderUtils.h"
-#include "SpaceUtils.h"
+#include "Sphere/Sphere.h"
+#include "ShaderUtils/ShaderUtils.h"
+#include "SpaceUtils/SpaceUtils.h"
 #include "Constants.h"
-#include "Engine.h"
-#include "ImGUIUtils.h"
+#include "Engine/Engine.h"
+#include "ImGUIUtils/ImGUIUtils.h"
+#include "Input/Input.h"
 
 int main()
 {
@@ -19,6 +20,10 @@ int main()
 
     if (!window)
         return -1;
+
+    // Register input callbacks
+    glfwSetCursorPosCallback(window, mouse_callback);
+    glfwSetScrollCallback(window, scroll_callback);
 
     int screenWidth, screenHeight;
     glfwGetFramebufferSize(window, &screenWidth, &screenHeight);
@@ -31,10 +36,12 @@ int main()
 
     ImGUIUtils::Initialize(window);
 
+    glEnable(GL_DEPTH_TEST);
+
     GLuint shaderProgram = CreateShaderProgram("Shaders/shader.vert", "Shaders/shader.frag");
 
     //Render
-    Render(shaderProgram, window, screenWidth, screenHeight);
+    Render(shaderProgram, window, screenWidth, screenHeight, camera);
 
     glfwDestroyWindow(window);
     glfwTerminate();

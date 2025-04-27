@@ -3,32 +3,52 @@
   "WorkspaceRootPath": "D:\\Documents\\Projects\\Space-Sim\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Core\\Engine\\Engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Core\\Engine\\Engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Utils\\ImGUIUtils\\ImGUIUtils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Utils\\ImGUIUtils\\ImGUIUtils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Shaders\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Shaders\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Shaders\\shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Shaders\\shader.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Main\\Space Sim.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Main\\Space Sim.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Core\\Engine\\Engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Core\\Engine\\Engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Core\\Camera\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Core\\Camera\\Camera.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Core\\Camera\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Core\\Camera\\Camera.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Core\\Input\\Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Core\\Input\\Input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Core\\Engine\\Engine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Core\\Engine\\Engine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Utils\\SpaceUtils\\SpaceUtils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Main\\Space Sim.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Main\\Space Sim.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Core\\Input\\Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Core\\Input\\Input.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Shaders\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Shaders\\shader.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Shapes\\Sphere\\Sphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Shapes\\Sphere\\Sphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Shapes\\Sphere\\Sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Shapes\\Sphere\\Sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Utils\\SpaceUtils\\SpaceUtils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Utils\\ImGUIUtils\\ImGUIUtils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -39,16 +59,8 @@
       "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Constants\\Constants.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Window\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Window\\Window.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Utils\\SpaceUtils\\SpaceUtils.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Window\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Window\\Window.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Utils\\SpaceUtils\\SpaceUtils.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,17 +70,140 @@
       "DocumentGroups": [
         {
           "DockedWidth": 512,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
+              "Title": "Input.h",
+              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Core\\Input\\Input.h",
+              "RelativeDocumentMoniker": "Core\\Input\\Input.h",
+              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Core\\Input\\Input.h",
+              "RelativeToolTip": "Core\\Input\\Input.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-27T19:59:08.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Input.cpp",
+              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Core\\Input\\Input.cpp",
+              "RelativeDocumentMoniker": "Core\\Input\\Input.cpp",
+              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Core\\Input\\Input.cpp",
+              "RelativeToolTip": "Core\\Input\\Input.cpp",
+              "ViewState": "AgIAACAAAAAAAAAAAAAYwDcAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-27T19:31:34.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Camera.cpp",
+              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Core\\Camera\\Camera.cpp",
+              "RelativeDocumentMoniker": "Core\\Camera\\Camera.cpp",
+              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Core\\Camera\\Camera.cpp",
+              "RelativeToolTip": "Core\\Camera\\Camera.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-27T19:11:30.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Camera.h",
+              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Core\\Camera\\Camera.h",
+              "RelativeDocumentMoniker": "Core\\Camera\\Camera.h",
+              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Core\\Camera\\Camera.h",
+              "RelativeToolTip": "Core\\Camera\\Camera.h",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-27T19:11:29.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Sphere.h",
+              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Shapes\\Sphere\\Sphere.h",
+              "RelativeDocumentMoniker": "Shapes\\Sphere\\Sphere.h",
+              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Shapes\\Sphere\\Sphere.h",
+              "RelativeToolTip": "Shapes\\Sphere\\Sphere.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwCcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-27T19:02:48.994Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Sphere.cpp",
+              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Shapes\\Sphere\\Sphere.cpp",
+              "RelativeDocumentMoniker": "Shapes\\Sphere\\Sphere.cpp",
+              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Shapes\\Sphere\\Sphere.cpp",
+              "RelativeToolTip": "Shapes\\Sphere\\Sphere.cpp",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAAAGsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-27T19:00:04.861Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SpaceUtils.h",
+              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.h",
+              "RelativeDocumentMoniker": "Utils\\SpaceUtils\\SpaceUtils.h",
+              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.h",
+              "RelativeToolTip": "Utils\\SpaceUtils\\SpaceUtils.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-04-03T01:17:32.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "SpaceUtils.cpp",
+              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.cpp",
+              "RelativeDocumentMoniker": "Utils\\SpaceUtils\\SpaceUtils.cpp",
+              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.cpp",
+              "RelativeToolTip": "Utils\\SpaceUtils\\SpaceUtils.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-03T00:59:08.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Space Sim.cpp",
+              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Main\\Space Sim.cpp",
+              "RelativeDocumentMoniker": "Main\\Space Sim.cpp",
+              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Main\\Space Sim.cpp",
+              "RelativeToolTip": "Main\\Space Sim.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-04-04T02:56:09.734Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 479,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Engine.cpp",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Core\\Engine\\Engine.cpp",
               "RelativeDocumentMoniker": "Core\\Engine\\Engine.cpp",
               "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Core\\Engine\\Engine.cpp",
               "RelativeToolTip": "Core\\Engine\\Engine.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACwAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-04-04T03:30:03.852Z",
               "EditorCaption": ""
@@ -81,126 +216,49 @@
               "RelativeDocumentMoniker": "Core\\Engine\\Engine.h",
               "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Core\\Engine\\Engine.h",
               "RelativeToolTip": "Core\\Engine\\Engine.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABVAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-04T03:25:18.703Z"
+              "WhenOpened": "2025-04-04T03:25:18.703Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Window.h",
-              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Window\\Window.h",
-              "RelativeDocumentMoniker": "Window\\Window.h",
-              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Window\\Window.h",
-              "RelativeToolTip": "Window\\Window.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-03T01:43:40.925Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Window.cpp",
-              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Window\\Window.cpp",
-              "RelativeDocumentMoniker": "Window\\Window.cpp",
-              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Window\\Window.cpp",
-              "RelativeToolTip": "Window\\Window.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-03T01:43:14.132Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SpaceUtils.h",
-              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.h",
-              "RelativeDocumentMoniker": "Utils\\SpaceUtils\\SpaceUtils.h",
-              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.h",
-              "RelativeToolTip": "Utils\\SpaceUtils\\SpaceUtils.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-03T01:17:32.07Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SpaceUtils.cpp",
-              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.cpp",
-              "RelativeDocumentMoniker": "Utils\\SpaceUtils\\SpaceUtils.cpp",
-              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.cpp",
-              "RelativeToolTip": "Utils\\SpaceUtils\\SpaceUtils.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-03T00:59:08.841Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Space Sim.cpp",
-              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Main\\Space Sim.cpp",
-              "RelativeDocumentMoniker": "Main\\Space Sim.cpp",
-              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Main\\Space Sim.cpp",
-              "RelativeToolTip": "Main\\Space Sim.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACQAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-04T02:56:09.734Z"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 479,
-          "SelectedChildIndex": 2,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "shader.vert",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Shaders\\shader.vert",
               "RelativeDocumentMoniker": "Shaders\\shader.vert",
               "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Shaders\\shader.vert",
               "RelativeToolTip": "Shaders\\shader.vert",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-03-24T20:01:21.354Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "shader.frag",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Shaders\\shader.frag",
               "RelativeDocumentMoniker": "Shaders\\shader.frag",
               "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Shaders\\shader.frag",
               "RelativeToolTip": "Shaders\\shader.frag",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-03-24T20:01:25.825Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ImGUIUtils.cpp",
-              "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Utils\\ImGUIUtils\\ImGUIUtils.cpp",
-              "RelativeDocumentMoniker": "Utils\\ImGUIUtils\\ImGUIUtils.cpp",
-              "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Utils\\ImGUIUtils\\ImGUIUtils.cpp",
-              "RelativeToolTip": "Utils\\ImGUIUtils\\ImGUIUtils.cpp",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-04T03:08:09.015Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "ImGUIUtils.h",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Utils\\ImGUIUtils\\ImGUIUtils.h",
               "RelativeDocumentMoniker": "Utils\\ImGUIUtils\\ImGUIUtils.h",
               "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Utils\\ImGUIUtils\\ImGUIUtils.h",
               "RelativeToolTip": "Utils\\ImGUIUtils\\ImGUIUtils.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-04T03:08:12.238Z"
+              "WhenOpened": "2025-04-04T03:08:12.238Z",
+              "EditorCaption": ""
             }
           ]
         },
@@ -210,13 +268,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "Constants.h",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Constants\\Constants.h",
               "RelativeDocumentMoniker": "Constants\\Constants.h",
               "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Constants\\Constants.h",
               "RelativeToolTip": "Constants\\Constants.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-04-03T01:09:57.172Z",
               "EditorCaption": ""

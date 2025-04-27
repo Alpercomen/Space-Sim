@@ -1,8 +1,6 @@
 #pragma once
 
-#include "SpaceUtils.h"
-
-#include "SpaceUtils.h"
+#include "SpaceUtils/SpaceUtils.h"
 #include "Constants.h"
 
 double GravitationalForce(double mu, double r) 
@@ -10,7 +8,7 @@ double GravitationalForce(double mu, double r)
 	return mu / (r * r);
 }
 
-void Attract(Circle& obj, std::vector<Circle>& objects)
+void Attract(Sphere& obj, std::vector<Sphere>& objects)
 {
 	for (auto& obj2 : objects)
 	{
@@ -19,14 +17,15 @@ void Attract(Circle& obj, std::vector<Circle>& objects)
 
 		float dx = obj2.circleDesc.pos.getX() - obj.circleDesc.pos.getX();
 		float dy = obj2.circleDesc.pos.getY() - obj.circleDesc.pos.getY();
+		float dz = obj2.circleDesc.pos.getZ() - obj.circleDesc.pos.getZ();
 
-		Vector unitVector = Vector(dx, dy, 0.0).normal();
+		Vector unitVector = Vector(dx, dy, dz).normal();
 		float distance = unitVector.magnitude() * METER_PER_KILOMETER;
 
 		float Gforce = (G * obj.circleDesc.mass * obj2.circleDesc.mass) / (distance * distance);
-		float acc1 = Gforce / obj.circleDesc.mass;
+		float acc = Gforce / obj.circleDesc.mass;
 
-		Acceleration attraction(acc1 * unitVector.x, acc1 * unitVector.y, 0.0);
+		Acceleration attraction(acc * unitVector.x, acc * unitVector.y, acc * unitVector.z);
 
 		obj.Accelerate(attraction);
 	}
