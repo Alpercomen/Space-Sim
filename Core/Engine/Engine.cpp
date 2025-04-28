@@ -23,9 +23,9 @@ void Render(GLuint shader, GLFWwindow* windowPtr, int screenWidth, int screenHei
     SphereDesc moonDesc;
     moonDesc.name = "Moon";
     moonDesc.pos.setX(0.0);
-    moonDesc.pos.setY(-100000.0);
+    moonDesc.pos.setY(-10000.0);
     moonDesc.pos.setZ(0.0);
-    moonDesc.radius.set(100000.0);
+    moonDesc.radius.set(10000.0);
     moonDesc.res = 50;
     moonDesc.mass = 730000000000000000000.0; // Moon mass
     moonDesc.vel.setX(0.0);
@@ -36,15 +36,15 @@ void Render(GLuint shader, GLFWwindow* windowPtr, int screenWidth, int screenHei
 
     SphereDesc asteroidDesc;
     asteroidDesc.name = "Asteroid";
-    asteroidDesc.pos.setX(250000.0);
+    asteroidDesc.pos.setX(5000.0);
     asteroidDesc.pos.setY(0.0);
     asteroidDesc.pos.setZ(0.0);
-    asteroidDesc.radius.set(15000.0f);
+    asteroidDesc.radius.set(1500.0f);
     asteroidDesc.res = 50;
     asteroidDesc.mass = 73000.0;
-    asteroidDesc.vel.setX(0);
+    asteroidDesc.vel.setX(35000.0);
     asteroidDesc.vel.setY(0.0);
-    asteroidDesc.vel.setZ(100000.0);
+    asteroidDesc.vel.setZ(35000.0);
 
     Sphere asteroid(asteroidDesc);
 

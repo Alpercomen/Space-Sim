@@ -102,7 +102,7 @@ void Sphere::UpdatePos()
 void Sphere::Draw(const glm::mat4& view, const glm::mat4& projection, GLuint shader)
 {
     glm::mat4 model = glm::mat4(1.0f);
-    model = glm::translate(model, glm::vec3(circleDesc.pos.getX(), circleDesc.pos.getY(), circleDesc.pos.getZ()));
+    model = glm::translate(model, circleDesc.pos.getPosition());
 
     float scaledRadius = circleDesc.radius.get(true) * METERS_PER_UNIT;
     model = glm::scale(model, glm::vec3(scaledRadius));
