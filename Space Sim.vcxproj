@@ -187,7 +187,6 @@
     <ClInclude Include="Utils\Position\Position.h" />
     <ClInclude Include="Utils\ShaderUtils\ShaderUtils.h" />
     <ClInclude Include="Utils\SpaceUtils\SpaceUtils.h" />
-    <ClInclude Include="Utils\Vector\Vector.h" />
     <ClInclude Include="Utils\Velocity\Velocity.h" />
     <ClInclude Include="Window\Window.h" />
   </ItemGroup>

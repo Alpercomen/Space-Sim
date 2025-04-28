@@ -7,6 +7,8 @@ extern float lastX;
 extern float lastY;
 extern bool rightMouseButtonDown;
 
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods);
+
 void mouse_callback(GLFWwindow* window, double xPos, double yPos);
 void scroll_callback(GLFWwindow* window, double xOffset, double yOffset);
 

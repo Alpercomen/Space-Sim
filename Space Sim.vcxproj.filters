@@ -42,9 +42,6 @@
     <Filter Include="Utils\Meter">
       <UniqueIdentifier>{0c0497f8-7387-4a29-b5c0-0f966484c420}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Utils\Vector">
-      <UniqueIdentifier>{f9e12034-7661-4876-bec6-65e52c003f81}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Constants">
       <UniqueIdentifier>{a10032d9-d42b-4f5b-9af0-f8284ccddad5}</UniqueIdentifier>
     </Filter>
@@ -132,9 +129,6 @@
     </ClInclude>
     <ClInclude Include="Utils\SpaceUtils\SpaceUtils.h">
       <Filter>Utils\SpaceUtils</Filter>
-    </ClInclude>
-    <ClInclude Include="Utils\Vector\Vector.h">
-      <Filter>Utils\Vector</Filter>
     </ClInclude>
     <ClInclude Include="Utils\Velocity\Velocity.h">
       <Filter>Utils\Velocity</Filter>

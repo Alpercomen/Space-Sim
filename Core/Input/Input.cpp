@@ -2,32 +2,34 @@
 #include "Input.h"
 #include "Constants.h"
 
-Camera camera(glm::vec3(0.0f, 0.0f, METERS_PER_UNIT));
+Camera camera(glm::vec3(1.0f));
 bool firstMouse = true;
 float lastX = 400.0f;
 float lastY = 400.f;
 bool rightMouseButtonDown = false;
 
-void mouse_callback(GLFWwindow* window, double xPos, double yPos)
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 {
-    if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS)
+    if (button == GLFW_MOUSE_BUTTON_RIGHT)
     {
-        if (!rightMouseButtonDown)
+        if (action == GLFW_PRESS)
         {
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
             rightMouseButtonDown = true;
+            firstMouse = true;
         }
-    }
-    else
-    {
-        if (rightMouseButtonDown)
+        else if (action == GLFW_RELEASE)
         {
             glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
             rightMouseButtonDown = false;
-            firstMouse = true; // Reset mouse movement
         }
-        return;
     }
+}
+
+void mouse_callback(GLFWwindow* window, double xPos, double yPos)
+{
+    if (!rightMouseButtonDown)
+        return;
 
     if (firstMouse)
     {
@@ -36,18 +38,13 @@ void mouse_callback(GLFWwindow* window, double xPos, double yPos)
         firstMouse = false;
     }
 
-    float xOffset = (float)xPos - lastX;
-    float yOffset = lastY - (float)yPos; // Reversed
+    float xoffset = (float)xPos - lastX;
+    float yoffset = lastY - (float)yPos; // reversed y
 
     lastX = (float)xPos;
     lastY = (float)yPos;
 
-    camera.ProcessMouseMovement(xOffset, yOffset);
-}
-
-void scroll_callback(GLFWwindow* window, double xOffset, double yOffset)
-{
-    camera.ProcessMouseScroll((float)yOffset);
+    camera.ProcessMouseMovement(xoffset, yoffset);
 }
 
 void process_keyboard_input(GLFWwindow* window, float deltaTime, Camera& camera)

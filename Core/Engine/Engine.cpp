@@ -14,10 +14,12 @@
 #include "ImGUIUtils/ImGUIUtils.h"
 #include "Input/Input.h"
 
-float lastFrame = 0.0f;
 
 void Render(GLuint shader, GLFWwindow* windowPtr, int screenWidth, int screenHeight, Camera& camera)
 {
+    float lastFrame = 0.0f;
+    float deltaTime = 0.0f;
+
     SphereDesc moonDesc;
     moonDesc.name = "Moon";
     moonDesc.pos.setX(0.0);
@@ -55,28 +57,26 @@ void Render(GLuint shader, GLFWwindow* windowPtr, int screenWidth, int screenHei
     while (!glfwWindowShouldClose(windowPtr))
     {
         float currentFrame = glfwGetTime();
-        float deltaTime = currentFrame - lastFrame;
+        deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
         glfwPollEvents();
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         if (rightMouseButtonDown)
             process_keyboard_input(windowPtr, deltaTime, camera);
 
-        camera.Update(deltaTime);
+        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         glUseProgram(shader);
 
-        // TODO: Refactor this!
+        
         glm::mat4 view = camera.GetViewMatrix();
-        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)screenWidth / screenHeight, 1.0f, 1e10f);
+        glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)screenWidth / (float)screenHeight, 0.1f, 1e15f);
 
         for (auto& object : objects)
         {
             Attract(object, objects);
-
             object.UpdatePos();
             object.Draw(view, projection, shader);
         }

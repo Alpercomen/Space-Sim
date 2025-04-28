@@ -2,16 +2,15 @@
 
 Camera::Camera(glm::vec3 position)
     : Front(glm::vec3(0.0f, 0.0f, -1.0f)),
-    MovementSpeed(10000.0f),
-    MovementSpeedMultiplier(25.0f),
+    MovementSpeed(1000.0f),
+    MovementSpeedMultiplier(20.0f),
     MouseSensitivity(0.1f),
-    RotationSmoothness(10.0f),
-    Zoom(45.0f)
+    Zoom(45.0f),
+    Yaw(-90.0f),
+    Pitch(0.0f),
+    WorldUp(glm::vec3(0.0f, 1.0f, 0.0f))
 {
     Position = position;
-    WorldUp = glm::vec3(0.0f, 1.0f, 0.0f);
-    Yaw = TargetYaw = -90.0f;
-    Pitch = TargetPitch = 0.0f;
     updateCameraVectors();
 }
 
@@ -42,31 +41,17 @@ void Camera::ProcessMouseMovement(float xoffset, float yoffset, bool constrainPi
     xoffset *= MouseSensitivity;
     yoffset *= MouseSensitivity;
 
-    TargetYaw += xoffset;
-    TargetPitch += yoffset;
+    Yaw += xoffset;
+    Pitch += yoffset;
 
     if (constrainPitch)
     {
-        if (TargetPitch > 89.0f) TargetPitch = 89.0f;
-        if (TargetPitch < -89.0f) TargetPitch = -89.0f;
+        if (Pitch > 89.0f)
+            Pitch = 89.0f;
+        if (Pitch < -89.0f)
+            Pitch = -89.0f;
     }
 
-    if (TargetYaw > 360.0f) TargetYaw -= 360.0f;
-    if (TargetYaw < 0.0f) TargetYaw += 360.0f;
-}
-
-void Camera::ProcessMouseScroll(float yoffset)
-{
-    Zoom -= (float)yoffset;
-    if (Zoom < 1.0f) Zoom = 1.0f;
-    if (Zoom > 45.0f) Zoom = 45.0f;
-}
-
-void Camera::Update(float deltaTime)
-{
-    // Smooth rotation
-    Yaw = glm::mix(Yaw, TargetYaw, 1.0f - glm::pow(0.001f, deltaTime * RotationSmoothness));
-    Pitch = glm::mix(Pitch, TargetPitch, 1.0f - glm::pow(0.001f, deltaTime * RotationSmoothness));
     updateCameraVectors();
 }
 
@@ -76,8 +61,8 @@ void Camera::updateCameraVectors()
     front.x = cos(glm::radians(Yaw)) * cos(glm::radians(Pitch));
     front.y = sin(glm::radians(Pitch));
     front.z = sin(glm::radians(Yaw)) * cos(glm::radians(Pitch));
-
     Front = glm::normalize(front);
+
     Right = glm::normalize(glm::cross(Front, WorldUp));
     Up = glm::normalize(glm::cross(Right, Front));
 }

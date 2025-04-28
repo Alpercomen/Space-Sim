@@ -1,14 +1,15 @@
 #pragma once
 
-#include "Vector/Vector.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 class Acceleration {
 public:
 
 	Acceleration()
 	{
-		world = Vector();
-		normalized = Vector();
+		world = glm::vec3();
+		normalized = glm::vec3();
 	}
 	
 	Acceleration(double x, double y, double z, bool normalized = false)
@@ -67,6 +68,6 @@ public:
 	}
 
 private:
-	Vector world;
-	Vector normalized;
+	glm::vec3 world;
+	glm::vec3 normalized;
 };

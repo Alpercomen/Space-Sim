@@ -2,6 +2,8 @@
 
 #include "SpaceUtils/SpaceUtils.h"
 #include "Constants.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 double GravitationalForce(double mu, double r) 
 {
@@ -19,8 +21,8 @@ void Attract(Sphere& obj, std::vector<Sphere>& objects)
 		float dy = obj2.circleDesc.pos.getY() - obj.circleDesc.pos.getY();
 		float dz = obj2.circleDesc.pos.getZ() - obj.circleDesc.pos.getZ();
 
-		Vector unitVector = Vector(dx, dy, dz).normal();
-		float distance = unitVector.magnitude() * METER_PER_KILOMETER;
+		glm::vec3 unitVector = glm::normalize(glm::vec3(dx, dy, dz));
+		float distance = glm::length(unitVector) * METER_PER_KILOMETER;
 
 		float Gforce = (G * obj.circleDesc.mass * obj2.circleDesc.mass) / (distance * distance);
 		float acc = Gforce / obj.circleDesc.mass;

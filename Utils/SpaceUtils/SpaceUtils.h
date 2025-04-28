@@ -3,7 +3,6 @@
 #include "vector"
 
 #include "Sphere/Sphere.h"
-#include "Vector/Vector.h"
 
 double GravitationalForce(double mu, double r);
 

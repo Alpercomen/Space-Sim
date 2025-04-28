@@ -1,6 +1,7 @@
 #pragma once
 
-#include "Vector/Vector.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 class Velocity{
 public:
@@ -53,6 +54,6 @@ public:
 	}
 
 private:
-	Vector world;
-	Vector normalized;
+	glm::vec3 world;
+	glm::vec3 normalized;
 };
