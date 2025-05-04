@@ -1,7 +1,9 @@
 #include <iostream>
 
+
 #include "Sphere.h"
 #include "Constants.h"
+#include "Engine/Engine.h"
 
 #include <vector>
 
@@ -82,26 +84,29 @@ void Sphere::Accelerate(Acceleration& acceleration)
     circleDesc.acc = acceleration;
 
     // Physics update in meters
-    circleDesc.vel.setY(circleDesc.vel.getY() + circleDesc.acc.getY() * DELTA_TIME);
-    circleDesc.vel.setX(circleDesc.vel.getX() + circleDesc.acc.getX() * DELTA_TIME);
-    circleDesc.vel.setZ(circleDesc.vel.getZ() + circleDesc.acc.getZ() * DELTA_TIME);
+    circleDesc.vel.setY(circleDesc.vel.getY() + circleDesc.acc.getY() * DELTA_TIME * TIME_SCALE);
+    circleDesc.vel.setX(circleDesc.vel.getX() + circleDesc.acc.getX() * DELTA_TIME * TIME_SCALE);
+    circleDesc.vel.setZ(circleDesc.vel.getZ() + circleDesc.acc.getZ() * DELTA_TIME * TIME_SCALE);
 }
 
 void Sphere::UpdatePos()
 {
-    double nextX = circleDesc.pos.getX() + circleDesc.vel.getX() * DELTA_TIME;
+    double nextX = circleDesc.pos.getX() + circleDesc.vel.getX() * DELTA_TIME * TIME_SCALE;
     circleDesc.pos.setX(nextX);
 
-    double nextY = circleDesc.pos.getY() + circleDesc.vel.getY() * DELTA_TIME;
+    double nextY = circleDesc.pos.getY() + circleDesc.vel.getY() * DELTA_TIME * TIME_SCALE;
     circleDesc.pos.setY(nextY);
 
-    double nextZ = circleDesc.pos.getZ() + circleDesc.vel.getZ() * DELTA_TIME;
+    double nextZ = circleDesc.pos.getZ() + circleDesc.vel.getZ() * DELTA_TIME * TIME_SCALE;
     circleDesc.pos.setZ(nextZ);
 }
 
-void Sphere::Draw(const glm::mat4& view, const glm::mat4& projection, GLuint shader)
+void Sphere::Draw(Camera& camera, GLuint shader)
 {
+    glm::mat4 view = camera.GetViewMatrix();
+    glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)sceneTexWidth / (float)sceneTexHeight, 0.1f, 1e15f);
     glm::mat4 model = glm::mat4(1.0f);
+
     model = glm::translate(model, circleDesc.pos.getPosition());
 
     float scaledRadius = circleDesc.radius.get(true) * METERS_PER_UNIT;

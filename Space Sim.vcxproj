@@ -76,7 +76,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-docking;$(SolutionDir)/../External Libs/ImGUI/imgui-docking/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -93,7 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-docking;$(SolutionDir)/../External Libs/ImGUI/imgui-docking/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,7 +110,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-docking;$(SolutionDir)/../External Libs/ImGUI/imgui-docking/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,7 +127,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-master;$(SolutionDir)/../External Libs/ImGUI/imgui-master/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/../External Libs/GLEW/glew-2.1.0/include;$(SolutionDir)/../External Libs/GLFW/glfw-3.4.bin.WIN32/include;$(ProjectDir)Utils;$(ProjectDir)Core;$(ProjectDir)Constants;$(ProjectDir)Shapes;$(ProjectDir)Window;$(SolutionDir)/../External Libs/ImGUI/imgui-docking;$(SolutionDir)/../External Libs/ImGUI/imgui-docking/backends;$(SolutionDir)/../External Libs/GLM/glm-master;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,32 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\backends\imgui_impl_glfw.cpp" />
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\backends\imgui_impl_opengl3.cpp" />
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_draw.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_tables.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
-    </ClCompile>
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_widgets.cpp">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
-    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\imgui.cpp" />
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\imgui_demo.cpp" />
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\imgui_draw.cpp" />
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\imgui_tables.cpp" />
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\imgui_widgets.cpp" />
+    <ClCompile Include="Constants\Constants.cpp" />
     <ClCompile Include="Core\Camera\Camera.cpp" />
     <ClCompile Include="Core\Engine\Engine.cpp" />
     <ClCompile Include="Core\Input\Input.cpp" />
@@ -176,6 +158,10 @@
     <ClCompile Include="Window\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\External Libs\ImGUI\imgui-docking\backends\imgui_impl_glfw.h" />
+    <ClInclude Include="..\External Libs\ImGUI\imgui-docking\backends\imgui_impl_opengl3.h" />
+    <ClInclude Include="..\External Libs\ImGUI\imgui-docking\imgui.h" />
+    <ClInclude Include="..\External Libs\ImGUI\imgui-docking\imgui_internal.h" />
     <ClInclude Include="Constants\Constants.h" />
     <ClInclude Include="Core\Camera\Camera.h" />
     <ClInclude Include="Core\Engine\Engine.h" />

@@ -25,14 +25,9 @@ int main()
     glfwSetMouseButtonCallback(window, mouse_button_callback);
     glfwSetCursorPosCallback(window, mouse_callback);
 
-    int screenWidth, screenHeight;
-    glfwGetFramebufferSize(window, &screenWidth, &screenHeight);
-
     glfwMakeContextCurrent(window);
     glewExperimental = GL_TRUE;
     glewInit();
-
-    glViewport(0, 0, screenWidth, screenHeight);
 
     ImGUIUtils::Initialize(window);
 
@@ -40,8 +35,10 @@ int main()
 
     GLuint shaderProgram = CreateShaderProgram("Shaders/shader.vert", "Shaders/shader.frag");
 
+    InitFBO();
+
     //Render
-    Render(shaderProgram, window, screenWidth, screenHeight, camera);
+    Render(shaderProgram, window, camera);
 
     glfwDestroyWindow(window);
     glfwTerminate();

@@ -2,55 +2,77 @@
 
 #include "ImGUIUtils/ImGUIUtils.h"
 
-#include "imgui.h"
-#include "imgui_impl_glfw.h"
-#include "imgui_impl_opengl3.h"
-
 void ImGUIUtils::Initialize(GLFWwindow* window)
 {
     // Initialize ImGUI
     IMGUI_CHECKVERSION();
+    printf("ImGui Version: %s\n", IMGUI_VERSION);
+
     ImGui::CreateContext();
+
+    ImGuiIO& io = ImGui::GetIO();
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+    io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+
     ImGui::StyleColorsDark();
 
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init("#version 330");  // Use your actual GLSL version
 }
 
-void ImGUIUtils::DrawWindow(std::vector<Sphere>& objects)
+ImVec2 ImGUIUtils::DrawWindow(Camera& camera, std::vector<Sphere>& objects, GLuint sceneTextureID)
 {
-    // Start new ImGui frame
-    ImGui_ImplOpenGL3_NewFrame();
-    ImGui_ImplGlfw_NewFrame();
-    ImGui::NewFrame();
-    ImGui::Begin("Simulation Control");
-
-    for (auto& obj : objects)
+    // If docking is enabled, set dockspace.
+    if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_DockingEnable)
     {
-        ImGui::Text(obj.circleDesc.name.c_str()); 
+        ImGuiViewport* viewport = ImGui::GetMainViewport();
+        ImGuiID dockspace_id = ImGui::GetID("MainDockspace");
 
-        float currentVelocityX = static_cast<float>(obj.circleDesc.acc.getX());
-        float currentVelocityY = static_cast<float>(obj.circleDesc.acc.getY());
-        float currentVelocityZ = static_cast<float>(obj.circleDesc.acc.getZ());
+        ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
 
-        std::string labelX = obj.circleDesc.name + " Velocity X";
-        std::string labelY = obj.circleDesc.name + " Velocity Y";
-        std::string labelZ = obj.circleDesc.name + " Velocity Z";
+        // Optional flags:
+        // dockspace_flags |= ImGuiDockNodeFlags_NoSplit;
+        // dockspace_flags |= ImGuiDockNodeFlags_NoResize;
+        // dockspace_flags |= ImGuiDockNodeFlags_NoDockingInCentralNode;
+        // dockspace_flags |= ImGuiDockNodeFlags_PassthruCentralNode;
+        // dockspace_flags |= ImGuiDockNodeFlags_AutoHideTabBar;
 
-        if (ImGui::SliderFloat(labelX.c_str(), &currentVelocityX, -20000.0f, 20000.0f)) {
-            obj.circleDesc.vel.setX(static_cast<double>(currentVelocityX));
-        }
-        if (ImGui::SliderFloat(labelY.c_str(), &currentVelocityY, -20000.0f, 20000.0f)) {
-            obj.circleDesc.vel.setY(static_cast<double>(currentVelocityY));
-        }
-        if (ImGui::SliderFloat(labelZ.c_str(), &currentVelocityZ, -20000.0f, 20000.0f)) {
-            obj.circleDesc.vel.setZ(static_cast<double>(currentVelocityZ));
-        }
+        ImGui::DockSpaceOverViewport(dockspace_id, viewport, dockspace_flags);
     }
 
+    ImGui::Begin("Game View");
+    ImVec2 textureSize = ImGui::GetContentRegionAvail(); // available ImGui space
+    ImGui::Image(
+        (ImTextureID)(intptr_t)sceneTextureID,
+        textureSize,
+        ImVec2(0, 1),  // uv0
+        ImVec2(1, 0),  // uv1
+        ImVec4(1, 1, 1, 1),  // tint (white)
+        ImVec4(0, 0, 0, 0)   // border (none)
+    );
     ImGui::End();
 
-    // Render ImGui
-    ImGui::Render();
-    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+    ImGui::SetNextWindowBgAlpha(1.0f); // Optional transparency
+
+    ImGui::Begin("Simulation Control");
+
+    ImGui::Text("Objects: %d", static_cast<int>(objects.size()));
+
+    for (size_t i = 0; i < objects.size(); ++i)
+    {
+        auto& sphere = objects[i];
+        auto pos = sphere.circleDesc.pos.getPosition();
+        ImGui::Text("[%s] Pos: (%.2f, %.2f, %.2f)", sphere.circleDesc.name.c_str(), pos.x, pos.y, pos.z);
+    }
+
+    ImGui::Separator();
+    ImGui::Text("Camera Info");
+    ImGui::Text("Position: (%.2f, %.2f, %.2f)", camera.Position.x, camera.Position.y, camera.Position.z);
+    ImGui::Text("Yaw: %.2f", camera.Yaw);
+    ImGui::Text("Pitch: %.2f", camera.Pitch);
+
+    ImGui::SliderFloat("Time Scale", &TIME_SCALE, 1e-8f, 1.0f, "%.8f", ImGuiSliderFlags_Logarithmic);
+    ImGui::End();
+
+    return textureSize;
 }

@@ -5,18 +5,23 @@
 
 class Acceleration {
 public:
-
+	// CTOR
 	Acceleration()
 	{
 		world = glm::vec3();
 		normalized = glm::vec3();
 	}
-	
-	Acceleration(double x, double y, double z, bool normalized = false)
+
+	Acceleration(glm::vec3 acceleration, bool normal = false)
 	{
-		setX(x, normalized);
-		setY(y, normalized);
-		setZ(z, normalized);
+		setAcceleration(acceleration, normal);
+	}
+	
+	Acceleration(double x, double y, double z, bool normal = false)
+	{
+		setX(x, normal);
+		setY(y, normal);
+		setZ(z, normal);
 	}
 
 	// Getters
@@ -25,6 +30,26 @@ public:
 	double getZ(bool normal = false) { return normal ? normalized.z : world.z; }
 
 	// Setters
+	void setAcceleration(glm::vec3 acceleration, bool normal = false)
+	{
+		if (normal)
+		{
+			world.x = acceleration.x * METERS_PER_UNIT;
+			world.y = acceleration.y * METERS_PER_UNIT;
+			world.z = acceleration.z * METERS_PER_UNIT;
+
+			normalized = acceleration;
+		}
+		else
+		{
+			world = acceleration;
+
+			normalized.x = acceleration.x / METERS_PER_UNIT;
+			normalized.y = acceleration.y / METERS_PER_UNIT;
+			normalized.z = acceleration.z / METERS_PER_UNIT;
+		}
+	}
+
 	void setX(double x, bool normal = false)
 	{
 		if (normal)

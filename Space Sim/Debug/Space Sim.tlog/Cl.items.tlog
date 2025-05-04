@@ -1,9 +1,11 @@
-D:\Documents\Projects\External Libs\ImGUI\imgui-master\backends\imgui_impl_glfw.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui_impl_glfw.obj
-D:\Documents\Projects\External Libs\ImGUI\imgui-master\backends\imgui_impl_opengl3.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui_impl_opengl3.obj
-D:\Documents\Projects\External Libs\ImGUI\imgui-master\imgui.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui.obj
-D:\Documents\Projects\External Libs\ImGUI\imgui-master\imgui_draw.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui_draw.obj
-D:\Documents\Projects\External Libs\ImGUI\imgui-master\imgui_tables.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui_tables.obj
-D:\Documents\Projects\External Libs\ImGUI\imgui-master\imgui_widgets.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui_widgets.obj
+D:\Documents\Projects\External Libs\ImGUI\imgui-docking\backends\imgui_impl_glfw.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui_impl_glfw.obj
+D:\Documents\Projects\External Libs\ImGUI\imgui-docking\backends\imgui_impl_opengl3.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui_impl_opengl3.obj
+D:\Documents\Projects\External Libs\ImGUI\imgui-docking\imgui.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui.obj
+D:\Documents\Projects\External Libs\ImGUI\imgui-docking\imgui_demo.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui_demo.obj
+D:\Documents\Projects\External Libs\ImGUI\imgui-docking\imgui_draw.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui_draw.obj
+D:\Documents\Projects\External Libs\ImGUI\imgui-docking\imgui_tables.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui_tables.obj
+D:\Documents\Projects\External Libs\ImGUI\imgui-docking\imgui_widgets.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\imgui_widgets.obj
+D:\Documents\Projects\Space-Sim\Constants\Constants.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\Constants.obj
 D:\Documents\Projects\Space-Sim\Core\Camera\Camera.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\Camera.obj
 D:\Documents\Projects\Space-Sim\Core\Engine\Engine.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\Engine.obj
 D:\Documents\Projects\Space-Sim\Core\Input\Input.cpp;D:\Documents\Projects\Space-Sim\Space Sim\Debug\Input.obj

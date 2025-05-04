@@ -1,5 +1,7 @@
 #pragma once
 
+extern float TIME_SCALE;
+
 #define M_PI 3.141592653589
 
 #define G 0.000000000066743
@@ -11,7 +13,7 @@
 
 #define MU 398601877000000
 
-#define METERS_PER_UNIT 100000.0
+#define METERS_PER_UNIT 1000.0
 #define METER_PER_KILOMETER 1000
 
 #define DELTA_TIME 0.0166666666666

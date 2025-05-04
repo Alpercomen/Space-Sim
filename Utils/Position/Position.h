@@ -7,6 +7,25 @@
 
 class Position {
 public:
+	// CTOR
+	Position()
+	{
+		world = glm::vec3();
+		normalized = glm::vec3();
+	}
+
+	Position(glm::vec3 position, bool normal = false)
+	{
+		setPosition(position, normal);
+	}
+
+	Position(double x, double y, double z, bool normal = false)
+	{
+		setX(x, normal);
+		setY(y, normal);
+		setZ(z, normal);
+	}
+
 	// Getters
 	glm::vec3 getPosition(bool normal = false) { return normal ? normalized : world; }
 

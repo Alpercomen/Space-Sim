@@ -2,10 +2,10 @@
 
 Camera::Camera(glm::vec3 position)
     : Front(glm::vec3(0.0f, 0.0f, -1.0f)),
-    MovementSpeed(1000.0f),
-    MovementSpeedMultiplier(20.0f),
+    MovementSpeed(5000.0f),
+    MovementSpeedMultiplier(35.0f),
     MouseSensitivity(0.1f),
-    Zoom(45.0f),
+    Zoom(70.0f),
     Yaw(-90.0f),
     Pitch(0.0f),
     WorldUp(glm::vec3(0.0f, 1.0f, 0.0f))

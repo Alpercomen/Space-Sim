@@ -6,11 +6,14 @@
 
 #include <string>
 #include <GL/glew.h>
+#include <GLFW/glfw3.h>
 
 #include "Position/Position.h"
 #include "Velocity/Velocity.h"
 #include "Acceleration/Acceleration.h"
 #include "Meter/Meter.h"
+
+#include "Camera/Camera.h"
 
 struct SphereMesh 
 {
@@ -56,7 +59,7 @@ public:
 
 	void Accelerate(Acceleration& acceleration);
 	void UpdatePos();
-	void Draw(const glm::mat4& view, const glm::mat4& projection, GLuint shader);
+	void Draw(Camera& camera, GLuint shader);
 };
 
 

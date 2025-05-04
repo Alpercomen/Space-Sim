@@ -77,24 +77,6 @@
     <ClCompile Include="Window\Window.cpp">
       <Filter>Window</Filter>
     </ClCompile>
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui.cpp">
-      <Filter>Externals</Filter>
-    </ClCompile>
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_draw.cpp">
-      <Filter>Externals</Filter>
-    </ClCompile>
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_tables.cpp">
-      <Filter>Externals</Filter>
-    </ClCompile>
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\imgui_widgets.cpp">
-      <Filter>Externals</Filter>
-    </ClCompile>
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\backends\imgui_impl_glfw.cpp">
-      <Filter>Externals</Filter>
-    </ClCompile>
-    <ClCompile Include="..\External Libs\ImGUI\imgui-master\backends\imgui_impl_opengl3.cpp">
-      <Filter>Externals</Filter>
-    </ClCompile>
     <ClCompile Include="Utils\ImGUIUtils\ImGUIUtils.cpp">
       <Filter>Utils\ImGUIUtils</Filter>
     </ClCompile>
@@ -106,6 +88,30 @@
     </ClCompile>
     <ClCompile Include="Shapes\Sphere\Sphere.cpp">
       <Filter>Shapes\Sphere</Filter>
+    </ClCompile>
+    <ClCompile Include="Constants\Constants.cpp">
+      <Filter>Constants</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\imgui.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\imgui_demo.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\imgui_draw.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\imgui_tables.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\imgui_widgets.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\backends\imgui_impl_glfw.cpp">
+      <Filter>Externals</Filter>
+    </ClCompile>
+    <ClCompile Include="..\External Libs\ImGUI\imgui-docking\backends\imgui_impl_opengl3.cpp">
+      <Filter>Externals</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +153,18 @@
     </ClInclude>
     <ClInclude Include="Shapes\Sphere\Sphere.h">
       <Filter>Shapes\Sphere</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External Libs\ImGUI\imgui-docking\imgui.h">
+      <Filter>Externals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External Libs\ImGUI\imgui-docking\imgui_internal.h">
+      <Filter>Externals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External Libs\ImGUI\imgui-docking\backends\imgui_impl_glfw.h">
+      <Filter>Externals</Filter>
+    </ClInclude>
+    <ClInclude Include="..\External Libs\ImGUI\imgui-docking\backends\imgui_impl_opengl3.h">
+      <Filter>Externals</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
