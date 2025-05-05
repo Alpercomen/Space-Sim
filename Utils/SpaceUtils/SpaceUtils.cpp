@@ -12,7 +12,7 @@ double GravitationalForce(double mu, double r)
 
 double CalculateOrbitalVelocity(double otherMass, double r)
 {
-	return std::sqrt(G * otherMass / r);
+	return std::sqrt(G * otherMass / r) / METER_PER_KILOMETER;
 }
 
 void Attract(Sphere& obj, std::vector<Sphere>& objects)
@@ -26,8 +26,9 @@ void Attract(Sphere& obj, std::vector<Sphere>& objects)
 		float dy = obj2.circleDesc.pos.getY() - obj.circleDesc.pos.getY();
 		float dz = obj2.circleDesc.pos.getZ() - obj.circleDesc.pos.getZ();
 
-		glm::vec3 unitVector = glm::normalize(glm::vec3(dx, dy, dz));
-		float distance = glm::length(unitVector) * METER_PER_KILOMETER;
+		glm::vec3 diff = glm::vec3(dx, dy, dz);
+		float distance = glm::length(diff) * METER_PER_KILOMETER;
+		glm::vec3 unitVector = glm::normalize(diff);
 
 		float Gforce = (G * obj.circleDesc.mass * obj2.circleDesc.mass) / (distance * distance);
 		float acc = Gforce / obj.circleDesc.mass;
