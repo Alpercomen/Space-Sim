@@ -74,7 +74,7 @@ ImVec2 ImGUIUtils::DrawWindow(Camera& camera, std::vector<Sphere>& objects, GLui
     ImGui::Text("Yaw: %.2f", camera.Yaw);
     ImGui::Text("Pitch: %.2f", camera.Pitch);
 
-    ImGui::SliderFloat("Time Scale", &TIME_SCALE, 0.0f, 100000.0f, "%.8f", ImGuiSliderFlags_Logarithmic);
+    ImGui::SliderFloat("Time Scale", &TIME_SCALE, 0.0f, 10000.0f, "%.8f", ImGuiSliderFlags_Logarithmic);
     ImGui::End();
 
     return textureSize;

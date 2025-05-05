@@ -66,39 +66,43 @@ void ResizeFBO(int width, int height)
 
 void Render(GLuint shader, GLFWwindow* windowPtr, Camera& camera)
 {
-    float lastFrame = 0.0f;
-    float deltaTime = 0.0f;
-
     SphereDesc earthDesc;
     earthDesc.name = "Earth";
     earthDesc.res = 50;
     earthDesc.mass = 5.972e24; // Earth mass
-    earthDesc.radius.set(12500);
+    earthDesc.radius.set(12.5);
     earthDesc.pos.setPosition(glm::vec3(0.0, 0.0, 0.0));
     earthDesc.vel.setVelocity(glm::vec3(0.0, 0.0, 0.0));
     earthDesc.topColor = glm::vec3(0.28, 0.56, 0.93);
     earthDesc.botColor = glm::vec3(0.11, 0.23, 0.37);
 
-    Sphere earth(earthDesc);
-
     SphereDesc moonDesc;
     moonDesc.name = "Moon";
     moonDesc.res = 50;
     moonDesc.mass = 7.342e22; // Moon mass
-    moonDesc.radius.set(3000.0f);
-    moonDesc.pos.setPosition(glm::vec3(384400.0, 0.0, 0.0));
-    double orbitalSpeed = CalculateOrbitalVelocity(earthDesc.mass, moonDesc.pos.distance3D(earthDesc.pos.getPosition()));
+    moonDesc.radius.set(3.0f);
+    moonDesc.pos.setPosition(glm::vec3(384.400, 0.0, 0.0));
 
+    double orbitalSpeed = CalculateOrbitalVelocity(earthDesc.mass, moonDesc.pos.distance3D(earthDesc.pos.getPosition()));
     moonDesc.vel.setVelocity(glm::vec3(0.0, 0.0, orbitalSpeed));
+
+    // Conservation of momentum
+    double earthSpeed = -orbitalSpeed * (moonDesc.mass / earthDesc.mass);
+    earthDesc.vel.setVelocity(glm::vec3(0.0, 0.0, earthSpeed));
+
     moonDesc.topColor = glm::vec3(0.89, 0.96, 0.96);
     moonDesc.botColor = glm::vec3(0.30, 0.41, 0.41);
 
+    Sphere earth(earthDesc);
     Sphere moon(moonDesc);
 
     std::vector<Sphere> objects;
 
     objects.push_back(earth);
     objects.push_back(moon);
+
+    float lastFrame = 0.0f;
+    float deltaTime = 0.0f;
 
     // Render loop
     while (!glfwWindowShouldClose(windowPtr))
