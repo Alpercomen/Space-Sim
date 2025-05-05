@@ -25,6 +25,8 @@ public:
 	}
 
 	// Getters
+	glm::vec3 getVelocity(bool normal = false) { return normal ? normalized : world; }
+
 	double getX(bool normal = false) { return normal ? normalized.x : world.x; }
 	double getY(bool normal = false) { return normal ? normalized.y : world.y; }
 	double getZ(bool normal = false) { return normal ? normalized.z : world.z; }

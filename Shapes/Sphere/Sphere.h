@@ -34,6 +34,9 @@ public:
 	int res = 50;
 
 	double mass = 1.0;
+
+	glm::vec3 topColor;
+	glm::vec3 botColor;
 };
 
 SphereMesh CreateSphereVAO(SphereDesc& circleDesc);

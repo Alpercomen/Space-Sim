@@ -62,7 +62,10 @@ ImVec2 ImGUIUtils::DrawWindow(Camera& camera, std::vector<Sphere>& objects, GLui
     {
         auto& sphere = objects[i];
         auto pos = sphere.circleDesc.pos.getPosition();
-        ImGui::Text("[%s] Pos: (%.2f, %.2f, %.2f)", sphere.circleDesc.name.c_str(), pos.x, pos.y, pos.z);
+        auto vel = sphere.circleDesc.vel.getVelocity();
+        ImGui::Text("[%s]", sphere.circleDesc.name.c_str());
+        ImGui::Text("Pos: (%.2f, %.2f, %.2f)", pos.x, pos.y, pos.z);
+        ImGui::Text("Vel: (%.2f, %.2f, %.2f)", vel.x, vel.y, vel.z);
     }
 
     ImGui::Separator();
@@ -71,7 +74,7 @@ ImVec2 ImGUIUtils::DrawWindow(Camera& camera, std::vector<Sphere>& objects, GLui
     ImGui::Text("Yaw: %.2f", camera.Yaw);
     ImGui::Text("Pitch: %.2f", camera.Pitch);
 
-    ImGui::SliderFloat("Time Scale", &TIME_SCALE, 1e-8f, 1.0f, "%.8f", ImGuiSliderFlags_Logarithmic);
+    ImGui::SliderFloat("Time Scale", &TIME_SCALE, 1.0f, 300.0f, "%.8f", ImGuiSliderFlags_Logarithmic);
     ImGui::End();
 
     return textureSize;

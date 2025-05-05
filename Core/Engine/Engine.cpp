@@ -69,30 +69,36 @@ void Render(GLuint shader, GLFWwindow* windowPtr, Camera& camera)
     float lastFrame = 0.0f;
     float deltaTime = 0.0f;
 
+    SphereDesc earthDesc;
+    earthDesc.name = "Earth";
+    earthDesc.res = 50;
+    earthDesc.mass = 5.972e24; // Earth mass
+    earthDesc.radius.set(10000);
+    earthDesc.pos.setPosition(glm::vec3(0.0, 0.0, 0.0));
+    earthDesc.vel.setVelocity(glm::vec3(0.0, 0.0, 0.0));
+    earthDesc.topColor = glm::vec3(0.28, 0.56, 0.93);
+    earthDesc.botColor = glm::vec3(0.11, 0.23, 0.37);
+
+    Sphere earth(earthDesc);
+
     SphereDesc moonDesc;
     moonDesc.name = "Moon";
     moonDesc.res = 50;
-    moonDesc.mass = 730000000000000000000.0; // Moon mass
-    moonDesc.radius.set(10000);
-    moonDesc.pos.setPosition(glm::vec3(0.0, 0.0, 0.0));
-    moonDesc.vel.setVelocity(glm::vec3(0.0, 0.0, 0.0));
+    moonDesc.mass = 7.342e22; // Moon mass
+    moonDesc.radius.set(2250.0f);
+    moonDesc.pos.setPosition(glm::vec3(384400.0, 0.0, 0.0));
+    double orbitalSpeed = CalculateOrbitalVelocity(earthDesc.mass, moonDesc.pos.distance3D(earthDesc.pos.getPosition()));
+
+    moonDesc.vel.setVelocity(glm::vec3(0.0, 0.0, orbitalSpeed));
+    moonDesc.topColor = glm::vec3(0.89, 0.96, 0.96);
+    moonDesc.botColor = glm::vec3(0.30, 0.41, 0.41);
 
     Sphere moon(moonDesc);
 
-    SphereDesc asteroidDesc;
-    asteroidDesc.name = "Asteroid";
-    asteroidDesc.res = 50;
-    asteroidDesc.mass = 7300.0;
-    asteroidDesc.radius.set(1000.0f);
-    asteroidDesc.pos.setPosition(glm::vec3(100000.0, 0.0, 0.0));
-    asteroidDesc.vel.setVelocity(glm::vec3(0.0, 0.0, 50000.0));
-
-    Sphere asteroid(asteroidDesc);
-
     std::vector<Sphere> objects;
 
+    objects.push_back(earth);
     objects.push_back(moon);
-    objects.push_back(asteroid);
 
     // Render loop
     while (!glfwWindowShouldClose(windowPtr))

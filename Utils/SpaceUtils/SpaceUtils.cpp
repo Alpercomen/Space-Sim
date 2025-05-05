@@ -10,6 +10,11 @@ double GravitationalForce(double mu, double r)
 	return mu / (r * r);
 }
 
+double CalculateOrbitalVelocity(double otherMass, double r)
+{
+	return std::sqrt(G * otherMass / r);
+}
+
 void Attract(Sphere& obj, std::vector<Sphere>& objects)
 {
 	for (auto& obj2 : objects)

@@ -2,7 +2,7 @@
 #include "Input.h"
 #include "Constants.h"
 
-Camera camera(glm::vec3(0.0f, 0.0f, 100000.0f));
+Camera camera(glm::vec3(0.0f, 0.0f, 25000.0f));
 bool firstMouse = true;
 float lastX = 400.0f;
 float lastY = 400.f;
