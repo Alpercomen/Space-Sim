@@ -12,7 +12,7 @@ double GravitationalForce(double mu, double r)
 
 double CalculateOrbitalVelocity(double otherMass, double r)
 {
-	return std::sqrt(G * otherMass / r) / METER_PER_KILOMETER;
+	return std::sqrt(G * otherMass / r);
 }
 
 void Attract(Sphere& obj, std::vector<Sphere>& objects)
@@ -22,11 +22,7 @@ void Attract(Sphere& obj, std::vector<Sphere>& objects)
 		if (&obj2 == &obj)
 			continue;
 
-		float dx = obj2.circleDesc.pos.getX() - obj.circleDesc.pos.getX();
-		float dy = obj2.circleDesc.pos.getY() - obj.circleDesc.pos.getY();
-		float dz = obj2.circleDesc.pos.getZ() - obj.circleDesc.pos.getZ();
-
-		glm::vec3 diff = glm::vec3(dx, dy, dz);
+		glm::vec3 diff = obj2.circleDesc.getPosition() - obj.circleDesc.getPosition();
 		float distance = glm::length(diff) * METER_PER_KILOMETER;
 		glm::vec3 unitVector = glm::normalize(diff);
 
@@ -37,4 +33,70 @@ void Attract(Sphere& obj, std::vector<Sphere>& objects)
 
 		obj.Accelerate(attraction);
 	}
+}
+
+void PlaceInOrbit(SphereDesc& centerDesc, SphereDesc& orbittingDesc)
+{
+	double distance = glm::distance(orbittingDesc.getPosition(), centerDesc.getPosition());
+	double orbitalSpeed = CalculateOrbitalVelocity(centerDesc.mass, distance);
+	orbittingDesc.setVelocity(centerDesc.getVelocity() + glm::vec3(0.0, 0.0, orbitalSpeed));
+
+	// Conservation of momentum
+	double conservationSpeed = -orbitalSpeed * (orbittingDesc.mass / centerDesc.mass);
+	centerDesc.setVelocity(orbittingDesc.getVelocity() + glm::vec3(0.0, 0.0, conservationSpeed));
+}
+
+void InitializeSun(SphereDesc& sunDesc)
+{
+	sunDesc.name = "Sun";
+	sunDesc.res = 100;
+	sunDesc.mass = SUN_MASS;
+	sunDesc.radius.set(SUN_RADIUS / METER_PER_KILOMETER / 10);
+	sunDesc.setPosition(glm::vec3(0.0f));
+	sunDesc.topColor = glm::vec3(1.0, 1.0, 1.0);
+	sunDesc.botColor = glm::vec3(1.0, 1.0, 1.0);
+}
+
+void InitializeEarth(SphereDesc& earthDesc)
+{
+	earthDesc.name = "Earth";
+	earthDesc.res = 50;
+	earthDesc.mass = EARTH_MASS;
+	earthDesc.radius.set(EARTH_RADIUS_EQUATORAL / METER_PER_KILOMETER);
+	earthDesc.setPosition(glm::vec3(AU / METER_PER_KILOMETER, 0.0, 0.0));
+	earthDesc.topColor = glm::vec3(0.28, 0.56, 0.93);
+	earthDesc.botColor = glm::vec3(0.11, 0.23, 0.37);
+}
+
+void InitializeMoon(SphereDesc& moonDesc)
+{
+	moonDesc.name = "Moon";
+	moonDesc.res = 50;
+	moonDesc.mass = MOON_MASS;
+	moonDesc.radius.set(MOON_RADIUS / METER_PER_KILOMETER);
+	moonDesc.setPosition(glm::vec3((EARTH_MOON_DISTANCE + AU) / METER_PER_KILOMETER, 0.0, 0.0));
+	moonDesc.topColor = glm::vec3(0.89, 0.96, 0.96);
+	moonDesc.botColor = glm::vec3(0.30, 0.41, 0.41);
+}
+
+void SetSolarSystem(std::vector<Sphere>& objects)
+{
+	SphereDesc sunDesc;
+	SphereDesc earthDesc;
+	SphereDesc moonDesc;
+
+	InitializeSun(sunDesc);
+	InitializeEarth(earthDesc);
+	InitializeMoon(moonDesc);
+
+	PlaceInOrbit(sunDesc, earthDesc);
+	PlaceInOrbit(earthDesc, moonDesc);
+
+	Sphere earth(earthDesc);
+	Sphere moon(moonDesc);
+	Sphere sun(sunDesc);
+
+	objects.push_back(earth);
+	objects.push_back(moon);
+	objects.push_back(sun);
 }

@@ -36,6 +36,13 @@ public:
     void ProcessKeyboard(Camera_Movement direction, float deltaTime);
     void ProcessMouseMovement(float xoffset, float yoffset, bool constrainPitch = true);
 
+    void FocusOn(glm::vec3 targetPosition, float distance)
+    {
+        Position = targetPosition + glm::vec3(0.0f, 0.0f, distance);
+        Yaw = -90.0f; Pitch = 0.0f;
+        updateCameraVectors();
+    }
+
 private:
     void updateCameraVectors();
 };

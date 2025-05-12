@@ -16,14 +16,33 @@
 #include "ImGUIUtils/ImGUIUtils.h"
 #include "Input/Input.h"
 
-GLuint sceneFBO = 0;
-GLuint sceneColorTex = 0;
-GLuint sceneDepthRBO = 0;
+void Engine::DrawGUI(std::vector<Sphere>& objects, Camera& camera)
+{
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
+    ImGui::NewFrame();
 
-int sceneTexWidth = 1280;
-int sceneTexHeight = 720;
+    ImGUIUtils::InitDockableWindowSpace();
+    ImVec2 textureSize = ImGUIUtils::DrawGameView(sceneColorTex);
 
-void InitFBO()
+    ImGUIUtils::DrawSimulationControl(objects, camera);
+    ImGUIUtils::DrawSimulationInfo(objects, camera);
+
+    ResizeFBO((int)textureSize.x, (int)textureSize.y);
+
+    ImGui::Render();
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+    if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+    {
+        GLFWwindow* backup = glfwGetCurrentContext();
+        ImGui::UpdatePlatformWindows();
+        ImGui::RenderPlatformWindowsDefault();
+        glfwMakeContextCurrent(backup);
+    }
+}
+
+void Engine::InitFBO()
 {
     // Create texture
     glGenTextures(1, &sceneColorTex);
@@ -49,7 +68,7 @@ void InitFBO()
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void ResizeFBO(int width, int height)
+void Engine::ResizeFBO(int width, int height)
 {
     if (width == sceneTexWidth && height == sceneTexHeight)
         return;
@@ -64,94 +83,42 @@ void ResizeFBO(int width, int height)
     InitFBO(); // Recreate with new size
 }
 
-void Render(GLuint shader, GLFWwindow* windowPtr, Camera& camera)
+void Engine::Render(std::vector<Sphere>& objects, Camera& camera)
 {
-    SphereDesc earthDesc;
-    earthDesc.name = "Earth";
-    earthDesc.res = 50;
-    earthDesc.mass = 5.972e24; // Earth mass
-    earthDesc.radius.set(12.5);
-    earthDesc.pos.setPosition(glm::vec3(0.0, 0.0, 0.0));
-    earthDesc.vel.setVelocity(glm::vec3(0.0, 0.0, 0.0));
-    earthDesc.topColor = glm::vec3(0.28, 0.56, 0.93);
-    earthDesc.botColor = glm::vec3(0.11, 0.23, 0.37);
-
-    SphereDesc moonDesc;
-    moonDesc.name = "Moon";
-    moonDesc.res = 50;
-    moonDesc.mass = 7.342e22; // Moon mass
-    moonDesc.radius.set(3.0f);
-    moonDesc.pos.setPosition(glm::vec3(384.400, 0.0, 0.0));
-
-    double orbitalSpeed = CalculateOrbitalVelocity(earthDesc.mass, moonDesc.pos.distance3D(earthDesc.pos.getPosition()));
-    moonDesc.vel.setVelocity(glm::vec3(0.0, 0.0, orbitalSpeed));
-
-    // Conservation of momentum
-    double earthSpeed = -orbitalSpeed * (moonDesc.mass / earthDesc.mass);
-    earthDesc.vel.setVelocity(glm::vec3(0.0, 0.0, earthSpeed));
-
-    moonDesc.topColor = glm::vec3(0.89, 0.96, 0.96);
-    moonDesc.botColor = glm::vec3(0.30, 0.41, 0.41);
-
-    Sphere earth(earthDesc);
-    Sphere moon(moonDesc);
-
-    std::vector<Sphere> objects;
-
-    objects.push_back(earth);
-    objects.push_back(moon);
-
     float lastFrame = 0.0f;
     float deltaTime = 0.0f;
 
     // Render loop
     while (!glfwWindowShouldClose(windowPtr))
     {
+        glfwPollEvents();
+
         float currentFrame = glfwGetTime();
         deltaTime = currentFrame - lastFrame;
         lastFrame = currentFrame;
 
-        glfwPollEvents();
-
         if (rightMouseButtonDown)
             process_keyboard_input(windowPtr, deltaTime, camera);
 
-        int width, height;
-        glfwGetFramebufferSize(windowPtr, &width, &height);
         glBindFramebuffer(GL_FRAMEBUFFER, sceneFBO);
 
         glViewport(0, 0, sceneTexWidth, sceneTexHeight);
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+        glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         glUseProgram(shader);
 
+        double aspectRatio = (float)sceneTexHeight == 0 ? 1280.0f / 720.0f : (float)sceneTexWidth / (float)sceneTexHeight;
         for (auto& object : objects)
         {
             Attract(object, objects);
             object.UpdatePos();
-            object.Draw(camera, shader);
+            object.Draw(camera, aspectRatio, shader);
         }
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
-
-        ImVec2 textureSize = ImGUIUtils::DrawWindow(camera, objects, sceneColorTex);
-        ResizeFBO((int)textureSize.x, (int)textureSize.y);
-
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-        if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-        {
-            GLFWwindow* backup = glfwGetCurrentContext();
-            ImGui::UpdatePlatformWindows();
-            ImGui::RenderPlatformWindowsDefault();
-            glfwMakeContextCurrent(backup);
-        }
+        DrawGUI(objects, camera);
 
         glfwSwapBuffers(windowPtr);
     }

@@ -96,15 +96,6 @@ public:
 		}
 	}
 
-	double distance3D(const Position& other) const
-	{
-		double dx = this->world.x - other.world.x;
-		double dy = this->world.y - other.world.y;
-		double dz = this->world.z - other.world.z;
-
-		return std::sqrt((dx * dx) + (dy * dy) + (dz * dz));
-	}
-
 private:
 	glm::vec3 world;
 	glm::vec3 normalized;

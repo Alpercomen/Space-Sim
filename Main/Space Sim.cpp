@@ -35,10 +35,12 @@ int main()
 
     GLuint shaderProgram = CreateShaderProgram("Shaders/shader.vert", "Shaders/shader.frag");
 
-    InitFBO();
+    std::vector<Sphere> objects;
+    SetSolarSystem(objects);
 
-    //Render
-    Render(shaderProgram, window, camera);
+    Engine engine(shaderProgram, window);
+    engine.InitFBO();
+    engine.Render(objects, camera);
 
     glfwDestroyWindow(window);
     glfwTerminate();

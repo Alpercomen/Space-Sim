@@ -1,392 +1,394 @@
-﻿  ImGUIUtils.cpp
+﻿  Engine.cpp
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(41,25): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(41,25): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(41,25): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(41,25): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(41,25): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(42,25): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(42,25): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(42,25): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(42,25): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(42,25): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(43,25): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(43,25): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(43,25): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(43,25): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(43,25): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(51,30): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(51,30): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(51,30): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(51,30): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(51,30): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(52,30): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(52,30): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(52,30): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(52,30): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(52,30): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(53,30): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(53,30): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(53,30): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(53,30): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(53,30): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(61,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(61,16): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(61,16): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(61,16): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(61,16): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(62,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(62,19): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(62,19): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(62,19): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(62,19): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(66,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(66,14): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(66,14): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(66,14): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(66,14): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(67,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(67,21): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(67,21): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(67,21): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(67,21): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(75,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(75,16): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(75,16): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(75,16): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(75,16): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(76,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(76,19): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(76,19): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(76,19): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(76,19): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(80,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(80,14): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(80,14): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(80,14): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(80,14): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(81,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(81,21): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(81,21): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(81,21): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(81,21): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(89,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(89,16): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(89,16): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(89,16): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(89,16): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(90,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(90,19): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(90,19): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(90,19): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(90,19): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(94,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(94,14): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(94,14): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(94,14): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(94,14): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(95,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(95,21): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(95,21): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(95,21): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Position\Position.h(95,21): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(39,25): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(39,25): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(39,25): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(39,25): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(39,25): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(40,25): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(40,25): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(40,25): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(40,25): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(40,25): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(41,25): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(41,25): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(41,25): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(41,25): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(41,25): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(49,30): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(49,30): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(49,30): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(49,30): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(49,30): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(50,30): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(50,30): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(50,30): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(50,30): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(50,30): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(51,30): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(51,30): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(51,30): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(51,30): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(51,30): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(59,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(59,16): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(59,16): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(59,16): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(59,16): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(60,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(60,19): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(60,19): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(60,19): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(60,19): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(64,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(64,14): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(64,14): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(64,14): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(64,14): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(65,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(65,21): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(65,21): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(65,21): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(65,21): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(73,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(73,16): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(73,16): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(73,16): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(73,16): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(74,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(74,19): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(74,19): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(74,19): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(74,19): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(78,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(78,14): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(78,14): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(78,14): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(78,14): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(79,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(79,21): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(79,21): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(79,21): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(79,21): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(87,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(87,16): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(87,16): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(87,16): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(87,16): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(88,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(88,19): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(88,19): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(88,19): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(88,19): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(92,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(92,14): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(92,14): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(92,14): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(92,14): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(93,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(93,21): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(93,21): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(93,21): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Velocity\Velocity.h(93,21): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
-  
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(37,29): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(37,29): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(37,29): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(37,29): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(37,29): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
-  
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(38,29): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(38,29): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(38,29): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(38,29): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(38,29): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(39,29): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(39,29): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(39,29): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(39,29): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(39,29): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(47,34): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(47,34): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(47,34): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(47,34): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(47,34): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(40,29): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(40,29): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(40,29): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(40,29): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(40,29): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(48,34): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(48,34): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(48,34): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(48,34): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(48,34): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(41,29): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(41,29): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(41,29): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(41,29): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(41,29): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(49,34): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
 D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(49,34): warning C4244:         with
 D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(49,34): warning C4244:         [
 D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(49,34): warning C4244:             T=float
 D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(49,34): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(57,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(57,16): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(57,16): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(57,16): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(57,16): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(50,34): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(50,34): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(50,34): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(50,34): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(50,34): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(58,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(58,19): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(58,19): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(58,19): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(58,19): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(51,34): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(51,34): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(51,34): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(51,34): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(51,34): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(62,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(62,14): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(62,14): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(62,14): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(62,14): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(59,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(59,16): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(59,16): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(59,16): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(59,16): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(63,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(63,21): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(63,21): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(63,21): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(63,21): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(60,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(60,19): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(60,19): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(60,19): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(60,19): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(71,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(71,16): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(71,16): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(71,16): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(71,16): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(64,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(64,14): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(64,14): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(64,14): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(64,14): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(72,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(72,19): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(72,19): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(72,19): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(72,19): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(65,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(65,21): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(65,21): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(65,21): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(65,21): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(76,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(76,14): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(76,14): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(76,14): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(76,14): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(73,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(73,16): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(73,16): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(73,16): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(73,16): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(77,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(77,21): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(77,21): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(77,21): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(77,21): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(74,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(74,19): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(74,19): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(74,19): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(74,19): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(85,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(85,16): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(85,16): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(85,16): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(85,16): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(78,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(78,14): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(78,14): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(78,14): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(78,14): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(86,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(86,19): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(86,19): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(86,19): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(86,19): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(79,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(79,21): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(79,21): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(79,21): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(79,21): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(90,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(90,14): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(90,14): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(90,14): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(90,14): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(87,16): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(87,16): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(87,16): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(87,16): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(87,16): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(91,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(91,21): warning C4244:         with
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(91,21): warning C4244:         [
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(91,21): warning C4244:             T=float
-D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(91,21): warning C4244:         ]
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(88,19): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(88,19): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(88,19): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(88,19): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(88,19): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
+  
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(92,14): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(92,14): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(92,14): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(92,14): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(92,14): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
+  
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(93,21): warning C4244: '=': conversion from 'double' to 'T', possible loss of data
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(93,21): warning C4244:         with
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(93,21): warning C4244:         [
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(93,21): warning C4244:             T=float
+D:\Documents\Projects\Space-Sim\Utils\Acceleration\Acceleration.h(93,21): warning C4244:         ]
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(15,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(16,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(20,12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
 D:\Documents\Projects\Space-Sim\Utils\Meter\Meter.h(21,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-  (compiling source file 'Utils/ImGUIUtils/ImGUIUtils.cpp')
+  (compiling source file 'Core/Engine/Engine.cpp')
   
+D:\Documents\Projects\Space-Sim\Core\Engine\Engine.cpp(96,28): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Space Sim.vcxproj -> D:\Documents\Projects\Space-Sim\Debug\Space Sim.exe

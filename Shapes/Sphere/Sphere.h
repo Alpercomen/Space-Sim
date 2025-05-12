@@ -25,18 +25,26 @@ struct SphereMesh
 struct SphereDesc {
 public:
 	std::string name = "NO_NAME";
-
-	Position pos;
-	Velocity vel;
-	Acceleration acc;
-
 	Meter radius;
 	int res = 50;
-
 	double mass = 1.0;
 
 	glm::vec3 topColor;
 	glm::vec3 botColor;
+
+	glm::vec3 getPosition(bool normal = false) { return pos.getPosition(normal); }
+	glm::vec3 getVelocity(bool normal = false) { return vel.getVelocity(normal); }
+	glm::vec3 getAcceleration(bool normal = false) { return acc.getAcceleration(normal); }
+
+	void setPosition(glm::vec3 pos, bool normal = false) { this->pos.setPosition(pos, normal); }
+	void setVelocity(glm::vec3 vel, bool normal = false) { this->vel.setVelocity(vel, normal); }
+	void setAcceleration(glm::vec3 acc, bool normal = false) { this->acc.setAcceleration(acc, normal); }
+
+private:
+	Position pos;
+	Velocity vel;
+	Acceleration acc;
+
 };
 
 SphereMesh CreateSphereVAO(SphereDesc& circleDesc);
@@ -62,7 +70,7 @@ public:
 
 	void Accelerate(Acceleration& acceleration);
 	void UpdatePos();
-	void Draw(Camera& camera, GLuint shader);
+	void Draw(Camera& camera, double aspectRatio, GLuint shader);
 };
 
 

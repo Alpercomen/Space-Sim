@@ -3,7 +3,6 @@
 
 #include "Sphere.h"
 #include "Constants.h"
-#include "Engine/Engine.h"
 
 #include <vector>
 
@@ -81,33 +80,37 @@ SphereMesh CreateSphereVAO(SphereDesc& circleDesc)
 void Sphere::Accelerate(Acceleration& acceleration)
 {
     // Update acceleration
-    circleDesc.acc = acceleration;
+    circleDesc.setAcceleration(acceleration.getAcceleration());
 
     // Physics update in meters
-    circleDesc.vel.setY(circleDesc.vel.getY() + circleDesc.acc.getY() * DELTA_TIME * TIME_SCALE);
-    circleDesc.vel.setX(circleDesc.vel.getX() + circleDesc.acc.getX() * DELTA_TIME * TIME_SCALE);
-    circleDesc.vel.setZ(circleDesc.vel.getZ() + circleDesc.acc.getZ() * DELTA_TIME * TIME_SCALE);
+    glm::vec3 velocity = circleDesc.getVelocity();
+    double nextX = (velocity.x + acceleration.getX()) * DELTA_TIME * TIME_SCALE;
+    double nextY = (velocity.y + acceleration.getY()) * DELTA_TIME * TIME_SCALE;
+    double nextZ = (velocity.z + acceleration.getZ()) * DELTA_TIME * TIME_SCALE;
+
+    circleDesc.setVelocity(glm::vec3(nextX, nextY, nextZ));
+
 }
 
 void Sphere::UpdatePos()
 {
-    double nextX = circleDesc.pos.getX() + circleDesc.vel.getX() * DELTA_TIME * TIME_SCALE;
-    circleDesc.pos.setX(nextX);
+    Position position = circleDesc.getPosition();
+    Velocity velocity = circleDesc.getVelocity();
 
-    double nextY = circleDesc.pos.getY() + circleDesc.vel.getY() * DELTA_TIME * TIME_SCALE;
-    circleDesc.pos.setY(nextY);
+    double nextX = position.getX() + velocity.getX() * DELTA_TIME * TIME_SCALE;
+    double nextY = position.getY() + velocity.getY() * DELTA_TIME * TIME_SCALE;
+    double nextZ = position.getZ() + velocity.getZ() * DELTA_TIME * TIME_SCALE;
 
-    double nextZ = circleDesc.pos.getZ() + circleDesc.vel.getZ() * DELTA_TIME * TIME_SCALE;
-    circleDesc.pos.setZ(nextZ);
+    circleDesc.setPosition(glm::vec3(nextX, nextY, nextZ));
 }
 
-void Sphere::Draw(Camera& camera, GLuint shader)
+void Sphere::Draw(Camera& camera, double aspectRatio, GLuint shader)
 {
     glm::mat4 view = camera.GetViewMatrix();
-    glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)sceneTexWidth / (float)sceneTexHeight, 0.1f, 1e25f);
+    glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)aspectRatio, 0.1f, 1e25f);
     glm::mat4 model = glm::mat4(1.0f);
 
-    model = glm::translate(model, circleDesc.pos.getPosition());
+    model = glm::translate(model, circleDesc.getPosition());
 
     float scaledRadius = circleDesc.radius.get(true) * METERS_PER_UNIT;
     model = glm::scale(model, glm::vec3(scaledRadius));

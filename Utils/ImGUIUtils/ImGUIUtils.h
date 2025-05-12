@@ -13,7 +13,13 @@ namespace ImGUIUtils
 {
 	void Initialize(GLFWwindow* window);
 
-	ImVec2 DrawWindow(Camera& camera, std::vector<Sphere>& objects, GLuint sceneTextureID);
+	ImVec2 DrawGameView(GLuint& sceneTextureID);
+
+	void DrawSimulationInfo(std::vector<Sphere>& objects, Camera& camera);
+
+	void DrawSimulationControl(std::vector<Sphere>& objects, Camera& camera);
+
+	void InitDockableWindowSpace();
 }
 
 
