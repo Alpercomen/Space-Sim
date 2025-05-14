@@ -62,7 +62,7 @@ public:
 
 	void Accelerate(Acceleration& acceleration);
 	void UpdatePos();
-	void Draw(Camera& camera, GLuint shader);
+	void Draw(Camera& camera, GLuint shader, float aspectRatio);
 };
 
 

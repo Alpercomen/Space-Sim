@@ -16,14 +16,7 @@
 #include "ImGUIUtils/ImGUIUtils.h"
 #include "Input/Input.h"
 
-GLuint sceneFBO = 0;
-GLuint sceneColorTex = 0;
-GLuint sceneDepthRBO = 0;
-
-int sceneTexWidth = 1280;
-int sceneTexHeight = 720;
-
-void InitFBO()
+void Engine::InitFBO()
 {
     // Create texture
     glGenTextures(1, &sceneColorTex);
@@ -49,7 +42,7 @@ void InitFBO()
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-void ResizeFBO(int width, int height)
+void Engine::ResizeFBO(int width, int height)
 {
     if (width == sceneTexWidth && height == sceneTexHeight)
         return;
@@ -64,7 +57,7 @@ void ResizeFBO(int width, int height)
     InitFBO(); // Recreate with new size
 }
 
-void Render(GLuint shader, GLFWwindow* windowPtr, Camera& camera)
+void Engine::Render(GLuint shader, GLFWwindow* windowPtr, Camera& camera)
 {
     SphereDesc earthDesc;
     earthDesc.name = "Earth";
@@ -126,11 +119,13 @@ void Render(GLuint shader, GLFWwindow* windowPtr, Camera& camera)
 
         glUseProgram(shader);
 
+        double aspectRatio = (float)sceneTexWidth / (float)sceneTexHeight;
+
         for (auto& object : objects)
         {
             Attract(object, objects);
             object.UpdatePos();
-            object.Draw(camera, shader);
+            object.Draw(camera, shader, aspectRatio);
         }
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);

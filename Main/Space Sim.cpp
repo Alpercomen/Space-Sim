@@ -35,10 +35,9 @@ int main()
 
     GLuint shaderProgram = CreateShaderProgram("Shaders/shader.vert", "Shaders/shader.frag");
 
-    InitFBO();
-
-    //Render
-    Render(shaderProgram, window, camera);
+    Engine engine(shaderProgram, window);
+    engine.InitFBO();
+    engine.Render(shaderProgram, window, camera);
 
     glfwDestroyWindow(window);
     glfwTerminate();

@@ -101,10 +101,10 @@ void Sphere::UpdatePos()
     circleDesc.pos.setZ(nextZ);
 }
 
-void Sphere::Draw(Camera& camera, GLuint shader)
+void Sphere::Draw(Camera& camera, GLuint shader, float aspectRatio)
 {
     glm::mat4 view = camera.GetViewMatrix();
-    glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)sceneTexWidth / (float)sceneTexHeight, 0.1f, 1e25f);
+    glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), aspectRatio, 0.1f, 1e25f);
     glm::mat4 model = glm::mat4(1.0f);
 
     model = glm::translate(model, circleDesc.pos.getPosition());
