@@ -130,23 +130,7 @@ void Engine::Render(GLuint shader, GLFWwindow* windowPtr, Camera& camera)
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
-
-        ImVec2 textureSize = ImGUIUtils::DrawWindow(camera, objects, sceneColorTex);
-        ResizeFBO((int)textureSize.x, (int)textureSize.y);
-
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-        if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-        {
-            GLFWwindow* backup = glfwGetCurrentContext();
-            ImGui::UpdatePlatformWindows();
-            ImGui::RenderPlatformWindowsDefault();
-            glfwMakeContextCurrent(backup);
-        }
+        ImGUIUtils::DrawWindow(this, sceneColorTex, camera, objects);
 
         glfwSwapBuffers(windowPtr);
     }

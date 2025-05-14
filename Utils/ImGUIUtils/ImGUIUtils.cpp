@@ -20,7 +20,7 @@ void ImGUIUtils::Initialize(GLFWwindow* window)
     ImGui_ImplOpenGL3_Init("#version 330");  // Use your actual GLSL version
 }
 
-ImVec2 ImGUIUtils::DrawWindow(Camera& camera, std::vector<Sphere>& objects, GLuint sceneTextureID)
+void ImGUIUtils::InitDockableWindow()
 {
     // If docking is enabled, set dockspace.
     if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_DockingEnable)
@@ -39,7 +39,10 @@ ImVec2 ImGUIUtils::DrawWindow(Camera& camera, std::vector<Sphere>& objects, GLui
 
         ImGui::DockSpaceOverViewport(dockspace_id, viewport, dockspace_flags);
     }
+}
 
+ImVec2 ImGUIUtils::DrawGameWindow(GLuint sceneTextureID)
+{
     ImGui::Begin("Game View");
     ImVec2 textureSize = ImGui::GetContentRegionAvail(); // available ImGui space
     ImGui::Image(
@@ -52,9 +55,12 @@ ImVec2 ImGUIUtils::DrawWindow(Camera& camera, std::vector<Sphere>& objects, GLui
     );
     ImGui::End();
 
-    ImGui::SetNextWindowBgAlpha(1.0f); // Optional transparency
+    return textureSize;
+}
 
-    ImGui::Begin("Simulation Control");
+void ImGUIUtils::DrawSimulationInfo(Camera & camera, std::vector<Sphere>& objects)
+{
+    ImGui::Begin("Simulation Info");
 
     ImGui::Text("Objects: %d", static_cast<int>(objects.size()));
 
@@ -73,9 +79,37 @@ ImVec2 ImGUIUtils::DrawWindow(Camera& camera, std::vector<Sphere>& objects, GLui
     ImGui::Text("Position: (%.2f, %.2f, %.2f)", camera.Position.x, camera.Position.y, camera.Position.z);
     ImGui::Text("Yaw: %.2f", camera.Yaw);
     ImGui::Text("Pitch: %.2f", camera.Pitch);
+    ImGui::End();
+}
 
+void ImGUIUtils::DrawSimulationControl(Camera& camera, std::vector<Sphere>& objects)
+{
+    ImGui::Begin("Simulation Control");
     ImGui::SliderFloat("Time Scale", &TIME_SCALE, 0.0f, 10000.0f, "%.8f", ImGuiSliderFlags_Logarithmic);
     ImGui::End();
+}
 
-    return textureSize;
+void ImGUIUtils::DrawWindow(Engine* engine, GLuint sceneTextureID, Camera& camera, std::vector<Sphere>& objects)
+{
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
+    ImGui::NewFrame();
+
+    ImGUIUtils::InitDockableWindow();
+    ImVec2 textureSize = ImGUIUtils::DrawGameWindow(sceneTextureID);
+    ImGUIUtils::DrawSimulationInfo(camera, objects);
+    ImGUIUtils::DrawSimulationControl(camera, objects);
+
+    engine->ResizeFBO((int)textureSize.x, (int)textureSize.y);
+
+    ImGui::Render();
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+    if (ImGui::GetIO().ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
+    {
+        GLFWwindow* backup = glfwGetCurrentContext();
+        ImGui::UpdatePlatformWindows();
+        ImGui::RenderPlatformWindowsDefault();
+        glfwMakeContextCurrent(backup);
+    }
 }
