@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Documents\\Projects\\Space-Sim\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Shapes\\Sphere\\Sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Shapes\\Sphere\\Sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Core\\Engine\\Engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Core\\Engine\\Engine.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Core\\Engine\\Engine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Core\\Engine\\Engine.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Shapes\\Sphere\\Sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|solutionrelative:Shapes\\Sphere\\Sphere.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{30EBAB3D-8D2C-4E1F-AE8C-10D960CD6A74}|Space Sim.vcxproj|D:\\Documents\\Projects\\Space-Sim\\Shapes\\Sphere\\Sphere.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -74,7 +74,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "Sphere.h",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Shapes\\Sphere\\Sphere.h",
               "RelativeDocumentMoniker": "Shapes\\Sphere\\Sphere.h",
@@ -95,8 +95,7 @@
               "RelativeToolTip": "Utils\\Position\\Position.h",
               "ViewState": "AgIAADkAAAAAAAAAAAAAAEsAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-28T15:42:15.745Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-28T15:42:15.745Z"
             }
           ]
         },
@@ -114,8 +113,7 @@
               "RelativeToolTip": "Main\\Space Sim.cpp",
               "ViewState": "AgIAAAUAAAAAAAAAAAAswB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-04T02:56:09.734Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-04T02:56:09.734Z"
             },
             {
               "$type": "Document",
@@ -127,25 +125,24 @@
               "RelativeToolTip": "Shapes\\Sphere\\Sphere.cpp",
               "ViewState": "AgIAAEoAAAAAAAAAAAAswGcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-12T18:09:05.942Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-12T18:09:05.942Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Engine.cpp",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Core\\Engine\\Engine.cpp",
               "RelativeDocumentMoniker": "Core\\Engine\\Engine.cpp",
               "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Core\\Engine\\Engine.cpp",
               "RelativeToolTip": "Core\\Engine\\Engine.cpp",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAswIIAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAswGUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-05-11T14:11:55.509Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Engine.h",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Core\\Engine\\Engine.h",
               "RelativeDocumentMoniker": "Core\\Engine\\Engine.h",
@@ -153,12 +150,11 @@
               "RelativeToolTip": "Core\\Engine\\Engine.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-04T03:25:18.703Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-04T03:25:18.703Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "SpaceUtils.cpp",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.cpp",
               "RelativeDocumentMoniker": "Utils\\SpaceUtils\\SpaceUtils.cpp",
@@ -166,12 +162,11 @@
               "RelativeToolTip": "Utils\\SpaceUtils\\SpaceUtils.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-04-03T00:59:08.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T00:59:08.841Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SpaceUtils.h",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Utils\\SpaceUtils\\SpaceUtils.h",
               "RelativeDocumentMoniker": "Utils\\SpaceUtils\\SpaceUtils.h",
@@ -179,12 +174,11 @@
               "RelativeToolTip": "Utils\\SpaceUtils\\SpaceUtils.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-03T01:17:32.07Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-03T01:17:32.07Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "ImGUIUtils.cpp",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Utils\\ImGUIUtils\\ImGUIUtils.cpp",
               "RelativeDocumentMoniker": "Utils\\ImGUIUtils\\ImGUIUtils.cpp",
@@ -192,12 +186,11 @@
               "RelativeToolTip": "Utils\\ImGUIUtils\\ImGUIUtils.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-05-11T12:11:50.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-11T12:11:50.368Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ImGUIUtils.h",
               "DocumentMoniker": "D:\\Documents\\Projects\\Space-Sim\\Utils\\ImGUIUtils\\ImGUIUtils.h",
               "RelativeDocumentMoniker": "Utils\\ImGUIUtils\\ImGUIUtils.h",
@@ -205,8 +198,7 @@
               "RelativeToolTip": "Utils\\ImGUIUtils\\ImGUIUtils.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-04-04T03:08:12.238Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-04T03:08:12.238Z"
             }
           ]
         },
@@ -234,7 +226,7 @@
               "RelativeDocumentMoniker": "Shaders\\shader.vert",
               "ToolTip": "D:\\Documents\\Projects\\Space-Sim\\Shaders\\shader.vert",
               "RelativeToolTip": "Shaders\\shader.vert",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
               "WhenOpened": "2025-03-24T20:01:21.354Z",
               "EditorCaption": ""
