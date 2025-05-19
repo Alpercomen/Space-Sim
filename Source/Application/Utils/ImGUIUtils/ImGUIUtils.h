@@ -19,11 +19,11 @@ namespace ImGUIUtils
 
 	ImVec2 DrawGameWindow(GLuint sceneTextureID);
 
-	void DrawSimulationInfo(Camera& camera, std::vector<Sphere>& objects);
+	void DrawSimulationInfo(Camera& camera, std::vector<std::shared_ptr<Sphere>>& objects);
 
-	void DrawSimulationControl(Camera& camera, std::vector<Sphere>& objects);
+	void DrawSimulationControl(Camera& camera, std::vector<std::shared_ptr<Sphere>>& objects);
 
-	void DrawWindow(Engine* engine, GLuint sceneTextureID, Camera& camera, std::vector<Sphere>& objects);
+	void DrawWindow(Engine* engine, GLuint sceneTextureID, Camera& camera, std::vector<std::shared_ptr<Sphere>>& objectss);
 }
 
 

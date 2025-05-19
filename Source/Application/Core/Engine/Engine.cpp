@@ -2,7 +2,6 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
-#include <vector>
 #include <cmath>
 
 #include <imgui.h>
@@ -12,7 +11,6 @@
 #include <Application/Core/Engine/Engine.h>
 #include <Application/Utils/SpaceUtils/SpaceUtils.h>
 #include <Application/Constants/Constants.h>
-#include <Application/Shapes/Sphere/Sphere.h>
 #include <Application/Utils/ImGUIUtils/ImGUIUtils.h>
 #include <Application/Core/Input/Input.h>
 
@@ -53,47 +51,12 @@ void Engine::ResizeFBO(int width, int height)
     glDeleteFramebuffers(1, &sceneFBO);
     glDeleteTextures(1, &sceneColorTex);
     glDeleteRenderbuffers(1, &sceneDepthRBO);
-
+    
     InitFBO(); // Recreate with new size
 }
 
-void Engine::Render(GLuint shader, GLFWwindow* windowPtr, Camera& camera)
+void Engine::Render(std::vector<std::shared_ptr<Sphere>>& objects, GLuint shader, GLFWwindow* windowPtr, Camera& camera)
 {
-    SphereDesc earthDesc;
-    earthDesc.name = "Earth";
-    earthDesc.res = 50;
-    earthDesc.mass = 5.972e24; // Earth mass
-    earthDesc.radius.set(12.5);
-    earthDesc.pos.setPosition(glm::vec3(0.0, 0.0, 0.0));
-    earthDesc.vel.setVelocity(glm::vec3(0.0, 0.0, 0.0));
-    earthDesc.topColor = glm::vec3(0.28, 0.56, 0.93);
-    earthDesc.botColor = glm::vec3(0.11, 0.23, 0.37);
-
-    SphereDesc moonDesc;
-    moonDesc.name = "Moon";
-    moonDesc.res = 50;
-    moonDesc.mass = 7.342e22; // Moon mass
-    moonDesc.radius.set(3.0f);
-    moonDesc.pos.setPosition(glm::vec3(384.400, 0.0, 0.0));
-
-    double orbitalSpeed = CalculateOrbitalVelocity(earthDesc.mass, moonDesc.pos.distance3D(earthDesc.pos.getPosition()));
-    moonDesc.vel.setVelocity(glm::vec3(0.0, 0.0, orbitalSpeed));
-
-    // Conservation of momentum
-    double earthSpeed = -orbitalSpeed * (moonDesc.mass / earthDesc.mass);
-    earthDesc.vel.setVelocity(glm::vec3(0.0, 0.0, earthSpeed));
-
-    moonDesc.topColor = glm::vec3(0.89, 0.96, 0.96);
-    moonDesc.botColor = glm::vec3(0.30, 0.41, 0.41);
-
-    Sphere earth(earthDesc);
-    Sphere moon(moonDesc);
-
-    std::vector<Sphere> objects;
-
-    objects.push_back(earth);
-    objects.push_back(moon);
-
     float lastFrame = 0.0f;
     float deltaTime = 0.0f;
 
@@ -124,8 +87,8 @@ void Engine::Render(GLuint shader, GLFWwindow* windowPtr, Camera& camera)
         for (auto& object : objects)
         {
             Attract(object, objects);
-            object.UpdatePos();
-            object.Draw(camera, shader, aspectRatio);
+            object->UpdatePos();
+            object->Draw(camera, shader, aspectRatio);
         }
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);

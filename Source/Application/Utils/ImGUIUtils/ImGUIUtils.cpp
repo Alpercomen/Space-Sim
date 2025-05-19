@@ -1,4 +1,5 @@
 #include <vector>
+#include <iostream>
 
 #include <Application/Utils/ImGUIUtils/ImGUIUtils.h>
 
@@ -58,7 +59,7 @@ ImVec2 ImGUIUtils::DrawGameWindow(GLuint sceneTextureID)
     return textureSize;
 }
 
-void ImGUIUtils::DrawSimulationInfo(Camera & camera, std::vector<Sphere>& objects)
+void ImGUIUtils::DrawSimulationInfo(Camera & camera, std::vector<std::shared_ptr<Sphere>>& objects)
 {
     ImGui::Begin("Simulation Info");
 
@@ -67,9 +68,9 @@ void ImGUIUtils::DrawSimulationInfo(Camera & camera, std::vector<Sphere>& object
     for (size_t i = 0; i < objects.size(); ++i)
     {
         auto& sphere = objects[i];
-        auto pos = sphere.circleDesc.pos.getPosition();
-        auto vel = sphere.circleDesc.vel.getVelocity();
-        ImGui::Text("[%s]", sphere.circleDesc.name.c_str());
+        auto pos = sphere->circleDesc.pos.getPosition();
+        auto vel = sphere->circleDesc.vel.getVelocity();
+        ImGui::Text("[%s]", sphere->circleDesc.name.c_str());
         ImGui::Text("Pos: (%.2f, %.2f, %.2f)", pos.x, pos.y, pos.z);
         ImGui::Text("Vel: (%.2f, %.2f, %.2f)", vel.x, vel.y, vel.z);
     }
@@ -82,14 +83,14 @@ void ImGUIUtils::DrawSimulationInfo(Camera & camera, std::vector<Sphere>& object
     ImGui::End();
 }
 
-void ImGUIUtils::DrawSimulationControl(Camera& camera, std::vector<Sphere>& objects)
+void ImGUIUtils::DrawSimulationControl(Camera& camera, std::vector<std::shared_ptr<Sphere>>& objects)
 {
     ImGui::Begin("Simulation Control");
     ImGui::SliderFloat("Time Scale", &TIME_SCALE, 0.0f, 10000.0f, "%.8f", ImGuiSliderFlags_Logarithmic);
     ImGui::End();
 }
 
-void ImGUIUtils::DrawWindow(Engine* engine, GLuint sceneTextureID, Camera& camera, std::vector<Sphere>& objects)
+void ImGUIUtils::DrawWindow(Engine* engine, GLuint sceneTextureID, Camera& camera, std::vector<std::shared_ptr<Sphere>>& objects)
 {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();

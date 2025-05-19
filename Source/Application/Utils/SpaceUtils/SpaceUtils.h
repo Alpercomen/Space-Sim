@@ -7,4 +7,6 @@ double GravitationalForce(double mu, double r);
 
 double CalculateOrbitalVelocity(double otherMass, double r);
 
-void Attract(Sphere& obj, std::vector<Sphere>& objects);
+void Attract(std::shared_ptr<Sphere>& obj, std::vector<std::shared_ptr<Sphere>>& objects);
+
+std::vector<std::shared_ptr<Sphere>> CreateSolarSystem();

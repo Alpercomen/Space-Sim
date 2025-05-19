@@ -1,9 +1,8 @@
+#pragma once
 #include <iostream>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include <vector>
-#include <cmath>
 
 #include <Application/Window/Window.h>
 #include <Application/Shapes/Sphere/Sphere.h>
@@ -12,7 +11,7 @@
 #include <Application/Constants/Constants.h>
 #include <Application/Core/Engine/Engine.h>
 #include <Application/Core/Input/Input.h>
-#include "Application/Utils/ImGUIUtils/ImGUIUtils.h"
+#include <Application/Utils/ImGUIUtils/ImGUIUtils.h>
 
 int main()
 {
@@ -33,11 +32,13 @@ int main()
 
     glEnable(GL_DEPTH_TEST);
 
-    GLuint shaderProgram = CreateShaderProgram(R"(D:\Documents\Projects\SS CMake\Source\Application\Shaders\shader.vert)", R"(D:\Documents\Projects\SS CMake\Source\Application\Shaders\shader.frag)");
+    std::vector<std::shared_ptr<Sphere>> objects = CreateSolarSystem();
+
+    GLuint shaderProgram = CreateShaderProgram(R"(D:\Documents\Projects\Space-Sim\Source\Application\Shaders\shader.vert)", R"(D:\Documents\Projects\Space-Sim\Source\Application\Shaders\shader.frag)");
 
     Engine engine(shaderProgram, window);
     engine.InitFBO();
-    engine.Render(shaderProgram, window, camera);
+    engine.Render(objects, shaderProgram, window, camera);
 
     glfwDestroyWindow(window);
     glfwTerminate();

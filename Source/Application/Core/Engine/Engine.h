@@ -1,5 +1,8 @@
 #pragma once
-#include "Application/Core/Camera/Camera.h"
+#include <vector>
+
+#include <Application/Shapes/Sphere/Sphere.h>
+#include <Application/Core/Camera/Camera.h>
 
 class Engine {
 public:
@@ -11,7 +14,7 @@ public:
 
 	void InitFBO();
 	void ResizeFBO(int width, int height);
-	void Render(GLuint shader, GLFWwindow* windowPtr, Camera& camera);
+	void Render(std::vector<std::shared_ptr<Sphere>>& objects, GLuint shader, GLFWwindow* windowPtr, Camera& camera);
 
 private:
 	GLuint sceneFBO = 0;
