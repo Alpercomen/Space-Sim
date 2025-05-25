@@ -12,7 +12,7 @@
 #include <Application/Utils/Velocity/Velocity.h>
 #include <Application/Utils/Acceleration/Acceleration.h>
 #include <Application/Utils/Meter/Meter.h>
-#include <Application/Core/Camera/Camera.h>
+#include <Application/Entities/Camera/Camera.h>
 
 struct SphereMesh 
 {

@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-#include <Application/Shapes/Sphere/Sphere.h>
+#include <Application/Entities/Sphere/Sphere.h>
 #include <Application/Constants/Constants.h>
 #include <Application/Core/Engine/Engine.h>
 

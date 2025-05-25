@@ -1,7 +1,7 @@
 #pragma once
 
-#include <Application/Shapes/Sphere/Sphere.h>
-#include <Application/Core/Camera/Camera.h>
+#include <Application/Entities/Sphere/Sphere.h>
+#include <Application/Entities/Camera/Camera.h>
 #include <Application/Core/Engine/Engine.h>
 
 #include <GLFW/glfw3.h>

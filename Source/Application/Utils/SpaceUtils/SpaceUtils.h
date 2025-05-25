@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include <Application/Shapes/Sphere/Sphere.h>
+#include <Application/Entities/Sphere/Sphere.h>
 
 double GravitationalForce(double mu, double r);
 

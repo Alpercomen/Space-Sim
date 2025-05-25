@@ -1,7 +1,7 @@
 #pragma once
 #include <Application/Core/Core.h>
-#include <Application/Core/Camera/Camera.h>
 #include <Application/Core/Input/InputEvent.h>
+#include <Application/Entities/Camera/Camera.h>
 
 namespace SpaceSim {
 	// CRTP (Curiously Recursive Templated Programming)

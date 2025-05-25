@@ -5,7 +5,7 @@
 #include <GLFW/glfw3.h>
 
 #include <Application/Window/Window.h>
-#include <Application/Shapes/Sphere/Sphere.h>
+#include <Application/Entities/Sphere/Sphere.h>
 #include <Application/Utils/ShaderUtils/ShaderUtils.h>
 #include <Application/Utils/SpaceUtils/SpaceUtils.h>
 #include <Application/Constants/Constants.h>
