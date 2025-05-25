@@ -1,13 +1,14 @@
 #include <vector>
 #include <iostream>
 
+#include <spdlog/spdlog.h>
 #include <Application/Utils/ImGUIUtils/ImGUIUtils.h>
 
-void ImGUIUtils::Initialize(GLFWwindow* window)
+void ImGUIUtils::Initialize(void* window)
 {
     // Initialize ImGUI
     IMGUI_CHECKVERSION();
-    printf("ImGui Version: %s\n", IMGUI_VERSION);
+    spdlog::info("ImGui Version: {:30}", IMGUI_VERSION);
 
     ImGui::CreateContext();
 
@@ -17,7 +18,7 @@ void ImGUIUtils::Initialize(GLFWwindow* window)
 
     ImGui::StyleColorsDark();
 
-    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui_ImplGlfw_InitForOpenGL(static_cast<GLFWwindow*>(window), true);
     ImGui_ImplOpenGL3_Init("#version 330");  // Use your actual GLSL version
 }
 

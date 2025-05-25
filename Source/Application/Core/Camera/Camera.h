@@ -1,4 +1,4 @@
-// Camera.h
+//Camera.h
 #pragma once
 
 #include <glm/glm.hpp>
@@ -33,9 +33,10 @@ public:
     Camera(glm::vec3 position);
 
     glm::mat4 GetViewMatrix();
-    void ProcessKeyboard(Camera_Movement direction, float deltaTime);
+
+    void ProcessKeyboardMovement(Camera_Movement direction, float deltaTime);
     void ProcessMouseMovement(float xoffset, float yoffset, bool constrainPitch = true);
 
 private:
-    void updateCameraVectors();
+    void UpdateCameraVectors();
 };

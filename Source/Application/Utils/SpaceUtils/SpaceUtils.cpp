@@ -71,9 +71,6 @@ std::vector<std::shared_ptr<Sphere>> CreateSolarSystem()
     moonDesc.topColor = glm::vec3(0.89, 0.96, 0.96);
     moonDesc.botColor = glm::vec3(0.30, 0.41, 0.41);
 
-    Sphere earth(earthDesc);
-    Sphere moon(moonDesc);
-
     objects.push_back(std::make_shared<Sphere>(earthDesc));
     objects.push_back(std::make_shared<Sphere>(moonDesc));
 

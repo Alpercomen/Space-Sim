@@ -13,7 +13,7 @@
 
 namespace ImGUIUtils
 {
-	void Initialize(GLFWwindow* window);
+	void Initialize(void* window);
 
 	void InitDockableWindow();
 

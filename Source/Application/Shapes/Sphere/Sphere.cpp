@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 
 #include <Application/Shapes/Sphere/Sphere.h>

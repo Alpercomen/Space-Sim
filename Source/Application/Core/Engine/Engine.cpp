@@ -12,7 +12,7 @@
 #include <Application/Utils/SpaceUtils/SpaceUtils.h>
 #include <Application/Constants/Constants.h>
 #include <Application/Utils/ImGUIUtils/ImGUIUtils.h>
-#include <Application/Core/Input/Input.h>
+#include <Application/Core/Input/InputDispatcher.h>
 
 void Engine::InitFBO()
 {
@@ -55,46 +55,30 @@ void Engine::ResizeFBO(int width, int height)
     InitFBO(); // Recreate with new size
 }
 
-void Engine::Render(std::vector<std::shared_ptr<Sphere>>& objects, GLuint shader, GLFWwindow* windowPtr, Camera& camera)
+void Engine::Render(std::vector<std::shared_ptr<Sphere>>& objects, GLuint shader, void* windowPtr, Camera& camera)
 {
-    float lastFrame = 0.0f;
-    float deltaTime = 0.0f;
+    auto* glfwWindow = static_cast<GLFWwindow*>(windowPtr);
 
-    // Render loop
-    while (!glfwWindowShouldClose(windowPtr))
+    int width, height;
+    glfwGetFramebufferSize(glfwWindow, &width, &height);
+    glBindFramebuffer(GL_FRAMEBUFFER, sceneFBO);
+
+    glViewport(0, 0, sceneTexWidth, sceneTexHeight);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    glUseProgram(shader);
+
+    double aspectRatio = (float)sceneTexWidth / (float)sceneTexHeight;
+
+    for (auto& object : objects)
     {
-        float currentFrame = glfwGetTime();
-        deltaTime = currentFrame - lastFrame;
-        lastFrame = currentFrame;
-
-        glfwPollEvents();
-
-        if (rightMouseButtonDown)
-            process_keyboard_input(windowPtr, deltaTime, camera);
-
-        int width, height;
-        glfwGetFramebufferSize(windowPtr, &width, &height);
-        glBindFramebuffer(GL_FRAMEBUFFER, sceneFBO);
-
-        glViewport(0, 0, sceneTexWidth, sceneTexHeight);
-        glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-        glUseProgram(shader);
-
-        double aspectRatio = (float)sceneTexWidth / (float)sceneTexHeight;
-
-        for (auto& object : objects)
-        {
-            Attract(object, objects);
-            object->UpdatePos();
-            object->Draw(camera, shader, aspectRatio);
-        }
-
-        glBindFramebuffer(GL_FRAMEBUFFER, 0);
-
-        ImGUIUtils::DrawWindow(this, sceneColorTex, camera, objects);
-
-        glfwSwapBuffers(windowPtr);
+        Attract(object, objects);
+        object->UpdatePos();
+        object->Draw(camera, shader, aspectRatio);
     }
+
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+    ImGUIUtils::DrawWindow(this, sceneColorTex, camera, objects);
 }

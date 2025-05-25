@@ -10,38 +10,35 @@
 #include <Application/Utils/SpaceUtils/SpaceUtils.h>
 #include <Application/Constants/Constants.h>
 #include <Application/Core/Engine/Engine.h>
-#include <Application/Core/Input/Input.h>
+#include <Application/Core/Input/InputDispatcher.h>
 #include <Application/Utils/ImGUIUtils/ImGUIUtils.h>
+
+using namespace SpaceSim;
 
 int main()
 {
-    GLFWwindow* window = Window::StartGLFW();
+    BasicWindow window;
 
-    if (!window)
-        return -1;
+    ImGUIUtils::Initialize(window.GetHandle());
 
-    // Register input callbacks
-    glfwSetMouseButtonCallback(window, mouse_button_callback);
-    glfwSetCursorPosCallback(window, mouse_callback);
+    Vector<SharedPtr<Sphere>> objects = CreateSolarSystem();
 
-    glfwMakeContextCurrent(window);
-    glewExperimental = GL_TRUE;
-    glewInit();
+    GLuint shaderProgram = CreateShaderProgram(
+        R"(D:\Documents\Projects\Space-Sim\Source\Application\Shaders\shader.vert)", 
+        R"(D:\Documents\Projects\Space-Sim\Source\Application\Shaders\shader.frag)"
+    );
 
-    ImGUIUtils::Initialize(window);
-
-    glEnable(GL_DEPTH_TEST);
-
-    std::vector<std::shared_ptr<Sphere>> objects = CreateSolarSystem();
-
-    GLuint shaderProgram = CreateShaderProgram(R"(D:\Documents\Projects\Space-Sim\Source\Application\Shaders\shader.vert)", R"(D:\Documents\Projects\Space-Sim\Source\Application\Shaders\shader.frag)");
-
-    Engine engine(shaderProgram, window);
+    Engine engine(shaderProgram, window.GetHandle());
     engine.InitFBO();
-    engine.Render(objects, shaderProgram, window, camera);
 
-    glfwDestroyWindow(window);
-    glfwTerminate();
+    window.Show();
+    while(window.IsActive())
+    {
+        window.PollEvents();
+        engine.Render(objects, shaderProgram, window.GetHandle(), camera);
+        window.SwapBuffers();
+    }
+    window.Hide();
 
     return 0;
 }

@@ -6,15 +6,15 @@
 
 class Engine {
 public:
-	Engine(GLuint shader, GLFWwindow* windowPtr)
+	Engine(GLuint shader, void* windowPtr)
 	{
 		this->shader = shader;
-		this->windowPtr = windowPtr;
+		this->windowPtr = static_cast<GLFWwindow*>(windowPtr);
 	}
 
 	void InitFBO();
 	void ResizeFBO(int width, int height);
-	void Render(std::vector<std::shared_ptr<Sphere>>& objects, GLuint shader, GLFWwindow* windowPtr, Camera& camera);
+	void Render(std::vector<std::shared_ptr<Sphere>>& objects, GLuint shader, void* windowPtr, Camera& camera);
 
 private:
 	GLuint sceneFBO = 0;
