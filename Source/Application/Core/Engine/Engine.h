@@ -3,27 +3,38 @@
 
 #include <Application/Shapes/Sphere/Sphere.h>
 #include <Application/Core/Camera/Camera.h>
+#include <Application/Utils/ShaderUtils/ShaderUtils.h>
 
-class Engine {
-public:
-	Engine(GLuint shader, void* windowPtr)
-	{
-		this->shader = shader;
-		this->windowPtr = static_cast<GLFWwindow*>(windowPtr);
-	}
+namespace SpaceSim 
+{
+	class Engine {
+	public:
+		Engine(void* windowPtr)
+		{
+			this->windowPtr = static_cast<GLFWwindow*>(windowPtr);
+			this->shader = CreateShaderProgram(
+				R"(D:\Documents\Projects\Space-Sim\Source\Application\Shaders\shader.vert)",
+				R"(D:\Documents\Projects\Space-Sim\Source\Application\Shaders\shader.frag)"
+			);
 
-	void InitFBO();
-	void ResizeFBO(int width, int height);
-	void Render(std::vector<std::shared_ptr<Sphere>>& objects, GLuint shader, void* windowPtr, Camera& camera);
+			InitFBO();
+		}
 
-private:
-	GLuint sceneFBO = 0;
-	GLuint sceneColorTex = 0;
-	GLuint sceneDepthRBO = 0;
+		void InitFBO();
+		void ResizeFBO(int width, int height);
+		void Render(std::vector<std::shared_ptr<Sphere>>& objects, void* windowPtr, Camera& camera);
 
-	GLuint shader;
-	GLFWwindow* windowPtr;
+	private:
+		GLuint sceneFBO = 0;
+		GLuint sceneColorTex = 0;
+		GLuint sceneDepthRBO = 0;
 
-	int sceneTexWidth = 1280;
-	int sceneTexHeight = 720;
-};
+		GLuint shader;
+		GLFWwindow* windowPtr;
+
+		int sceneTexWidth = 1280;
+		int sceneTexHeight = 720;
+	};
+
+}
+

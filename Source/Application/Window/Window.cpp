@@ -6,6 +6,7 @@
 #include <spdlog/spdlog.h>
 
 #include <Application/Constants/Constants.h>
+#include <Application/Utils/ImGUIUtils/ImGUIUtils.h>
 
 namespace SpaceSim
 {
@@ -199,6 +200,8 @@ namespace SpaceSim
         glewExperimental = GL_TRUE;
         glewInit();
         glEnable(GL_DEPTH_TEST);
+
+        ImGUIUtils::Initialize(gWindow);
     }
 
     BasicWindow::~BasicWindow()

@@ -87,7 +87,7 @@ void ImGUIUtils::DrawSimulationInfo(Camera & camera, std::vector<std::shared_ptr
 void ImGUIUtils::DrawSimulationControl(Camera& camera, std::vector<std::shared_ptr<Sphere>>& objects)
 {
     ImGui::Begin("Simulation Control");
-    ImGui::SliderFloat("Time Scale", &TIME_SCALE, 0.0f, 10000.0f, "%.8f", ImGuiSliderFlags_Logarithmic);
+    ImGui::SliderFloat("Time Scale", &TIME_SCALE, 0.0f, 100000.0f, "%.8f", ImGuiSliderFlags_Logarithmic);
     ImGui::End();
 }
 
