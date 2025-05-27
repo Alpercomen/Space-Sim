@@ -2,8 +2,6 @@
 
 extern float TIME_SCALE;
 
-#define M_PI 3.141592653589
-
 #define G 0.000000000066743
 
 #define EARTH_RADIUS_EQUATORAL 6378137.0

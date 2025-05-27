@@ -6,7 +6,7 @@
 #include <spdlog/spdlog.h>
 
 #include <Application/Constants/Constants.h>
-#include <Application/Utils/ImGUIUtils/ImGUIUtils.h>
+#include <Application/Resource/Utils/ImGUIUtils/ImGUIUtils.h>
 
 namespace SpaceSim
 {

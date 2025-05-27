@@ -2,7 +2,7 @@
 #include <iostream>
 
 #include <spdlog/spdlog.h>
-#include <Application/Utils/ImGUIUtils/ImGUIUtils.h>
+#include <Application/Resource/Utils/ImGUIUtils/ImGUIUtils.h>
 
 void ImGUIUtils::Initialize(void* window)
 {

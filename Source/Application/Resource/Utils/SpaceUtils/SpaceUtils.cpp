@@ -1,8 +1,9 @@
 #pragma once
 #include <iostream>
 
-#include <Application/Utils/SpaceUtils/SpaceUtils.h>
+#include <Application/Resource/Utils/SpaceUtils/SpaceUtils.h>
 #include <Application/Constants/Constants.h>
+
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -16,7 +17,7 @@ double CalculateOrbitalVelocity(double otherMass, double r)
 	return std::sqrt(G * otherMass / r) / METER_PER_KILOMETER;
 }
 
-void Attract(std::shared_ptr<Sphere>& obj, std::vector<std::shared_ptr<Sphere>>& objects)
+void Attract(SharedPtr<Sphere>& obj, Vector<SharedPtr<Sphere>>& objects)
 {
 	for (auto& obj2 : objects)
 	{
@@ -40,9 +41,9 @@ void Attract(std::shared_ptr<Sphere>& obj, std::vector<std::shared_ptr<Sphere>>&
 	}
 }
 
-std::vector<std::shared_ptr<Sphere>> CreateSolarSystem()
+Vector<SharedPtr<Sphere>> CreateSolarSystem()
 {
-    std::vector<std::shared_ptr<Sphere>> objects;
+    Vector<SharedPtr<Sphere>> objects;
 
     SphereDesc earthDesc;
     earthDesc.name = "Earth";

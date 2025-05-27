@@ -1,9 +1,9 @@
 #pragma once
 #include <vector>
 
-#include <Application/Entities/Sphere/Sphere.h>
-#include <Application/Entities/Camera/Camera.h>
-#include <Application/Utils/ShaderUtils/ShaderUtils.h>
+#include <Application/Resource/Entities/Sphere/Sphere.h>
+#include <Application/Resource/Entities/Camera/Camera.h>
+#include <Application/Resource/Utils/ShaderUtils/ShaderUtils.h>
 
 namespace SpaceSim 
 {

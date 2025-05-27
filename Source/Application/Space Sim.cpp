@@ -5,9 +5,9 @@
 #include <GLFW/glfw3.h>
 
 #include <Application/Window/Window.h>
-#include <Application/Entities/Sphere/Sphere.h>
-#include <Application/Utils/ShaderUtils/ShaderUtils.h>
-#include <Application/Utils/SpaceUtils/SpaceUtils.h>
+#include <Application/Resource/Entities/Sphere/Sphere.h>
+#include <Application/Resource/Utils/ShaderUtils/ShaderUtils.h>
+#include <Application/Resource/Utils/SpaceUtils/SpaceUtils.h>
 #include <Application/Constants/Constants.h>
 #include <Application/Core/Engine/Engine.h>
 #include <Application/Core/Input/InputDispatcher.h>

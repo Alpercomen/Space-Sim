@@ -8,11 +8,11 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-#include <Application/Utils/Position/Position.h>
-#include <Application/Utils/Velocity/Velocity.h>
-#include <Application/Utils/Acceleration/Acceleration.h>
-#include <Application/Utils/Meter/Meter.h>
-#include <Application/Entities/Camera/Camera.h>
+#include <Application/Resource/Components/Transform/Position/Position.h>
+#include <Application/Resource/Physics/Velocity/Velocity.h>
+#include <Application/Resource/Physics/Acceleration/Acceleration.h>
+#include <Application/Resource/Physics/Meter/Meter.h>
+#include <Application/Resource/Entities/Camera/Camera.h>
 
 struct SphereMesh 
 {
@@ -38,27 +38,18 @@ public:
 	glm::vec3 botColor;
 };
 
-SphereMesh CreateSphereVAO(SphereDesc& circleDesc);
 
 class Sphere {
 public:
 	SphereDesc circleDesc;
 	SphereMesh sphereMesh;
 
-	Sphere() : circleDesc(SphereDesc()) 
-	{
-		sphereMesh = CreateSphereVAO(circleDesc);
-	}
-	Sphere(SphereDesc& circleDesc) : circleDesc(circleDesc) 
-	{
-		sphereMesh = CreateSphereVAO(circleDesc);
-	}
+	Sphere();
+	Sphere(const SphereDesc& circleDesc);
 
-	~Sphere()
-	{
-		glDeleteVertexArrays(1, &sphereMesh.circleVAO);
-	}
+	~Sphere();
 
+	SphereMesh CreateSphereVAO(const SphereDesc& circleDesc);
 	void Accelerate(Acceleration& acceleration);
 	void UpdatePos();
 	void Draw(Camera& camera, GLuint shader, float aspectRatio);

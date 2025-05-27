@@ -1,13 +1,24 @@
 #pragma once
 #include <iostream>
 
-#include <Application/Entities/Sphere/Sphere.h>
+#include <Application/Resource/Entities/Sphere/Sphere.h>
 #include <Application/Constants/Constants.h>
 #include <Application/Core/Engine/Engine.h>
 
 #include <vector>
 
-SphereMesh CreateSphereVAO(SphereDesc& circleDesc)
+Sphere::Sphere() : Sphere(SphereDesc()) {}
+Sphere::Sphere(const SphereDesc& circleDesc) : circleDesc(circleDesc)
+{
+    sphereMesh = CreateSphereVAO(circleDesc);
+}
+
+Sphere::~Sphere()
+{
+    glDeleteVertexArrays(1, &sphereMesh.circleVAO);
+}
+
+SphereMesh Sphere::CreateSphereVAO(const SphereDesc& circleDesc)
 {
     const unsigned int X_SEGMENTS = 50;
     const unsigned int Y_SEGMENTS = 50;
