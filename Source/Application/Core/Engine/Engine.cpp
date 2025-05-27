@@ -77,7 +77,7 @@ namespace SpaceSim {
         for (auto& object : objects)
         {
             Attract(object, objects);
-            object->UpdatePos();
+            object->Update();
             object->Draw(camera, shader, aspectRatio);
         }
 

@@ -15,25 +15,25 @@ public:
 
 	Position(glm::vec3 position, bool normal = false)
 	{
-		setPosition(position, normal);
+		SetPosition(position, normal);
 	}
 
 	Position(double x, double y, double z, bool normal = false)
 	{
-		setX(x, normal);
-		setY(y, normal);
-		setZ(z, normal);
+		SetX(x, normal);
+		SetY(y, normal);
+		SetZ(z, normal);
 	}
 
 	// Getters
-	glm::vec3 getPosition(bool normal = false) { return normal ? normalized : world; }
+	glm::vec3 GetPosition(bool normal = false) { return normal ? normalized : world; }
 
-	double getX(bool normal = false) { return normal ? normalized.x : world.x; }
-	double getY(bool normal = false) { return normal ? normalized.y : world.y; }
-	double getZ(bool normal = false) { return normal ? normalized.z : world.z; }
+	double GetX(bool normal = false) { return normal ? normalized.x : world.x; }
+	double GetY(bool normal = false) { return normal ? normalized.y : world.y; }
+	double GetZ(bool normal = false) { return normal ? normalized.z : world.z; }
 
 	// Setters
-	void setPosition(glm::vec3 position, bool normal = false)
+	void SetPosition(glm::vec3 position, bool normal = false)
 	{
 		if (normal)
 		{
@@ -53,7 +53,7 @@ public:
 		}
 	}
 
-	void setX(double x, bool normal = false)
+	void SetX(double x, bool normal = false)
 	{
 		if (normal)
 		{
@@ -67,7 +67,7 @@ public:
 		}
 	}
 
-	void setY(double y, bool normal = false)
+	void SetY(double y, bool normal = false)
 	{
 		if (normal)
 		{
@@ -81,7 +81,7 @@ public:
 		}
 	}
 
-	void setZ(double z, bool normal = false)
+	void SetZ(double z, bool normal = false)
 	{
 		if (normal)
 		{

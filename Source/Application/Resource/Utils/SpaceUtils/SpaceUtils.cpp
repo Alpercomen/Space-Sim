@@ -24,9 +24,9 @@ void Attract(SharedPtr<Sphere>& obj, Vector<SharedPtr<Sphere>>& objects)
 		if (&obj == &obj2)
 			continue;
 
-		float dx = obj2->circleDesc.pos.getX() - obj->circleDesc.pos.getX();
-		float dy = obj2->circleDesc.pos.getY() - obj->circleDesc.pos.getY();
-		float dz = obj2->circleDesc.pos.getZ() - obj->circleDesc.pos.getZ();
+		float dx = obj2->circleDesc.pos.GetX() - obj->circleDesc.pos.GetX();
+		float dy = obj2->circleDesc.pos.GetY() - obj->circleDesc.pos.GetY();
+		float dz = obj2->circleDesc.pos.GetZ() - obj->circleDesc.pos.GetZ();
 
 		glm::vec3 diff = glm::vec3(dx, dy, dz);
 		float distance = glm::length(diff) * METER_PER_KILOMETER;
@@ -50,7 +50,7 @@ Vector<SharedPtr<Sphere>> CreateSolarSystem()
     earthDesc.res = 50;
     earthDesc.mass = 5.972e24; // Earth mass
     earthDesc.radius.set(12.5);
-    earthDesc.pos.setPosition(glm::vec3(0.0, 0.0, 0.0));
+    earthDesc.pos.SetPosition(glm::vec3(0.0, 0.0, 0.0));
     earthDesc.vel.setVelocity(glm::vec3(0.0, 0.0, 0.0));
     earthDesc.topColor = glm::vec3(0.28, 0.56, 0.93);
     earthDesc.botColor = glm::vec3(0.11, 0.23, 0.37);
@@ -60,9 +60,9 @@ Vector<SharedPtr<Sphere>> CreateSolarSystem()
     moonDesc.res = 50;
     moonDesc.mass = 7.342e22; // Moon mass
     moonDesc.radius.set(3.0f);
-    moonDesc.pos.setPosition(glm::vec3(384.400, 0.0, 0.0));
+    moonDesc.pos.SetPosition(glm::vec3(384.400, 0.0, 0.0));
 
-    double orbitalSpeed = CalculateOrbitalVelocity(earthDesc.mass, moonDesc.pos.distance3D(earthDesc.pos.getPosition()));
+    double orbitalSpeed = CalculateOrbitalVelocity(earthDesc.mass, moonDesc.pos.distance3D(earthDesc.pos.GetPosition()));
     moonDesc.vel.setVelocity(glm::vec3(0.0, 0.0, orbitalSpeed));
 
     // Conservation of momentum

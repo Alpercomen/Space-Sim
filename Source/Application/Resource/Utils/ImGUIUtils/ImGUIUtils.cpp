@@ -69,7 +69,7 @@ void ImGUIUtils::DrawSimulationInfo(Camera & camera, std::vector<std::shared_ptr
     for (size_t i = 0; i < objects.size(); ++i)
     {
         auto& sphere = objects[i];
-        auto pos = sphere->circleDesc.pos.getPosition();
+        auto pos = sphere->circleDesc.pos.GetPosition();
         auto vel = sphere->circleDesc.vel.getVelocity();
         ImGui::Text("[%s]", sphere->circleDesc.name.c_str());
         ImGui::Text("Pos: (%.2f, %.2f, %.2f)", pos.x, pos.y, pos.z);

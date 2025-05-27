@@ -51,7 +51,7 @@ public:
 
 	SphereMesh CreateSphereVAO(const SphereDesc& circleDesc);
 	void Accelerate(Acceleration& acceleration);
-	void UpdatePos();
+	void Update();
 	void Draw(Camera& camera, GLuint shader, float aspectRatio);
 };
 

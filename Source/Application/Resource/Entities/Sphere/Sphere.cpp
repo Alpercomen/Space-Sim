@@ -100,16 +100,16 @@ void Sphere::Accelerate(Acceleration& acceleration)
     circleDesc.vel.setZ(circleDesc.vel.getZ() + circleDesc.acc.getZ() * DELTA_TIME * TIME_SCALE);
 }
 
-void Sphere::UpdatePos()
+void Sphere::Update()
 {
-    double nextX = circleDesc.pos.getX() + circleDesc.vel.getX() * DELTA_TIME * TIME_SCALE;
-    circleDesc.pos.setX(nextX);
+    double nextX = circleDesc.pos.GetX() + circleDesc.vel.getX() * DELTA_TIME * TIME_SCALE;
+    circleDesc.pos.SetX(nextX);
 
-    double nextY = circleDesc.pos.getY() + circleDesc.vel.getY() * DELTA_TIME * TIME_SCALE;
-    circleDesc.pos.setY(nextY);
+    double nextY = circleDesc.pos.GetY() + circleDesc.vel.getY() * DELTA_TIME * TIME_SCALE;
+    circleDesc.pos.SetY(nextY);
 
-    double nextZ = circleDesc.pos.getZ() + circleDesc.vel.getZ() * DELTA_TIME * TIME_SCALE;
-    circleDesc.pos.setZ(nextZ);
+    double nextZ = circleDesc.pos.GetZ() + circleDesc.vel.getZ() * DELTA_TIME * TIME_SCALE;
+    circleDesc.pos.SetZ(nextZ);
 }
 
 void Sphere::Draw(Camera& camera, GLuint shader, float aspectRatio)
@@ -118,7 +118,7 @@ void Sphere::Draw(Camera& camera, GLuint shader, float aspectRatio)
     glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), aspectRatio, 0.1f, 1e25f);
     glm::mat4 model = glm::mat4(1.0f);
 
-    model = glm::translate(model, circleDesc.pos.getPosition());
+    model = glm::translate(model, circleDesc.pos.GetPosition());
 
     float scaledRadius = circleDesc.radius.get(true) * METERS_PER_UNIT;
     model = glm::scale(model, glm::vec3(scaledRadius));
