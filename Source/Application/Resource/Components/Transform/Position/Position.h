@@ -9,8 +9,8 @@ public:
 	// CTOR
 	Position()
 	{
-		world = glm::vec3();
-		normalized = glm::vec3();
+		m_world = glm::vec3();
+		m_normalized = glm::vec3();
 	}
 
 	Position(glm::vec3 position, bool normal = false)
@@ -26,30 +26,30 @@ public:
 	}
 
 	// Getters
-	glm::vec3 GetPosition(bool normal = false) { return normal ? normalized : world; }
+	glm::vec3 GetPosition(bool normal = false) { return normal ? m_normalized : m_world; }
 
-	double GetX(bool normal = false) { return normal ? normalized.x : world.x; }
-	double GetY(bool normal = false) { return normal ? normalized.y : world.y; }
-	double GetZ(bool normal = false) { return normal ? normalized.z : world.z; }
+	double GetX(bool normal = false) { return normal ? m_normalized.x : m_world.x; }
+	double GetY(bool normal = false) { return normal ? m_normalized.y : m_world.y; }
+	double GetZ(bool normal = false) { return normal ? m_normalized.z : m_world.z; }
 
 	// Setters
-	void SetPosition(glm::vec3 position, bool normal = false)
+	void SetPosition(const glm::vec3& position, bool normal = false)
 	{
 		if (normal)
 		{
-			world.x = position.x * METERS_PER_UNIT;
-			world.y = position.y * METERS_PER_UNIT;
-			world.z = position.z * METERS_PER_UNIT;
+			m_world.x = position.x * METERS_PER_UNIT;
+			m_world.y = position.y * METERS_PER_UNIT;
+			m_world.z = position.z * METERS_PER_UNIT;
 
-			normalized = position;
+			m_normalized = position;
 		}
 		else
 		{
-			world = position;
+			m_world = position;
 
-			normalized.x = position.x / METERS_PER_UNIT;
-			normalized.y = position.y / METERS_PER_UNIT;
-			normalized.z = position.z / METERS_PER_UNIT;
+			m_normalized.x = position.x / METERS_PER_UNIT;
+			m_normalized.y = position.y / METERS_PER_UNIT;
+			m_normalized.z = position.z / METERS_PER_UNIT;
 		}
 	}
 
@@ -57,13 +57,13 @@ public:
 	{
 		if (normal)
 		{
-			world.x = x * METERS_PER_UNIT;
-			normalized.x = x;
+			m_world.x = x * METERS_PER_UNIT;
+			m_normalized.x = x;
 		}
 		else
 		{
-			world.x = x;
-			normalized.x = x / METERS_PER_UNIT;
+			m_world.x = x;
+			m_normalized.x = x / METERS_PER_UNIT;
 		}
 	}
 
@@ -71,13 +71,13 @@ public:
 	{
 		if (normal)
 		{
-			world.y = y * METERS_PER_UNIT;
-			normalized.y = y;
+			m_world.y = y * METERS_PER_UNIT;
+			m_normalized.y = y;
 		}
 		else
 		{
-			world.y = y;
-			normalized.y = y / METERS_PER_UNIT;
+			m_world.y = y;
+			m_normalized.y = y / METERS_PER_UNIT;
 		}
 	}
 
@@ -85,26 +85,26 @@ public:
 	{
 		if (normal)
 		{
-			world.z = z * METERS_PER_UNIT;
-			normalized.z = z;
+			m_world.z = z * METERS_PER_UNIT;
+			m_normalized.z = z;
 		}
 		else
 		{
-			world.z = z;
-			normalized.z = z / METERS_PER_UNIT;
+			m_world.z = z;
+			m_normalized.z = z / METERS_PER_UNIT;
 		}
 	}
 
 	double distance3D(const Position& other) const
 	{
-		double dx = this->world.x - other.world.x;
-		double dy = this->world.y - other.world.y;
-		double dz = this->world.z - other.world.z;
+		double dx = this->m_world.x - other.m_world.x;
+		double dy = this->m_world.y - other.m_world.y;
+		double dz = this->m_world.z - other.m_world.z;
 
 		return std::sqrt((dx * dx) + (dy * dy) + (dz * dz));
 	}
 
 private:
-	glm::vec3 world;
-	glm::vec3 normalized;
+	glm::vec3 m_world;
+	glm::vec3 m_normalized;
 };
