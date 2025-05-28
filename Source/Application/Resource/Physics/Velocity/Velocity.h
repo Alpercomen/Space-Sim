@@ -2,99 +2,48 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#include <Application/Constants/Constants.h>
 
-class Velocity{
+class Velocity {
 public:
 	// CTOR
 	Velocity()
 	{
-		world = glm::vec3();
-		normalized = glm::vec3();
+		m_world = glm::vec3();
+		m_normalized = glm::vec3();
 	}
 
 	Velocity(glm::vec3 velocity, bool normal = false)
 	{
-		setVelocity(velocity, normal);
+		normal ? SetNormal(velocity) : SetWorld(velocity);
 	}
 
-	Velocity(double x, double y, double z, bool normal = false)
-	{
-		setX(x, normal);
-		setY(y, normal);
-		setZ(z, normal);
-	}
+	~Velocity() = default;
 
 	// Getters
-	glm::vec3 getVelocity(bool normal = false) { return normal ? normalized : world; }
-
-	double getX(bool normal = false) { return normal ? normalized.x : world.x; }
-	double getY(bool normal = false) { return normal ? normalized.y : world.y; }
-	double getZ(bool normal = false) { return normal ? normalized.z : world.z; }
+	const glm::vec3& GetWorld() const { return m_world; }
+	const glm::vec3& GetNormal() const { return m_normalized; }
 
 	// Setters
-	void setVelocity(glm::vec3 velocity, bool normal = false)
+	void SetWorld(const glm::vec3& velocity)
 	{
-		if (normal)
-		{
-			world.x = velocity.x * METERS_PER_UNIT;
-			world.y = velocity.y * METERS_PER_UNIT;
-			world.z = velocity.z * METERS_PER_UNIT;
-			
-			normalized = velocity;
-		}
-		else
-		{
-			world = velocity;
+		m_world = velocity;
 
-			normalized.x = velocity.x / METERS_PER_UNIT;
-			normalized.y = velocity.y / METERS_PER_UNIT;
-			normalized.z = velocity.z / METERS_PER_UNIT;
-		}
+		m_normalized.x = velocity.x / METERS_PER_UNIT;
+		m_normalized.y = velocity.y / METERS_PER_UNIT;
+		m_normalized.z = velocity.z / METERS_PER_UNIT;
 	}
 
-	void setX(double x, bool normal = false)
+	void SetNormal(const glm::vec3& velocity)
 	{
-		if (normal)
-		{
-			world.x = x * METERS_PER_UNIT;
-			normalized.x = x;
-		}
-		else
-		{
-			world.x = x;
-			normalized.x = x / METERS_PER_UNIT;
-		}
-	}
+		m_world.x = velocity.x * METERS_PER_UNIT;
+		m_world.y = velocity.y * METERS_PER_UNIT;
+		m_world.z = velocity.z * METERS_PER_UNIT;
 
-	void setY(double y, bool normal = false)
-	{
-		if (normal)
-		{
-			world.y = y * METERS_PER_UNIT;
-			normalized.y = y;
-		}
-		else
-		{
-			world.y = y;
-			normalized.y = y / METERS_PER_UNIT;
-		}
-	}
-
-	void setZ(double z, bool normal = false)
-	{
-		if (normal)
-		{
-			world.z = z * METERS_PER_UNIT;
-			normalized.z = z;
-		}
-		else
-		{
-			world.z = z;
-			normalized.z = z / METERS_PER_UNIT;
-		}
+		m_normalized = velocity;
 	}
 
 private:
-	glm::vec3 world;
-	glm::vec3 normalized;
+	glm::vec3 m_world;
+	glm::vec3 m_normalized;
 };

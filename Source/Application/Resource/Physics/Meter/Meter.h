@@ -5,21 +5,20 @@
 class Meter {
 public:
 	// Getters
-	double get(bool normal = false) { return normal ? normalized : world; }
+	double GetWorld() { return world; }
+	double GetNormal() { return normalized; }
 
 	// Setters
-	void set(double meter, bool normal = false)
+	void SetWorld(double meter)
 	{
-		if (normal)
-		{
-			world = meter * METERS_PER_UNIT;
-			normalized = meter;
-		}
-		else 
-		{
-			world = meter;
-			normalized = meter / METERS_PER_UNIT;
-		}
+		world = meter;
+		normalized = meter / METERS_PER_UNIT;
+	}
+
+	void SetNormal(double meter)
+	{
+		world = meter * METERS_PER_UNIT;
+		normalized = meter;
 	}
 
 private:

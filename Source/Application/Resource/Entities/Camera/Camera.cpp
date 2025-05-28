@@ -11,19 +11,20 @@
 #include <Application/Core/Input/InputEvent.h>
 #include <Application/Core/Input/InputQueue.h>
 
-using namespace SpaceSim;
-
 Camera::Camera(glm::vec3 position)
-    : Front(glm::vec3(0.0f, 0.0f, -1.0f)),
-    MovementSpeed(METERS_PER_UNIT * 100),
-    MovementSpeedMultiplier(3.5f),
-    MouseSensitivity(0.1f),
-    Zoom(45.0f),
-    Yaw(-90.0f),
-    Pitch(0.0f),
-    WorldUp(glm::vec3(0.0f, 1.0f, 0.0f))
 {
-    Position = position;
+    Front = glm::vec3(0.0f, 0.0f, -1.0f);
+    MovementSpeed = METERS_PER_UNIT * 100;
+    MovementSpeedMultiplier = 3.5f;
+    MouseSensitivity = 0.1f;
+    Zoom = 45.0f;
+    Yaw = -90.0f;
+    Pitch = 0.0f;
+    WorldUp = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    SetName("Camera");
+
+    SetPosition(Position(position));
     UpdateCameraVectors();
 
     InputHelper::ProcessMouseButtons();
@@ -32,39 +33,43 @@ Camera::Camera(glm::vec3 position)
 
 glm::mat4 Camera::GetViewMatrix()
 {
-    return glm::lookAt(Position, Position + Front, Up);
+    Position pos = GetPosition();
+    return glm::lookAt(pos.GetWorld(), pos.GetWorld() + Front, Up);
 }
 
 void Camera::ProcessKeyboardMovement(Camera_Movement direction, float deltaTime)
 {
     float velocity = MovementSpeed * deltaTime;
+    Position pos = GetPosition();
 
     switch (direction) {
         case FORWARD:
-            spdlog::info("Camera move forward input detected by {:03.6f} unit.", velocity);
-            Position += Front * velocity;
+            spdlog::info("{} move forward input detected by {:03.6f} unit.", GetName(), velocity);
+            pos.SetWorld(pos.GetWorld() + Front * velocity);
             break;
         case BACKWARD:
-            spdlog::info("Camera move backward input detected by {:03.6f} unit.", velocity);
-            Position -= Front * velocity;
-            break;
-        case LEFT:
-            spdlog::info("Camera move left input detected by {:03.6f} unit.", velocity);
-            Position -= Right * velocity;
+            spdlog::info("{} move backward input detected by {:03.6f} unit.", GetName(), velocity);
+            pos.SetWorld(pos.GetWorld() - Front * velocity);
             break;
         case RIGHT:
-            spdlog::info("Camera move right input detected by {:03.6f} unit.", velocity);
-            Position += Right * velocity;
+            spdlog::info("{} move right input detected by {:03.6f} unit.", GetName(), velocity);
+            pos.SetWorld(pos.GetWorld() + Right * velocity);
+            break;
+        case LEFT:
+            spdlog::info("{} move left input detected by {:03.6f} unit.", GetName(), velocity);
+            pos.SetWorld(pos.GetWorld() - Right * velocity);
             break;
         case UP:
-            spdlog::info("Camera move up input detected by {:03.6f} unit.", velocity);
-            Position += WorldUp * velocity;
+            spdlog::info("{} move up input detected by {:03.6f} unit.", GetName(), velocity);
+            pos.SetWorld(pos.GetWorld() + WorldUp * velocity);
             break;
         case DOWN:
-            spdlog::info("Camera move down input detected by {:03.6f} unit.", velocity);
-            Position -= WorldUp * velocity;
+            spdlog::info("{} move down input detected by {:03.6f} unit.", GetName(), velocity);
+            pos.SetWorld(pos.GetWorld() - WorldUp * velocity);
             break;
-    }   
+    }
+
+    SetPosition(pos);
 }
 
 void Camera::ProcessMouseMovement(float xoffset, float yoffset, bool constrainPitch)

@@ -1,31 +1,28 @@
 #pragma once
-
-/*
-* BASE CLASS
-*/
-
-#include "Entity.h"
-
 #include <Application/Core/Core.h>
 #include <Application/Resource/Components/Transform/Position/Position.h>
 
 namespace SpaceSim {
+	enum class EntityType {
+		NONE = 0,
+		SPHERE = 1 << 0,
+		CAMERA = 1 << 1,
+		ALL = SPHERE | CAMERA
+	};
+
 	class Entity {
 	public:
 		Entity() = default;
 		virtual ~Entity() = default;
 
-		virtual void Update(float deltaTime) = 0;
-		virtual void Draw() = 0;
-
-		void SetPosition(const Position& pos) { m_pos = pos; }
-		Position GetPosition() const { return m_pos; }
-
 		void SetName(const String& name) { m_name = name; }
 		const String& GetName() const { return m_name; }
-		
+
+		void SetPosition(const Position& position) { m_position = position; }
+		const Position& GetPosition() const { return m_position; }
+
 	private:
-		String m_name = "NO_NAME";
-		Position m_pos = glm::vec3(0.0);
+		String m_name;
+		Position m_position;
 	};
 }

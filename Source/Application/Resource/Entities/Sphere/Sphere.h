@@ -13,6 +13,9 @@
 #include <Application/Resource/Physics/Acceleration/Acceleration.h>
 #include <Application/Resource/Physics/Meter/Meter.h>
 #include <Application/Resource/Entities/Camera/Camera.h>
+#include <Application/Resource/Entities/Entity.h>
+
+using namespace SpaceSim;
 
 struct SphereMesh 
 {
@@ -23,9 +26,6 @@ struct SphereMesh
 // Stores the attributes of a circle
 struct SphereDesc {
 public:
-	std::string name = "NO_NAME";
-
-	Position pos;
 	Velocity vel;
 	Acceleration acc;
 
@@ -39,7 +39,7 @@ public:
 };
 
 
-class Sphere {
+class Sphere : public Entity {
 public:
 	SphereDesc circleDesc;
 	SphereMesh sphereMesh;

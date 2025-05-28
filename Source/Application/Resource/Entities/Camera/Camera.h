@@ -4,6 +4,10 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include <Application/Resource/Entities/Entity.h>
+
+using namespace SpaceSim;
+
 enum Camera_Movement {
     FORWARD,
     BACKWARD,
@@ -13,10 +17,9 @@ enum Camera_Movement {
     DOWN
 };
 
-class Camera
+class Camera : public Entity
 {
 public:
-    glm::vec3 Position;
     glm::vec3 Front;
     glm::vec3 Up;
     glm::vec3 Right;
