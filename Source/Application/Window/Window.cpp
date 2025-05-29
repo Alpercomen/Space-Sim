@@ -7,13 +7,14 @@
 
 #include <Application/Constants/Constants.h>
 #include <Application/Resource/Utils/ImGUIUtils/ImGUIUtils.h>
+#include <Application/Resource/Transform/Position.h>
 
 namespace SpaceSim
 {
     GLFWwindow* gWindow = nullptr;
     static InputEvent event;
 
-    Camera camera(glm::vec3(0.0f, 0.0f, 25.0f));
+    Camera camera(Position(glm::vec3(0.0f, 0.0f, 25.0f)));
     bool firstMouse = true;
     float lastX = 400.0f;
     float lastY = 400.f;
@@ -64,7 +65,7 @@ namespace SpaceSim
         );
     }
 
-    void InputHelper::ProsessMouseMovement()
+    void InputHelper::ProcessMouseMovement()
     {
 
         InputEventDispatcher::Get().AddCallback(EventType::MOUSE_MOVE, [&](const InputEvent& event)
@@ -252,10 +253,10 @@ namespace SpaceSim
 
         float effectiveDelta = DELTA_TIME;
         if (glfwGetKey(gWindow, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
-            effectiveDelta *= camera.MovementSpeedMultiplier;
+            effectiveDelta *= camera.GetMovementSpeedMultiplier();
 
         if (glfwGetKey(gWindow, GLFW_KEY_LEFT_ALT) == GLFW_PRESS)
-            effectiveDelta /= camera.MovementSpeedMultiplier;
+            effectiveDelta /= camera.GetMovementSpeedMultiplier();
 
         if (glfwGetKey(gWindow, GLFW_KEY_W) == GLFW_PRESS)
             camera.ProcessKeyboardMovement(FORWARD, effectiveDelta);

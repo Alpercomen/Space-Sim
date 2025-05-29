@@ -69,18 +69,20 @@ void ImGUIUtils::DrawSimulationInfo(Camera & camera, std::vector<std::shared_ptr
     for (size_t i = 0; i < objects.size(); ++i)
     {
         auto& sphere = objects[i];
-        auto pos = sphere->circleDesc.pos.GetPosition();
-        auto vel = sphere->circleDesc.vel.getVelocity();
-        ImGui::Text("[%s]", sphere->circleDesc.name.c_str());
+        auto pos = sphere->GetPosition().GetWorld();
+        auto vel = sphere->circleDesc.vel.GetWorld();
+
+        ImGui::Text("[%s]", sphere->GetName().data());
         ImGui::Text("Pos: (%.2f, %.2f, %.2f)", pos.x, pos.y, pos.z);
         ImGui::Text("Vel: (%.2f, %.2f, %.2f)", vel.x, vel.y, vel.z);
     }
 
+    const auto& camPos = camera.GetPosition().GetWorld();
     ImGui::Separator();
     ImGui::Text("Camera Info");
-    ImGui::Text("Position: (%.2f, %.2f, %.2f)", camera.Position.x, camera.Position.y, camera.Position.z);
-    ImGui::Text("Yaw: %.2f", camera.Yaw);
-    ImGui::Text("Pitch: %.2f", camera.Pitch);
+    ImGui::Text("Position: (%.2f, %.2f, %.2f)", camPos.x, camPos.y, camPos.z);
+    ImGui::Text("Yaw: %.2f", camera.GetYaw());
+    ImGui::Text("Pitch: %.2f", camera.GetPitch());
     ImGui::End();
 }
 

@@ -8,11 +8,14 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-#include <Application/Resource/Components/Transform/Position/Position.h>
-#include <Application/Resource/Physics/Velocity/Velocity.h>
-#include <Application/Resource/Physics/Acceleration/Acceleration.h>
-#include <Application/Resource/Physics/Meter/Meter.h>
-#include <Application/Resource/Entities/Camera/Camera.h>
+#include <Application/Resource/Transform/Position.h>
+#include <Application/Resource/Physics/Velocity.h>
+#include <Application/Resource/Physics/Acceleration.h>
+#include <Application/Resource/Physics/Meter.h>
+#include <Application/Resource/Camera/Camera.h>
+#include <Application/Resource/EntityManager/EntityManager.h>
+
+using namespace SpaceSim;
 
 struct SphereMesh 
 {
@@ -23,9 +26,6 @@ struct SphereMesh
 // Stores the attributes of a circle
 struct SphereDesc {
 public:
-	std::string name = "NO_NAME";
-
-	Position pos;
 	Velocity vel;
 	Acceleration acc;
 
@@ -39,7 +39,7 @@ public:
 };
 
 
-class Sphere {
+class Sphere : public Entity {
 public:
 	SphereDesc circleDesc;
 	SphereMesh sphereMesh;

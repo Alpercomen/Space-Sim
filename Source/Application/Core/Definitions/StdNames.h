@@ -49,8 +49,8 @@ template<typename... Args>
 using Variant = std::variant<Args...>;
 
 #include <memory>
-template<typename T>
-using UniquePtr = std::unique_ptr<T>;
+template<typename T, typename... Args>
+using UniquePtr = std::unique_ptr<T, Args...>;
 
 template<typename T>
 using SharedPtr = std::shared_ptr<T>;
@@ -103,3 +103,6 @@ template<typename T>
 using function = std::function<T>;
 using voidPtrFunc = std::function<void*>;
 using voidFunc = std::function<void()>;
+
+#include <typeindex>
+using TypeIndex = std::type_index;

@@ -1,8 +1,8 @@
 #pragma once
 #include <iostream>
 
-#include <Application/Resource/Entities/Sphere/Sphere.h>
-#include <Application/Constants/Constants.h>
+#include <Application/Resource/Sphere/Sphere.h>
+#include <Application/Core/Core.h>
 #include <Application/Core/Engine/Engine.h>
 
 #include <vector>
@@ -22,7 +22,6 @@ SphereMesh Sphere::CreateSphereVAO(const SphereDesc& circleDesc)
 {
     const unsigned int X_SEGMENTS = 50;
     const unsigned int Y_SEGMENTS = 50;
-    const float PI = 3.14159265359f;
 
     std::vector<float> vertices;
     std::vector<unsigned int> indices;
@@ -33,9 +32,9 @@ SphereMesh Sphere::CreateSphereVAO(const SphereDesc& circleDesc)
         {
             float xSegment = (float)x / (float)X_SEGMENTS;
             float ySegment = (float)y / (float)Y_SEGMENTS;
-            float xPos = cos(xSegment * 2.0f * PI) * sin(ySegment * PI);
-            float yPos = cos(ySegment * PI);
-            float zPos = sin(xSegment * 2.0f * PI) * sin(ySegment * PI);
+            float xPos = cos(xSegment * 2.0f * Math::Pi) * sin(ySegment * Math::Pi);
+            float yPos = cos(ySegment * Math::Pi);
+            float zPos = sin(xSegment * 2.0f * Math::Pi) * sin(ySegment * Math::Pi);
 
             vertices.push_back(xPos);
             vertices.push_back(yPos);
@@ -95,32 +94,40 @@ void Sphere::Accelerate(Acceleration& acceleration)
     circleDesc.acc = acceleration;
 
     // Physics update in meters
-    circleDesc.vel.setY(circleDesc.vel.getY() + circleDesc.acc.getY() * DELTA_TIME * TIME_SCALE);
-    circleDesc.vel.setX(circleDesc.vel.getX() + circleDesc.acc.getX() * DELTA_TIME * TIME_SCALE);
-    circleDesc.vel.setZ(circleDesc.vel.getZ() + circleDesc.acc.getZ() * DELTA_TIME * TIME_SCALE);
+    const Velocity& vel = circleDesc.vel;
+    const Acceleration& acc = circleDesc.acc;
+
+    double nextX = vel.GetWorld().x + acc.GetWorld().x * DELTA_TIME * TIME_SCALE;
+    double nextY = vel.GetWorld().y + acc.GetWorld().y * DELTA_TIME * TIME_SCALE;
+    double nextZ = vel.GetWorld().z + acc.GetWorld().z * DELTA_TIME * TIME_SCALE;
+
+    Velocity newVel = Velocity(glm::vec3(nextX, nextY, nextZ));
+    circleDesc.vel = newVel;
 }
 
 void Sphere::Update()
 {
-    double nextX = circleDesc.pos.GetX() + circleDesc.vel.getX() * DELTA_TIME * TIME_SCALE;
-    circleDesc.pos.SetX(nextX);
+    const Position& pos = GetPosition();
+    const Velocity& vel = circleDesc.vel;
 
-    double nextY = circleDesc.pos.GetY() + circleDesc.vel.getY() * DELTA_TIME * TIME_SCALE;
-    circleDesc.pos.SetY(nextY);
+    double nextX = pos.GetWorld().x + vel.GetWorld().x * DELTA_TIME * TIME_SCALE;
+    double nextY = pos.GetWorld().y + vel.GetWorld().y * DELTA_TIME * TIME_SCALE;
+    double nextZ = pos.GetWorld().z + vel.GetWorld().z * DELTA_TIME * TIME_SCALE;
 
-    double nextZ = circleDesc.pos.GetZ() + circleDesc.vel.getZ() * DELTA_TIME * TIME_SCALE;
-    circleDesc.pos.SetZ(nextZ);
+    Position nextPos(glm::vec3(nextX, nextY, nextZ));
+    SetPosition(nextPos);
 }
 
 void Sphere::Draw(Camera& camera, GLuint shader, float aspectRatio)
 {
     glm::mat4 view = camera.GetViewMatrix();
-    glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), aspectRatio, 0.1f, 1e25f);
+    glm::mat4 projection = glm::perspective(glm::radians(camera.GetZoom()), aspectRatio, 0.1f, 1e25f);
     glm::mat4 model = glm::mat4(1.0f);
 
-    model = glm::translate(model, circleDesc.pos.GetPosition());
+    Position pos = GetPosition();
+    model = glm::translate(model, pos.GetWorld());
 
-    float scaledRadius = circleDesc.radius.get(true) * METERS_PER_UNIT;
+    float scaledRadius = circleDesc.radius.GetNormal() * METERS_PER_UNIT;
     model = glm::scale(model, glm::vec3(scaledRadius));
 
     glm::mat4 mvp = projection * view * model;

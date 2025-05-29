@@ -28,3 +28,5 @@ constexpr uint8 uint8_max = 0xFF;
 
 template<typename T>
 concept Arithmetic = std::is_arithmetic_v<T>;
+
+using EntityID = uint32_t;
