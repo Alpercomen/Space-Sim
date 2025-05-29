@@ -81,8 +81,8 @@ void ImGUIUtils::DrawSimulationInfo(Camera & camera, std::vector<std::shared_ptr
     ImGui::Separator();
     ImGui::Text("Camera Info");
     ImGui::Text("Position: (%.2f, %.2f, %.2f)", camPos.x, camPos.y, camPos.z);
-    ImGui::Text("Yaw: %.2f", camera.Yaw);
-    ImGui::Text("Pitch: %.2f", camera.Pitch);
+    ImGui::Text("Yaw: %.2f", camera.GetYaw());
+    ImGui::Text("Pitch: %.2f", camera.GetPitch());
     ImGui::End();
 }
 

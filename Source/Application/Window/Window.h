@@ -38,7 +38,7 @@ namespace SpaceSim
 		static MouseMode GetMouseMode();
 
 		static void ProcessMouseButtons();
-		static void ProsessMouseMovement();
+		static void ProcessMouseMovement();
 	};
 
 	struct InputCallbacks
