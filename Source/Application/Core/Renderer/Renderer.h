@@ -29,7 +29,7 @@ namespace SpaceSim
                 model = glm::scale(model, glm::vec3(scaledRadius));
 
                 glm::mat4 view = camera.GetViewMatrix();
-                glm::mat4 projection = glm::perspective(glm::radians(camera.GetZoom()), aspectRatio, 0.1f, 1000.0f);
+                glm::mat4 projection = glm::perspective(glm::radians(camera.GetZoom()), aspectRatio, 0.1f, 100000000.0f);
                 glm::mat4 mvp = projection * view * model;
 
                 GLuint mvpLoc = glGetUniformLocation(shader, "uMVP");

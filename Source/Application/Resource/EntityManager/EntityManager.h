@@ -139,37 +139,41 @@ namespace SpaceSim {
 		template<typename T>
 		void RemoveComponent(EntityID id)
 		{
-			GetPool<T>().Remove(id);
+			GetPool<T>()->Remove(id);
 		}
 
 		template<typename T>
 		bool HasComponent(EntityID id) {
-			return GetPool<T>().Has(id);
+			if (GetPool<T>() == nullptr)
+				return false;
+
+			return GetPool<T>()->Has(id);
 		}
 
 		template<typename T>
 		T* GetComponent(EntityID id) {
-			return GetPool<T>().Get(id);
+			return GetPool<T>()->Get(id);
 		}
 
 		template<typename T>
 		Vector<T>& GetAllComponents() {
-			return GetPool<T>().GetAll();
+			return GetPool<T>()->GetAll();
 		}
 
 		template<typename T>
 		Vector<EntityID>& GetAllComponentIDs()
 		{
-			return GetPool<T>().GetEntityIDs();
+			return GetPool<T>()->GetEntityIDs();
 		}
 
 	private:
 		template<typename T>
-		ComponentPool<T>& GetPool()
+		ComponentPool<T>* GetPool()
 		{
 			auto it = m_componentPools.find(typeid(T));
-			assert(it != m_componentPools.end());
-			return *static_cast<ComponentPool<T>*>(it->second.get());
+			if (it == m_componentPools.end())
+				return nullptr;
+			return static_cast<ComponentPool<T>*>(it->second.get());
 		}
 
 		template<typename T>
