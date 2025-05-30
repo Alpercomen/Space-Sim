@@ -32,12 +32,12 @@ struct CameraDesc {
     float Zoom = 45.0f;
 };
 
-class Camera : public Entity
+class Camera
 {
 public:
 
-    Camera(const Position& position);
-    Camera(const Position& position, const String& name, const CameraDesc& cameraDesc);
+    Camera();
+    ~Camera() = default;
 
     glm::mat4 GetViewMatrix();
 

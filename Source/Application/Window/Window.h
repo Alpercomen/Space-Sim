@@ -7,7 +7,6 @@ struct GLFWwindow;
 
 namespace SpaceSim
 {
-	extern Camera camera;
 	extern bool firstMouse;
 	extern float lastX;
 	extern float lastY;

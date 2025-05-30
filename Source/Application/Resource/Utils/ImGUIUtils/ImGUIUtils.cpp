@@ -60,40 +60,76 @@ ImVec2 ImGUIUtils::DrawGameWindow(GLuint sceneTextureID)
     return textureSize;
 }
 
-void ImGUIUtils::DrawSimulationInfo(Camera & camera, std::vector<std::shared_ptr<Sphere>>& objects)
+void ImGUIUtils::DrawSimulationInfo()
 {
+    auto& spheres = ECS::Get().GetAllComponents<Sphere>();
+    auto& sphereIDs = ECS::Get().GetAllComponentIDs<Sphere>();
+
+    auto& cameras = ECS::Get().GetAllComponents<Camera>();
+    auto& cameraIDs = ECS::Get().GetAllComponentIDs<Camera>();
+
     ImGui::Begin("Simulation Info");
 
-    ImGui::Text("Objects: %d", static_cast<int>(objects.size()));
-
-    for (size_t i = 0; i < objects.size(); ++i)
+    ImGui::Text("Objects: %d", static_cast<int>(spheres.size()));
+    for (size_t i = 0; i < spheres.size(); ++i)
     {
-        auto& sphere = objects[i];
-        auto pos = sphere->GetPosition().GetWorld();
-        auto vel = sphere->circleDesc.vel.GetWorld();
+        auto& sphere = spheres[i];
+        const EntityID& id = sphereIDs[i];
 
-        ImGui::Text("[%s]", sphere->GetName().data());
-        ImGui::Text("Pos: (%.2f, %.2f, %.2f)", pos.x, pos.y, pos.z);
-        ImGui::Text("Vel: (%.2f, %.2f, %.2f)", vel.x, vel.y, vel.z);
+        if (ECS::Get().HasComponent<Name>(id))
+        {
+            const auto& name = ECS::Get().GetComponent<Name>(id)->name;
+            ImGui::Text("[%s]", name.data());
+        }
+
+        if (ECS::Get().HasComponent<Position>(id))
+        {
+            auto& pos = *ECS::Get().GetComponent<Position>(id);
+            auto& posVec = pos.GetWorld();
+            ImGui::Text("Pos: (%.2f, %.2f, %.2f)", posVec.x, posVec.y, posVec.z);
+        }
+
+        if (ECS::Get().HasComponent<Velocity>(id))
+        {
+            const auto& vel = *ECS::Get().GetComponent<Velocity>(id);
+            const auto& velVec = vel.GetWorld();
+            ImGui::Text("Vel: (%.2f, %.2f, %.2f)", velVec.x, velVec.y, velVec.z);
+        }
     }
 
-    const auto& camPos = camera.GetPosition().GetWorld();
     ImGui::Separator();
     ImGui::Text("Camera Info");
-    ImGui::Text("Position: (%.2f, %.2f, %.2f)", camPos.x, camPos.y, camPos.z);
-    ImGui::Text("Yaw: %.2f", camera.GetYaw());
-    ImGui::Text("Pitch: %.2f", camera.GetPitch());
+
+    for (size_t i = 0; i < cameras.size(); ++i)
+    {
+        auto& camera = cameras[i];
+        const EntityID& id = cameraIDs[i];
+
+        if (!ECS::Get().HasComponent<Position>(id) || !ECS::Get().HasComponent<Name>(id))
+            continue;
+
+        auto& pos = *ECS::Get().GetComponent<Position>(id);
+        auto posVec = pos.GetWorld();
+
+        const auto& name = ECS::Get().GetComponent<Name>(id)->name;
+
+        ImGui::Text("[%s]", name.data());
+        ImGui::Text("Pos: (%.2f, %.2f, %.2f)", posVec.x, posVec.y, posVec.z);
+        ImGui::Text("Yaw: %.2f", camera.GetYaw());
+        ImGui::Text("Pitch: %.2f", camera.GetPitch());
+    }
+
     ImGui::End();
 }
 
-void ImGUIUtils::DrawSimulationControl(Camera& camera, std::vector<std::shared_ptr<Sphere>>& objects)
+void ImGUIUtils::DrawSimulationControl()
 {
     ImGui::Begin("Simulation Control");
     ImGui::SliderFloat("Time Scale", &TIME_SCALE, 0.0f, 100000.0f, "%.8f", ImGuiSliderFlags_Logarithmic);
     ImGui::End();
 }
 
-void ImGUIUtils::DrawWindow(Engine* engine, GLuint sceneTextureID, Camera& camera, std::vector<std::shared_ptr<Sphere>>& objects)
+void ImGUIUtils::DrawWindow(Engine* engine, GLuint sceneTextureID)
 {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
@@ -101,8 +137,8 @@ void ImGUIUtils::DrawWindow(Engine* engine, GLuint sceneTextureID, Camera& camer
 
     ImGUIUtils::InitDockableWindow();
     ImVec2 textureSize = ImGUIUtils::DrawGameWindow(sceneTextureID);
-    ImGUIUtils::DrawSimulationInfo(camera, objects);
-    ImGUIUtils::DrawSimulationControl(camera, objects);
+    ImGUIUtils::DrawSimulationInfo();
+    ImGUIUtils::DrawSimulationControl();
 
     engine->ResizeFBO((int)textureSize.x, (int)textureSize.y);
 

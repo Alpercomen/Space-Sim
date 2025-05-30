@@ -1,11 +1,13 @@
 #pragma once
 #include <iostream>
 
-#include <Application/Resource/Utils/SpaceUtils/SpaceUtils.h>
-#include <Application/Constants/Constants.h>
-
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+
+#include <Application/Resource/Utils/SpaceUtils/SpaceUtils.h>
+#include <Application/Resource/Components/Components.h>
+#include <Application/Constants/Constants.h>
+
 
 double GravitationalForce(double mu, double r) 
 {
@@ -17,76 +19,46 @@ double CalculateOrbitalVelocity(double otherMass, double r)
 	return std::sqrt(G * otherMass / r) / METER_PER_KILOMETER;
 }
 
-void Attract(SharedPtr<Sphere>& obj, Vector<SharedPtr<Sphere>>& objects)
+void Attract(EntityID& objID)
 {
-	for (auto& obj2 : objects)
+	if (!ECS::Get().HasComponent<Rigidbody>(objID) || !ECS::Get().HasComponent<Position>(objID))
+		return;
+
+    auto& spheres = ECS::Get().GetAllComponents<Sphere>();
+    auto sphereIDs = ECS::Get().GetAllComponentIDs<Sphere>();
+
+	for (size_t i = 0; i < spheres.size(); ++i)
 	{
-		if (&obj == &obj2)
+        const EntityID& id = sphereIDs[i];
+		if (objID == id)
 			continue;
 
-        const Position& pos1 = obj->GetPosition();
-        const Position& pos2 = obj2->GetPosition();
+        if (!ECS::Get().HasComponent<Rigidbody>(id) || !ECS::Get().HasComponent<Position>(id) || !ECS::Get().HasComponent<Velocity>(id) || !ECS::Get().HasComponent<Acceleration>(id))
+            continue;
 
-		float dx = pos2.GetWorld().x - pos1.GetWorld().x;
-		float dy = pos2.GetWorld().y - pos1.GetWorld().y;
-		float dz = pos2.GetWorld().z - pos1.GetWorld().z;
+        auto& objPos  = *ECS::Get().GetComponent<Position>(objID);
+        auto& objRig  = *ECS::Get().GetComponent<Rigidbody>(objID);
 
-		glm::vec3 diff = glm::vec3(dx, dy, dz);
+		auto& obj2Pos  = *ECS::Get().GetComponent<Position>(id);
+		auto& obj2Rig  = *ECS::Get().GetComponent<Rigidbody>(id);
+		auto& obj2Vel  = *ECS::Get().GetComponent<Velocity>(id);
+		auto& obj2Acc  = *ECS::Get().GetComponent<Acceleration>(id);
+
+		double dx = objPos.GetWorld().x - obj2Pos.GetWorld().x;
+		double dy = objPos.GetWorld().y - obj2Pos.GetWorld().y;
+		double dz = objPos.GetWorld().z - obj2Pos.GetWorld().z;
+
+		Math::Vec3d diff = glm::vec3(dx, dy, dz);
 		float distance = glm::length(diff) * METER_PER_KILOMETER;
-		glm::vec3 unitVector = glm::normalize(diff);
+		Math::Vec3d unitVector = glm::normalize(diff);
 
-		float Gforce = (G * obj->circleDesc.mass * obj2->circleDesc.mass) / (distance * distance);
-		float acc = Gforce / obj->circleDesc.mass;
+		float Gforce = (G * objRig.mass * obj2Rig.mass) / (distance * distance);
+		float acc = Gforce / obj2Rig.mass;
 
-        glm::vec3 accVec(acc * unitVector.x, acc * unitVector.y, acc * unitVector.z);
+        Math::Vec3d accVec(acc * unitVector.x, acc * unitVector.y, acc * unitVector.z);
 		Acceleration attraction(accVec);
 
-		obj->Accelerate(attraction);
+		obj2Acc = attraction;
+		obj2Vel.Accelerate(obj2Acc);
 	}
-}
-
-Vector<SharedPtr<Sphere>> CreateSolarSystem()
-{
-    Vector<SharedPtr<Sphere>> objects;
-
-    SphereDesc earthDesc;
-    SphereDesc moonDesc;
-    
-    earthDesc.res = 50;
-    earthDesc.mass = 5.972e24; // Earth mass
-    earthDesc.radius.SetWorld(12.5);
-    earthDesc.vel.SetWorld(glm::vec3(0.0, 0.0, 0.0));
-    earthDesc.topColor = glm::vec3(0.28, 0.56, 0.93);
-    earthDesc.botColor = glm::vec3(0.11, 0.23, 0.37);
-
-    moonDesc.res = 50;
-    moonDesc.mass = 7.342e22; // Moon mass
-    moonDesc.radius.SetWorld(3.0f);
-
-    Position earthPos(glm::vec3(0.0f, 0.0f, 0.0f));
-    Position moonPos(glm::vec3(384.400, 0.0, 0.0));
-
-    double orbitalSpeed = CalculateOrbitalVelocity(earthDesc.mass, moonPos.distance3D(earthPos));
-    moonDesc.vel.SetWorld(glm::vec3(0.0, 0.0, orbitalSpeed));
-
-    // Conservation of momentum
-    double earthSpeed = -orbitalSpeed * (moonDesc.mass / earthDesc.mass);
-    earthDesc.vel.SetWorld(glm::vec3(0.0, 0.0, earthSpeed));
-
-    moonDesc.topColor = glm::vec3(0.89, 0.96, 0.96);
-    moonDesc.botColor = glm::vec3(0.30, 0.41, 0.41);
-
-    std::shared_ptr<Sphere> earthPtr = std::make_shared<Sphere>(earthDesc);
-    std::shared_ptr<Sphere> moonPtr = std::make_shared<Sphere>(moonDesc);
-
-    earthPtr->SetName("Earth");
-    earthPtr->SetPosition(earthPos);
-
-    moonPtr->SetName("Moon");
-    moonPtr->SetPosition(moonPos);
-
-    objects.push_back(earthPtr);
-    objects.push_back(moonPtr);
-
-    return objects;
 }

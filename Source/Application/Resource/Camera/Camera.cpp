@@ -10,8 +10,9 @@
 #include <Application/Core/Input/InputDispatcher.h>
 #include <Application/Core/Input/InputEvent.h>
 #include <Application/Core/Input/InputQueue.h>
+#include <Application/Resource/Components/Components.h>
 
-Camera::Camera(const Position& position)
+Camera::Camera()
 {
     SetFront(glm::vec3(0.0f, 0.0f, -1.0f));
     SetMovementSpeed(METERS_PER_UNIT * 100);
@@ -22,29 +23,6 @@ Camera::Camera(const Position& position)
     SetPitch(0.0f);
     SetWorldUp(glm::vec3(0.0f, 1.0f, 0.0f));
 
-    SetPosition(position);
-    SetName("Camera");
-
-    UpdateCameraVectors();
-
-    InputHelper::ProcessMouseButtons();
-    InputHelper::ProcessMouseMovement();
-}
-
-Camera::Camera(const Position& position, const String& name, const CameraDesc& cameraDesc)
-{
-    SetFront(cameraDesc.Front);
-    SetMovementSpeed(cameraDesc.MovementSpeed);
-    SetMovementSpeedMultiplier(cameraDesc.MovementSpeedMultiplier);
-    SetMouseSensitivity(cameraDesc.MouseSensitivity);
-    SetZoom(cameraDesc.Zoom);
-    SetYaw(cameraDesc.Yaw);
-    SetPitch(cameraDesc.Pitch);
-    SetWorldUp(cameraDesc.WorldUp);
-
-    SetPosition(position);
-    SetName(name);
-
     UpdateCameraVectors();
 
     InputHelper::ProcessMouseButtons();
@@ -53,43 +31,63 @@ Camera::Camera(const Position& position, const String& name, const CameraDesc& c
 
 glm::mat4 Camera::GetViewMatrix()
 {
-    Position pos = GetPosition();
+    auto& cameraIDs = ECS::Get().GetAllComponentIDs<Camera>();
+
+    if (cameraIDs.size() <= 0)
+        return glm::mat4(0.0);
+
+    const EntityID& id = cameraIDs[0];
+
+    if (!ECS::Get().HasComponent<Position>(id))
+        return glm::mat4(0.0);
+
+    Position pos = *ECS::Get().GetComponent<Position>(id);
     return glm::lookAt(pos.GetWorld(), pos.GetWorld() + GetFront(), GetUp());
 }
 
 void Camera::ProcessKeyboardMovement(Camera_Movement direction, float deltaTime)
 {
+    auto& cameraIDs = ECS::Get().GetAllComponentIDs<Camera>();
+
+    if (cameraIDs.size() <= 0)
+        return;
+
+    const EntityID& id = cameraIDs[0];
+
+    if (!ECS::Get().HasComponent<Position>(id) || !ECS::Get().HasComponent<Name>(id))
+        return;
+
     float velocity = GetMovementSpeed() * deltaTime;
-    Position pos = GetPosition();
+
+    auto& pos = *ECS::Get().GetComponent<Position>(id);
+    auto& name = ECS::Get().GetComponent<Name>(id)->name;
 
     switch (direction) {
         case FORWARD:
-            spdlog::info("{} move forward input detected by {:03.6f} unit.", GetName(), velocity);
+            spdlog::info("{} move forward input detected by {:03.6f} unit.", name, velocity);
             pos.SetWorld(pos.GetWorld() + GetFront() * velocity);
             break;
         case BACKWARD:
-            spdlog::info("{} move backward input detected by {:03.6f} unit.", GetName(), velocity);
+            spdlog::info("{} move backward input detected by {:03.6f} unit.", name, velocity);
             pos.SetWorld(pos.GetWorld() - GetFront() * velocity);
             break;
         case RIGHT:
-            spdlog::info("{} move right input detected by {:03.6f} unit.", GetName(), velocity);
+            spdlog::info("{} move right input detected by {:03.6f} unit.", name, velocity);
             pos.SetWorld(pos.GetWorld() + GetRight() * velocity);
             break;
         case LEFT:
-            spdlog::info("{} move left input detected by {:03.6f} unit.", GetName(), velocity);
+            spdlog::info("{} move left input detected by {:03.6f} unit.", name, velocity);
             pos.SetWorld(pos.GetWorld() - GetRight() * velocity);
             break;
         case UP:
-            spdlog::info("{} move up input detected by {:03.6f} unit.", GetName(), velocity);
+            spdlog::info("{} move up input detected by {:03.6f} unit.", name, velocity);
             pos.SetWorld(pos.GetWorld() + GetWorldUp() * velocity);
             break;
         case DOWN:
-            spdlog::info("{} move down input detected by {:03.6f} unit.", GetName(), velocity);
+            spdlog::info("{} move down input detected by {:03.6f} unit.", name, velocity);
             pos.SetWorld(pos.GetWorld() - GetWorldUp() * velocity);
             break;
     }
-
-    SetPosition(pos);
 }
 
 void Camera::ProcessMouseMovement(float xoffset, float yoffset, bool constrainPitch)

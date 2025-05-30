@@ -2,7 +2,9 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+
 #include <Application/Constants/Constants.h>
+#include <Application/Resource/Physics/Acceleration.h>
 
 class Velocity {
 public:
@@ -41,6 +43,16 @@ public:
 		m_world.z = velocity.z * METERS_PER_UNIT;
 
 		m_normalized = velocity;
+	}
+
+	void Accelerate(Acceleration& acceleration)
+	{
+		// Physics update in meters
+		double nextX = GetWorld().x + acceleration.GetWorld().x * DELTA_TIME * TIME_SCALE;
+		double nextY = GetWorld().y + acceleration.GetWorld().y * DELTA_TIME * TIME_SCALE;
+		double nextZ = GetWorld().z + acceleration.GetWorld().z * DELTA_TIME * TIME_SCALE;
+
+		SetWorld(glm::vec3(nextX, nextY, nextZ));
 	}
 
 private:

@@ -1,4 +1,6 @@
 #pragma once
+#include <spdlog/spdlog.h>
+
 #include <Application/Core/Core.h>
 #include <Application/Resource/Transform/Position.h>
 
@@ -10,22 +12,8 @@ namespace SpaceSim {
 		ALL = SPHERE | CAMERA
 	};
 
-	class Entity {
-	public:
-		Entity() = default;
-		virtual ~Entity() = default;
-
-		void SetName(const String& name) { m_name = name; }
-		const String& GetName() const { return m_name; }
-
-		void SetPosition(const Position& position) { m_position = position; }
-		const Position& GetPosition() const { return m_position; }
-
-	private:
+	struct Entity {
 		EntityID id;
-
-		String m_name;
-		Position m_position;
 	};
 
 	class EntityManager {
@@ -77,10 +65,13 @@ namespace SpaceSim {
 	public:
 		void Add(EntityID id, const T& component)
 		{
-			assert(!Has(id));
-			size_t index = component.size();
+			assert(!Has(id)); // already done
+			size_t index = components.size();
+			components.push_back(component);
 			entityToIndex[id] = index;
 			indexToEntity.push_back(id);
+			assert(entityToIndex[id] == index); // sanity check
+			assert(index < components.size());  // valid range
 		}
 
 		void Remove(EntityID id) override
@@ -112,7 +103,9 @@ namespace SpaceSim {
 			return nullptr;
 		}
 
-		const Vector<T>& GetAll() const { return components; }
+		Vector<T>& GetAll() { return components; }
+
+		Vector<EntityID>& GetEntityIDs() { return indexToEntity; }
 
 	private:
 		Vector<T> components;
@@ -120,7 +113,7 @@ namespace SpaceSim {
 		HashMap<EntityID, size_t> entityToIndex;
 	};
 
-	class ECS
+	class ECS : public Singleton<ECS>
 	{
 	public:
 		EntityID CreateEntity()
@@ -160,8 +153,14 @@ namespace SpaceSim {
 		}
 
 		template<typename T>
-		const Vector<T>& GetAllComponents() {
+		Vector<T>& GetAllComponents() {
 			return GetPool<T>().GetAll();
+		}
+
+		template<typename T>
+		Vector<EntityID>& GetAllComponentIDs()
+		{
+			return GetPool<T>().GetEntityIDs();
 		}
 
 	private:
@@ -179,8 +178,8 @@ namespace SpaceSim {
 			auto it = m_componentPools.find(typeid(T));
 			if (it == m_componentPools.end())
 			{
-				auto pool = MakeUnique<ComponentPool<T>>;
-				m_componentPools[typeid(T)] = std::move(pool);
+				auto pool = std::make_unique<ComponentPool<T>>();
+				m_componentPools[typeid(T)] = std::unique_ptr<IComponentPool>(pool.release());
 			}
 			
 			return *static_cast<ComponentPool<T>*>(m_componentPools[typeid(T)].get());

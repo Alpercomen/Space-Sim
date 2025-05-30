@@ -1,21 +1,23 @@
 #pragma once
 #include <iostream>
+#include <vector>
 
-#include <Application/Resource/Sphere/Sphere.h>
+#include <Application/Resource/Mesh/Sphere/Sphere.h>
 #include <Application/Core/Core.h>
 #include <Application/Core/Engine/Engine.h>
 
-#include <vector>
 
 Sphere::Sphere() : Sphere(SphereDesc()) {}
-Sphere::Sphere(const SphereDesc& circleDesc) : circleDesc(circleDesc)
+Sphere::Sphere(const SphereDesc& circleDesc) : m_circleDesc(circleDesc)
 {
-    sphereMesh = CreateSphereVAO(circleDesc);
+    m_circleDesc = circleDesc;
+    m_sphereMesh = CreateSphereVAO(m_circleDesc);
 }
 
 Sphere::~Sphere()
 {
-    glDeleteVertexArrays(1, &sphereMesh.circleVAO);
+    // Will get moved to a SceneManager, where it will handle the lifetime of a Sphere.
+    // glDeleteVertexArrays(1, &m_sphereMesh.circleVAO);
 }
 
 SphereMesh Sphere::CreateSphereVAO(const SphereDesc& circleDesc)
@@ -86,60 +88,4 @@ SphereMesh Sphere::CreateSphereVAO(const SphereDesc& circleDesc)
     mesh.circleVAO = VAO;
     mesh.indexCount = static_cast<GLuint>(indices.size());
     return mesh;
-}
-
-void Sphere::Accelerate(Acceleration& acceleration)
-{
-    // Update acceleration
-    circleDesc.acc = acceleration;
-
-    // Physics update in meters
-    const Velocity& vel = circleDesc.vel;
-    const Acceleration& acc = circleDesc.acc;
-
-    double nextX = vel.GetWorld().x + acc.GetWorld().x * DELTA_TIME * TIME_SCALE;
-    double nextY = vel.GetWorld().y + acc.GetWorld().y * DELTA_TIME * TIME_SCALE;
-    double nextZ = vel.GetWorld().z + acc.GetWorld().z * DELTA_TIME * TIME_SCALE;
-
-    Velocity newVel = Velocity(glm::vec3(nextX, nextY, nextZ));
-    circleDesc.vel = newVel;
-}
-
-void Sphere::Update()
-{
-    const Position& pos = GetPosition();
-    const Velocity& vel = circleDesc.vel;
-
-    double nextX = pos.GetWorld().x + vel.GetWorld().x * DELTA_TIME * TIME_SCALE;
-    double nextY = pos.GetWorld().y + vel.GetWorld().y * DELTA_TIME * TIME_SCALE;
-    double nextZ = pos.GetWorld().z + vel.GetWorld().z * DELTA_TIME * TIME_SCALE;
-
-    Position nextPos(glm::vec3(nextX, nextY, nextZ));
-    SetPosition(nextPos);
-}
-
-void Sphere::Draw(Camera& camera, GLuint shader, float aspectRatio)
-{
-    glm::mat4 view = camera.GetViewMatrix();
-    glm::mat4 projection = glm::perspective(glm::radians(camera.GetZoom()), aspectRatio, 0.1f, 1e25f);
-    glm::mat4 model = glm::mat4(1.0f);
-
-    Position pos = GetPosition();
-    model = glm::translate(model, pos.GetWorld());
-
-    float scaledRadius = circleDesc.radius.GetNormal() * METERS_PER_UNIT;
-    model = glm::scale(model, glm::vec3(scaledRadius));
-
-    glm::mat4 mvp = projection * view * model;
-    GLuint mvpLoc = glGetUniformLocation(shader, "uMVP");
-    glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, glm::value_ptr(mvp));
-
-    GLuint topColorLoc = glGetUniformLocation(shader, "topColor");
-    glUniform3fv(topColorLoc, 1, glm::value_ptr(this->circleDesc.topColor));
-
-    GLuint botColorLoc = glGetUniformLocation(shader, "botColor");
-    glUniform3fv(botColorLoc, 1, glm::value_ptr(this->circleDesc.botColor));
-
-    glBindVertexArray(sphereMesh.circleVAO);
-    glDrawElements(GL_TRIANGLE_STRIP, sphereMesh.indexCount, GL_UNSIGNED_INT, 0);
 }

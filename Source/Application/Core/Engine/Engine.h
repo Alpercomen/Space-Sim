@@ -1,9 +1,11 @@
 #pragma once
 #include <vector>
 
-#include <Application/Resource/Sphere/Sphere.h>
+#include <Application/Resource/Mesh/Sphere/Sphere.h>
 #include <Application/Resource/Camera/Camera.h>
 #include <Application/Resource/Utils/ShaderUtils/ShaderUtils.h>
+
+#include <Application/Core/Renderer/Renderer.h>
 
 namespace SpaceSim 
 {
@@ -22,9 +24,11 @@ namespace SpaceSim
 
 		void InitFBO();
 		void ResizeFBO(int width, int height);
-		void Render(std::vector<std::shared_ptr<Sphere>>& objects, void* windowPtr, Camera& camera);
+		void Render(void* windowPtr, Camera& camera);
 
 	private:
+		Renderer renderer;
+
 		GLuint sceneFBO = 0;
 		GLuint sceneColorTex = 0;
 		GLuint sceneDepthRBO = 0;

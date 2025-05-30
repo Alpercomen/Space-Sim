@@ -26,23 +26,18 @@ struct SphereMesh
 // Stores the attributes of a circle
 struct SphereDesc {
 public:
-	Velocity vel;
-	Acceleration acc;
-
 	Meter radius;
 	int res = 50;
-
-	double mass = 1.0;
 
 	glm::vec3 topColor;
 	glm::vec3 botColor;
 };
 
 
-class Sphere : public Entity {
+class Sphere {
 public:
-	SphereDesc circleDesc;
-	SphereMesh sphereMesh;
+	SphereDesc m_circleDesc;
+	SphereMesh m_sphereMesh;
 
 	Sphere();
 	Sphere(const SphereDesc& circleDesc);
@@ -50,9 +45,6 @@ public:
 	~Sphere();
 
 	SphereMesh CreateSphereVAO(const SphereDesc& circleDesc);
-	void Accelerate(Acceleration& acceleration);
-	void Update();
-	void Draw(Camera& camera, GLuint shader, float aspectRatio);
 };
 
 

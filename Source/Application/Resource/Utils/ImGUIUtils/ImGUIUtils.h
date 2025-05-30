@@ -1,8 +1,9 @@
 #pragma once
 
-#include <Application/Resource/Sphere/Sphere.h>
+#include <Application/Resource/Mesh/Sphere/Sphere.h>
 #include <Application/Resource/Camera/Camera.h>
 #include <Application/Core/Engine/Engine.h>
+#include <Application/Resource/Components/Components.h>
 
 #include <GLFW/glfw3.h>
 
@@ -20,11 +21,11 @@ namespace ImGUIUtils
 
 	ImVec2 DrawGameWindow(GLuint sceneTextureID);
 
-	void DrawSimulationInfo(Camera& camera, std::vector<std::shared_ptr<Sphere>>& objects);
+	void DrawSimulationInfo();
 
-	void DrawSimulationControl(Camera& camera, std::vector<std::shared_ptr<Sphere>>& objects);
+	void DrawSimulationControl();
 
-	void DrawWindow(Engine* engine, GLuint sceneTextureID, Camera& camera, std::vector<std::shared_ptr<Sphere>>& objectss);
+	void DrawWindow(Engine* engine, GLuint sceneTextureID);
 }
 
 

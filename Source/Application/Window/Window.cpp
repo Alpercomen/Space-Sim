@@ -8,13 +8,13 @@
 #include <Application/Constants/Constants.h>
 #include <Application/Resource/Utils/ImGUIUtils/ImGUIUtils.h>
 #include <Application/Resource/Transform/Position.h>
+#include <Application/Resource/EntityManager/EntityManager.h>
 
 namespace SpaceSim
 {
     GLFWwindow* gWindow = nullptr;
     static InputEvent event;
 
-    Camera camera(Position(glm::vec3(0.0f, 0.0f, 25.0f)));
     bool firstMouse = true;
     float lastX = 400.0f;
     float lastY = 400.f;
@@ -70,6 +70,15 @@ namespace SpaceSim
 
         InputEventDispatcher::Get().AddCallback(EventType::MOUSE_MOVE, [&](const InputEvent& event)
             {
+                auto& cameraIDs = ECS::Get().GetAllComponentIDs<Camera>();
+
+                if (cameraIDs.size() <= 0)
+                    return;
+
+                const EntityID& id = cameraIDs[0];
+
+                auto& camera = *ECS::Get().GetComponent<Camera>(id);
+
                 if (GetMouseMode() != MouseMode::HIDDEN)
                     return;
 
@@ -250,6 +259,14 @@ namespace SpaceSim
 
         if (gWindow == nullptr)
             return;
+
+        auto& cameraIDs = ECS::Get().GetAllComponentIDs<Camera>();
+
+        if (cameraIDs.size() <= 0)
+            return;
+
+        const EntityID& id = cameraIDs[0];
+        auto& camera = *ECS::Get().GetComponent<Camera>(id);
 
         float effectiveDelta = DELTA_TIME;
         if (glfwGetKey(gWindow, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)

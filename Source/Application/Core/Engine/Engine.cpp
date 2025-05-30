@@ -10,8 +10,11 @@
 
 #include <Application/Core/Engine/Engine.h>
 #include <Application/Core/Input/InputDispatcher.h>
+
 #include <Application/Resource/Utils/SpaceUtils/SpaceUtils.h>
 #include <Application/Resource/Utils/ImGUIUtils/ImGUIUtils.h>
+#include <Application/Resource/Physics/Physics.h>
+
 #include <Application/Constants/Constants.h>
 
 using namespace ImGUIUtils;
@@ -58,7 +61,7 @@ namespace SpaceSim {
         InitFBO(); // Recreate with new size
     }
 
-    void Engine::Render(std::vector<std::shared_ptr<Sphere>>& objects, void* windowPtr, Camera& camera)
+    void Engine::Render(void* windowPtr, Camera& camera)
     {
         auto* glfwWindow = static_cast<GLFWwindow*>(windowPtr);
 
@@ -73,16 +76,19 @@ namespace SpaceSim {
         glUseProgram(shader);
 
         double aspectRatio = (float)sceneTexWidth / (float)sceneTexHeight;
+        auto& spheres = ECS::Get().GetAllComponents<Sphere>();
+        auto& sphereIDs = ECS::Get().GetAllComponentIDs<Sphere>();
 
-        for (auto& object : objects)
+        for (size_t i = 0; i < spheres.size(); ++i)
         {
-            Attract(object, objects);
-            object->Update();
-            object->Draw(camera, shader, aspectRatio);
+            EntityID objId = sphereIDs[i];
+            Attract(objId);
+            Physics::Update(DELTA_TIME);
+            renderer.Draw(shader, aspectRatio, camera);
         }
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
-        ImGUIUtils::DrawWindow(this, sceneColorTex, camera, objects);
+        ImGUIUtils::DrawWindow(this, sceneColorTex);
     }
 }
