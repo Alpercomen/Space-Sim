@@ -3,7 +3,7 @@
 #include <vector>
 
 #include <Application/Constants/Constants.h>
-#include <Application/Resource/Mesh/Sphere/Sphere.h>
+#include <Application/Resource/Components/Components.h>
 #include <Application/Resource/Camera/Camera.h>
 #include <Application/Resource/Physics/Meter.h>
 #include <Application/Resource/EntityManager/EntityManager.h>

@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 
-#include <Application/Resource/Mesh/Sphere/Sphere.h>
+#include <Application/Resource/Components/Components.h>
 #include <Application/Resource/Camera/Camera.h>
 #include <Application/Resource/Utils/ShaderUtils/ShaderUtils.h>
 

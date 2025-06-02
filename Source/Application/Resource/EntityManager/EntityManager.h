@@ -2,7 +2,7 @@
 #include <spdlog/spdlog.h>
 
 #include <Application/Core/Core.h>
-#include <Application/Resource/Transform/Position.h>
+#include <Application/Resource/Components/Transform/Position.h>
 
 namespace SpaceSim {
 	enum class EntityType {

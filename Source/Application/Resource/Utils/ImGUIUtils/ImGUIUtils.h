@@ -1,6 +1,5 @@
 #pragma once
 
-#include <Application/Resource/Mesh/Sphere/Sphere.h>
 #include <Application/Resource/Camera/Camera.h>
 #include <Application/Core/Engine/Engine.h>
 #include <Application/Resource/Components/Components.h>

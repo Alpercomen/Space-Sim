@@ -1,16 +1,13 @@
 #pragma once
 
-#include <Application/Core/Core.h>
+#include <Application/Resource/Components/Transform/Position.h>
+#include <Application/Resource/Components/Rigidbody/Rigidbody.h>
+#include <Application/Resource/Components/Mesh/Mesh.h>
 
 namespace SpaceSim
 {
 	struct Name
 	{
 		String name;
-	};
-
-	struct Rigidbody
-	{
-		double mass;
 	};
 }

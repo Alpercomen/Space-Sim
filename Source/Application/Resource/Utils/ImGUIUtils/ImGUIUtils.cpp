@@ -93,7 +93,7 @@ void ImGUIUtils::DrawSimulationInfo()
         {
             const auto& vel = *ECS::Get().GetComponent<Velocity>(id);
             const auto& velVec = vel.GetWorld();
-            ImGui::Text("Vel: (%.2f, %.2f, %.2f)", velVec.x, velVec.y, velVec.z);
+            ImGui::Text("Vel: %.2f km/h", glm::length(velVec));
         }
     }
 

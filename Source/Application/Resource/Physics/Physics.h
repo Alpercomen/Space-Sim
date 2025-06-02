@@ -2,7 +2,7 @@
 #include <iostream>
 
 #include <Application/Constants/Constants.h>
-#include <Application/Resource/Mesh/Sphere/Sphere.h>
+#include <Application/Resource/Components/Components.h>
 #include <Application/Resource/EntityManager/EntityManager.h>
 
 namespace Physics
