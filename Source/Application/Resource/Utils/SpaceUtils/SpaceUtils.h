@@ -10,4 +10,4 @@ double CalculateOrbitalVelocity(double otherMass, double r);
 
 void InitializeCircularOrbit(EntityID satelliteID, EntityID attractorID);
 
-void Attract(EntityID& objID);
+void Attract(const EntityID& objID);

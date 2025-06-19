@@ -29,7 +29,7 @@ Camera::Camera()
     InputHelper::ProcessMouseMovement();
 }
 
-glm::mat4 Camera::GetViewMatrix()
+glm::mat4 Camera::GetViewMatrix() const
 {
     auto& cameraIDs = ECS::Get().GetAllComponentIDs<Camera>();
 
@@ -38,10 +38,11 @@ glm::mat4 Camera::GetViewMatrix()
 
     const EntityID& id = cameraIDs[0];
 
-    if (!ECS::Get().HasComponent<Position>(id))
+    if (!ECS::Get().HasComponent<Transform>(id))
         return glm::mat4(0.0);
 
-    Position pos = *ECS::Get().GetComponent<Position>(id);
+    Transform& transform = *ECS::Get().GetComponent<Transform>(id);
+    Position& pos = transform.position;
     return glm::lookAt(pos.GetWorld(), pos.GetWorld() + GetFront(), GetUp());
 }
 
@@ -54,12 +55,14 @@ void Camera::ProcessKeyboardMovement(Camera_Movement direction, float deltaTime)
 
     const EntityID& id = cameraIDs[0];
 
-    if (!ECS::Get().HasComponent<Position>(id) || !ECS::Get().HasComponent<Name>(id))
+    if (!ECS::Get().HasComponent<Transform>(id) || !ECS::Get().HasComponent<Name>(id))
         return;
 
     float velocity = GetMovementSpeed() * deltaTime;
 
-    auto& pos = *ECS::Get().GetComponent<Position>(id);
+    auto& transform = *ECS::Get().GetComponent<Transform>(id);
+
+    auto& pos = transform.position;
     auto& name = ECS::Get().GetComponent<Name>(id)->name;
 
     switch (direction) {

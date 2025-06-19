@@ -6,7 +6,7 @@
 
 #include <Application/Resource/EntityManager/EntityManager.h>
 
-using namespace SpaceSim;
+using namespace Nyx;
 
 enum Camera_Movement {
     FORWARD,
@@ -39,7 +39,7 @@ public:
     Camera();
     ~Camera() = default;
 
-    glm::mat4 GetViewMatrix();
+    glm::mat4 GetViewMatrix() const;
 
     const glm::vec3& GetFront() const { return m_cameraDesc.Front; }
     const glm::vec3& GetUp() const { return m_cameraDesc.Up; }

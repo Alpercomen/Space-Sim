@@ -1,11 +1,11 @@
 #pragma once
 
-namespace SpaceSim
-{
-	class VAO {
-	public:
-		
-	private:
+#include <Application/Core/Core.h>
 
+namespace Nyx
+{
+	struct VAO 
+	{
+		uint32 m_data;
 	};
 }

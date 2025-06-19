@@ -10,7 +10,7 @@
 #include <Application/Resource/Components/Components.h>
 #include <Application/Resource/EntityManager/EntityManager.h>
 
-namespace SpaceSim
+namespace Nyx
 {
     GLFWwindow* gWindow = nullptr;
     static InputEvent event;

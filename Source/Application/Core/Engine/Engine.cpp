@@ -1,8 +1,9 @@
 #pragma once
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
 #include <iostream>
 #include <cmath>
+
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
 
 #include <imgui.h>
 #include <backends/imgui_impl_glfw.h>
@@ -10,6 +11,7 @@
 
 #include <Application/Core/Engine/Engine.h>
 #include <Application/Core/Input/InputDispatcher.h>
+#include <Application/Core/SceneManager/SceneManager.h>
 
 #include <Application/Resource/Utils/SpaceUtils/SpaceUtils.h>
 #include <Application/Resource/Utils/ImGUIUtils/ImGUIUtils.h>
@@ -19,7 +21,7 @@
 
 using namespace ImGUIUtils;
 
-namespace SpaceSim {
+namespace Nyx {
     void Engine::InitFBO()
     {
         // Create texture
@@ -41,7 +43,7 @@ namespace SpaceSim {
         glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_STENCIL_ATTACHMENT, GL_RENDERBUFFER, sceneDepthRBO);
 
         if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
-            std::cerr << "ERROR: Framebuffer not complete!\n";
+            spdlog::critical("ERROR: Framebuffer not complete!");
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
     }
@@ -61,31 +63,18 @@ namespace SpaceSim {
         InitFBO(); // Recreate with new size
     }
 
-    void Engine::Render(void* windowPtr, Camera& camera)
+    void Engine::Present(Scene& scene)
     {
-        auto* glfwWindow = static_cast<GLFWwindow*>(windowPtr);
-
-        int width, height;
-        glfwGetFramebufferSize(glfwWindow, &width, &height);
         glBindFramebuffer(GL_FRAMEBUFFER, sceneFBO);
 
         glViewport(0, 0, sceneTexWidth, sceneTexHeight);
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glUseProgram(shader);
-
         double aspectRatio = (float)sceneTexWidth / (float)sceneTexHeight;
-        auto& spheres = ECS::Get().GetAllComponents<Sphere>();
-        auto& sphereIDs = ECS::Get().GetAllComponentIDs<Sphere>();
 
-        for (size_t i = 0; i < spheres.size(); ++i)
-        {
-            EntityID objId = sphereIDs[i];
-            Attract(objId);
-            Physics::Update(DELTA_TIME);
-            renderer.Draw(shader, aspectRatio, camera);
-        }
+        Physics::Update(DELTA_TIME);
+        m_Renderer.DrawScene(scene, aspectRatio);
 
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
 

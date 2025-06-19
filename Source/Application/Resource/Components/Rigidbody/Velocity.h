@@ -4,7 +4,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 
 #include <Application/Constants/Constants.h>
-#include <Application/Resource/Physics/Acceleration.h>
+#include <Application/Resource/Components/Rigidbody/Acceleration.h>
 
 class Velocity {
 public:

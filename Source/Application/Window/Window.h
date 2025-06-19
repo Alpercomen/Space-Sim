@@ -5,7 +5,7 @@
 
 struct GLFWwindow;
 
-namespace SpaceSim
+namespace Nyx
 {
 	extern bool firstMouse;
 	extern float lastX;
@@ -26,7 +26,7 @@ namespace SpaceSim
 
 	struct BasicWindowDesc 
 	{
-		String name = "SpaceSim";
+		String name = "Nyx";
 		Math::Vec2u windowSize = {1280, 720};
 		WindowMode windowMode = WindowMode::WINDOWED_MODE;
 	};

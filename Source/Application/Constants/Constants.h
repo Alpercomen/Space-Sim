@@ -17,3 +17,6 @@ extern float TIME_SCALE;
 #define METER_PER_KILOMETER 1000.0
 
 #define DELTA_TIME 0.000000066666666666
+
+#define NO_INDEX -1
+#define NO_ID 0

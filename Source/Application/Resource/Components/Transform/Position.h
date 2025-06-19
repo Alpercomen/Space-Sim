@@ -3,17 +3,19 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <Application/Constants/Constants.h>
+#include <Application/Core/Core.h>
+
+using namespace Math;
 
 class Position {
 public:
-	// CTOR
 	Position()
 	{
-		m_world = glm::vec3();
-		m_normalized = glm::vec3();
+		m_world = Math::Vec3f();
+		m_normalized = Math::Vec3f();
 	}
 
-	Position(glm::vec3 position, bool normal = false)
+	Position(Math::Vec3f position, bool normal = false)
 	{
 		normal ? SetNormal(position) : SetWorld(position);
 	}
@@ -21,11 +23,11 @@ public:
 	~Position() = default;
 
 	// Getters
-	const glm::vec3& GetWorld() const { return m_world; }
-	const glm::vec3& GetNormal() const { return m_normalized; }
+	const Math::Vec3f& GetWorld() const { return m_world; }
+	const Math::Vec3f& GetNormal() const { return m_normalized; }
 
 	// Setters
-	void SetWorld(const glm::vec3& position)
+	void SetWorld(const Math::Vec3f& position)
 	{
 		m_world = position;
 
@@ -34,7 +36,7 @@ public:
 		m_normalized.z = position.z / METERS_PER_UNIT;
 	}
 
-	void SetNormal(const glm::vec3& position)
+	void SetNormal(const Math::Vec3f& position)
 	{
 		m_world.x = position.x * METERS_PER_UNIT;
 		m_world.y = position.y * METERS_PER_UNIT;
@@ -49,6 +51,6 @@ public:
 	}
 
 private:
-	glm::vec3 m_world;
-	glm::vec3 m_normalized;
+	Math::Vec3f m_world;
+	Math::Vec3f m_normalized;
 };

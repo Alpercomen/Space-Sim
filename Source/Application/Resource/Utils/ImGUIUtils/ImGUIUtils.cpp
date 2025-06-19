@@ -82,18 +82,29 @@ void ImGUIUtils::DrawSimulationInfo()
             ImGui::Text("[%s]", name.data());
         }
 
-        if (ECS::Get().HasComponent<Position>(id))
+        if (ECS::Get().HasComponent<Transform>(id))
         {
-            auto& pos = *ECS::Get().GetComponent<Position>(id);
-            auto& posVec = pos.GetWorld();
-            ImGui::Text("Pos: (%.2f, %.2f, %.2f)", posVec.x, posVec.y, posVec.z);
+            auto& transform = *ECS::Get().GetComponent<Transform>(id);
+
+            const auto& pos = transform.position.GetWorld();
+            const auto& rot = transform.rotation.getEulerAngles();
+            const auto& sca = transform.scale.get();
+
+            ImGui::Text("Pos: (%.2f, %.2f, %.2f)", pos.x, pos.y, pos.z);
+            ImGui::Text("Rot: (%.2f, %.2f, %.2f)", rot.x, rot.y, rot.z);
+            ImGui::Text("Sca: (%.2f, %.2f, %.2f)", sca.x, sca.y, sca.z);
         }
 
-        if (ECS::Get().HasComponent<Velocity>(id))
+        if (ECS::Get().HasComponent<Rigidbody>(id))
         {
-            const auto& vel = *ECS::Get().GetComponent<Velocity>(id);
-            const auto& velVec = vel.GetWorld();
+
+            const auto& rigidbody = *ECS::Get().GetComponent<Rigidbody>(id);
+
+            const auto& velVec = rigidbody.velocity.GetWorld();
+            const auto& accVec = rigidbody.acceleration.GetWorld();
+
             ImGui::Text("Vel: %.2f km/h", glm::length(velVec));
+            ImGui::Text("Acc: %.2f km/h", glm::length(accVec));
         }
     }
 
@@ -105,11 +116,13 @@ void ImGUIUtils::DrawSimulationInfo()
         auto& camera = cameras[i];
         const EntityID& id = cameraIDs[i];
 
-        if (!ECS::Get().HasComponent<Position>(id) || !ECS::Get().HasComponent<Name>(id))
+        if (!ECS::Get().HasComponent<Transform>(id) || !ECS::Get().HasComponent<Name>(id))
             continue;
 
-        auto& pos = *ECS::Get().GetComponent<Position>(id);
-        auto posVec = pos.GetWorld();
+        auto& transform = *ECS::Get().GetComponent<Transform>(id);
+
+        const auto& pos = transform.position;
+        const auto& posVec = pos.GetWorld();
 
         const auto& name = ECS::Get().GetComponent<Name>(id)->name;
 

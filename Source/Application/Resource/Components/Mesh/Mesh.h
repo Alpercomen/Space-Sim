@@ -9,41 +9,48 @@
 #include <GLFW/glfw3.h>
 
 #include <Application/Resource/Components/Transform/Position.h>
-#include <Application/Resource/Physics/Velocity.h>
-#include <Application/Resource/Physics/Acceleration.h>
+#include <Application/Resource/Components/Rigidbody/Velocity.h>
+#include <Application/Resource/Components/Rigidbody/Acceleration.h>
 #include <Application/Resource/Physics/Meter.h>
 #include <Application/Resource/Camera/Camera.h>
 #include <Application/Resource/EntityManager/EntityManager.h>
+#include <Application/Resource/ShaderProgram/ShaderProgram.h>
+#include <Application/Resource/Buffers/VAO.h>
+#include <Application/Resource/Buffers/VBO.h>
+#include <Application/Resource/Buffers/EBO.h>
 
-namespace SpaceSim
+namespace Nyx
 {
-    struct SphereMesh
+    struct Mesh
     {
-        GLuint circleVAO;
-        GLuint indexCount;
+        VAO vao;
+        VBO vbo;
+        EBO ebo;
     };
 
     // Stores the attributes of a circle
     struct SphereDesc {
     public:
-        Meter radius;
         int32 res = 50;
 
         Math::Vec3f topColor;
         Math::Vec3f botColor;
     };
 
-
     class Sphere {
     public:
-        SphereDesc m_circleDesc;
-        SphereMesh m_sphereMesh;
+        SphereDesc m_sphereDesc;
+        Mesh m_sphereMesh;
+        Shader m_shader;
 
         Sphere() : Sphere(SphereDesc()) {}
-        Sphere(const SphereDesc& circleDesc) : m_circleDesc(circleDesc)
+        Sphere(const SphereDesc& circleDesc) : m_sphereDesc(circleDesc)
         {
-            m_circleDesc = circleDesc;
-            m_sphereMesh = CreateSphereMesh(m_circleDesc);
+            m_sphereMesh = CreateSphereMesh(m_sphereDesc);
+            m_shader = Shader(
+                R"(D:\Documents\Projects\Nyx\Source\Application\Shaders\shader.vert)",
+                R"(D:\Documents\Projects\Nyx\Source\Application\Shaders\shader.frag)"
+            );
         }
 
         ~Sphere()
@@ -52,13 +59,42 @@ namespace SpaceSim
             // glDeleteVertexArrays(1, &m_sphereMesh.circleVAO);
         }
 
-        SphereMesh CreateSphereMesh(const SphereDesc& circleDesc)
+        Mesh CreateSphereMesh(const SphereDesc& circleDesc)
         {
             const uint32 X_SEGMENTS = circleDesc.res;
             const uint32 Y_SEGMENTS = circleDesc.res;
 
-            Vector<float> vertices;
-            Vector<unsigned int> indices;
+            Vector<float32> vertices = GenerateVertices(X_SEGMENTS, Y_SEGMENTS);
+            Vector<uint32> indices = GenerateIndices(X_SEGMENTS, Y_SEGMENTS);
+
+            Mesh mesh;
+
+            glGenVertexArrays(1, &mesh.vao.m_data);
+            glGenBuffers(1, &mesh.vbo.m_data);
+            glGenBuffers(1, &mesh.ebo.m_data);
+
+            glBindVertexArray(mesh.vao.m_data);
+
+            glBindBuffer(GL_ARRAY_BUFFER, mesh.vbo.m_data);
+            glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
+
+            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mesh.ebo.m_data);
+            glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
+
+            glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+            glEnableVertexAttribArray(0);
+
+            glBindVertexArray(0);
+
+            mesh.ebo.m_indexCount = static_cast<uint32>(indices.size());
+
+            return mesh;
+        }
+
+    private:
+        Vector<float32> GenerateVertices(const uint32 X_SEGMENTS, const uint32 Y_SEGMENTS)
+        {
+            Vector<float32> vertices;
 
             for (uint32 y = 0; y <= Y_SEGMENTS; ++y)
             {
@@ -75,6 +111,13 @@ namespace SpaceSim
                     vertices.push_back(zPos);
                 }
             }
+
+            return vertices;
+        }
+
+        Vector<uint32> GenerateIndices(const uint32 X_SEGMENTS, const uint32 Y_SEGMENTS)
+        {
+            Vector<uint32> indices;
 
             bool oddRow = false;
             for (uint32 y = 0; y < Y_SEGMENTS; ++y)
@@ -98,28 +141,7 @@ namespace SpaceSim
                 oddRow = !oddRow;
             }
 
-            GLuint VAO, VBO, EBO;
-            glGenVertexArrays(1, &VAO);
-            glGenBuffers(1, &VBO);
-            glGenBuffers(1, &EBO);
-
-            glBindVertexArray(VAO);
-
-            glBindBuffer(GL_ARRAY_BUFFER, VBO);
-            glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(float), vertices.data(), GL_STATIC_DRAW);
-
-            glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-            glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
-
-            glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
-            glEnableVertexAttribArray(0);
-
-            glBindVertexArray(0);
-
-            SphereMesh mesh;
-            mesh.circleVAO = VAO;
-            mesh.indexCount = static_cast<GLuint>(indices.size());
-            return mesh;
+            return indices;
         }
     };
 }

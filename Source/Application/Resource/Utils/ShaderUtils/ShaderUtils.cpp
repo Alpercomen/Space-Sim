@@ -1,26 +1,24 @@
 #include "ShaderUtils.h"
 
-#include <fstream>
-#include <sstream>
-#include <iostream>
+#include <spdlog/spdlog.h>
 
-static std::string ReadFile(const std::string& filePath)
+static String ReadFile(const String& filePath)
 {
-	std::ifstream file(filePath);
+	IfStream file(filePath);
 	if (!file.is_open())
 	{
-		std::cerr << "Failed to open shader file: " << filePath << std::endl;
+		spdlog::critical("Failed to open shader file: {}", filePath);
 		return "";
 	}
 
-	std::stringstream ss;
+	StringStream ss;
 	ss << file.rdbuf();
 	return ss.str();
 }
 
-static GLuint CompileShader(GLenum type, const std::string& source)
+static uint32 CompileShader(GLenum type, const String& source)
 {
-	GLuint shader = glCreateShader(type);
+	uint32 shader = glCreateShader(type);
 	const char* src = source.c_str();
 	glShaderSource(shader, 1, &src, nullptr);
 	glCompileShader(shader);
@@ -32,21 +30,21 @@ static GLuint CompileShader(GLenum type, const std::string& source)
 	{
 		char infoLog[512];
 		glGetShaderInfoLog(shader, 512, nullptr, infoLog);
-		std::cerr << "Shader compilation failed:\n" << infoLog << std::endl;
+		spdlog::critical("Shader compilation failed: {}", infoLog);
 	}
 
 	return shader;
 }
 
-GLuint CreateShaderProgram(const std::string& vertexPath, const std::string& fragmentPath)
+uint32 CreateShaderProgram(const String& vertexPath, const String& fragmentPath)
 {
-	std::string vertexSource = ReadFile(vertexPath);
-	std::string fragmentSource = ReadFile(fragmentPath);
+	String vertexSource = ReadFile(vertexPath);
+	String fragmentSource = ReadFile(fragmentPath);
 
-	GLuint vertexShader = CompileShader(GL_VERTEX_SHADER, vertexSource);
-	GLuint fragmentShader = CompileShader(GL_FRAGMENT_SHADER, fragmentSource);
+	uint32 vertexShader = CompileShader(GL_VERTEX_SHADER, vertexSource);
+	uint32 fragmentShader = CompileShader(GL_FRAGMENT_SHADER, fragmentSource);
 
-	GLuint program = glCreateProgram();
+	uint32 program = glCreateProgram();
 	glAttachShader(program, vertexShader);
 	glAttachShader(program, fragmentShader);
 	glLinkProgram(program);
@@ -58,7 +56,7 @@ GLuint CreateShaderProgram(const std::string& vertexPath, const std::string& fra
 	{
 		char infoLog[512];
 		glGetProgramInfoLog(program, 512, nullptr, infoLog);
-		std::cerr << "Shader linking failed: \n" << infoLog << std::endl;
+		spdlog::critical("Shader linking failed: {}", infoLog);
 	}
 
 	glDeleteShader(vertexShader);

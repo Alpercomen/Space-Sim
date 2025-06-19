@@ -4,17 +4,8 @@
 #include <Application/Core/Core.h>
 #include <Application/Resource/Components/Transform/Position.h>
 
-namespace SpaceSim {
-	enum class EntityType {
-		NONE = 0,
-		SPHERE = 1 << 0,
-		CAMERA = 1 << 1,
-		ALL = SPHERE | CAMERA
-	};
-
-	struct Entity {
-		EntityID id;
-	};
+namespace Nyx {
+	using EntityID = uint32_t;
 
 	class EntityManager {
 	public:
@@ -25,6 +16,12 @@ namespace SpaceSim {
 			{
 				id = m_freeList.back();
 				m_freeList.pop_back();
+
+				if (id == NO_ID) 
+				{
+					spdlog::warn("Attempted to reuse NO_ID (0). Skipping.");
+					return CreateEntity(); // recursive call; will go to nextID instead
+				}
 			}
 			else
 			{
@@ -37,6 +34,9 @@ namespace SpaceSim {
 
 		void DestroyEntity(EntityID id)
 		{
+			if (id == NO_ID)
+				return;
+
 			m_alive[id] = false;
 			m_freeList.push_back(id);
 		}
@@ -48,7 +48,7 @@ namespace SpaceSim {
 		}
 
 	private:
-		EntityID m_nextID = 0;
+		EntityID m_nextID = NO_ID;
 		Vector<EntityID> m_freeList;
 		HashMap<EntityID, bool> m_alive;
 	};
@@ -76,7 +76,9 @@ namespace SpaceSim {
 
 		void Remove(EntityID id) override
 		{
-			assert(Has(id));
+			if (!Has(id))
+				return; // TODO: Convert to an assert(Has(id));
+
 			size_t index = entityToIndex[id];
 			size_t last = components.size() - 1;
 

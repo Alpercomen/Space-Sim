@@ -2,5 +2,7 @@
 #include <string>
 #include <GL/glew.h>
 
-GLuint CompileShader(GLenum type, const std::string& source);
-GLuint CreateShaderProgram(const std::string& vertexPath, const std::string& fragmentPath);
+#include <Application/Core/Core.h>
+
+uint32 CompileShader(GLenum type, const String& source);
+uint32 CreateShaderProgram(const String& vertexPath, const String& fragmentPath);
