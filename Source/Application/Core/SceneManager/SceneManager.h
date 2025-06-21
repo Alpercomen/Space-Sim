@@ -4,6 +4,7 @@
 #include <Application/Resource/EntityManager/EntityManager.h>
 #include <Application/Resource/Components/Components.h>
 #include <Application/Resource/Utils/SpaceUtils/SpaceUtils.h>
+#include <Application/Resource/Components/Mesh/GridMesh/GridMesh.h>
 
 namespace Nyx {
 	using SceneID = uint32;
@@ -48,6 +49,11 @@ namespace Nyx {
 			{
 				const auto& sphere = ECS::Get().GetComponent<Sphere>(m_entityID);
 				sphere->DrawSphere(mvp);
+			}
+			else if (ECS::Get().HasComponent<GridComponent>(m_entityID))
+			{
+				const auto& gridComponent = ECS::Get().GetComponent<GridComponent>(m_entityID);
+				gridComponent->grid->Draw(mvp);
 			}
 		}
 
@@ -141,8 +147,15 @@ namespace Nyx {
 			}
 
 			Scene newScene;
+
+
 			m_scenes[sceneID] = newScene;
 			m_activeSceneID = sceneID;
+
+			EntityID gridID = m_scenes[sceneID].CreateEmptyEntity("Grid");
+			ECS::Get().AddComponent(gridID, GridComponent { MakeShared<GridMesh>(100000, 100000, 10.0f) });
+			ECS::Get().AddComponent(gridID, Transform{});
+			ECS::Get().GetComponent<GridComponent>(gridID)->grid->UploadToGPU();
 
 			return sceneID;
 		}

@@ -48,8 +48,8 @@ namespace Nyx
         {
             m_sphereMesh = CreateSphereMesh(m_sphereDesc);
             m_shader = Shader(
-                R"(D:\Documents\Projects\Nyx\Source\Application\Shaders\shader.vert)",
-                R"(D:\Documents\Projects\Nyx\Source\Application\Shaders\shader.frag)"
+                R"(D:\Documents\Projects\Nyx\Source\Application\Shaders\Sphere\sphere.vert)",
+                R"(D:\Documents\Projects\Nyx\Source\Application\Shaders\Sphere\sphere.frag)"
             );
         }
 
