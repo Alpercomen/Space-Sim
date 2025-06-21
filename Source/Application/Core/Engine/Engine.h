@@ -13,25 +13,29 @@ namespace Nyx
 	public:
 		Engine(void* windowPtr)
 		{
-			this->windowPtr = static_cast<GLFWwindow*>(windowPtr);
+			this->m_windowPtr = static_cast<GLFWwindow*>(windowPtr);
 
 			InitFBO();
 		}
 
 		void InitFBO();
-		void ResizeFBO(int width, int height);
+		void ResizeFBO(Math::Vec2f newSize, Scene* scenePtr);
 		void Present(Scene& scene);
+
+		GLuint GetSceneFBO() const { return m_sceneFBO; }
+		GLuint GetSceneColorTex() const { return m_sceneColorTex; }
+		GLuint GetSceneDepthRBO() const { return m_sceneDepthRBO; }
 
 	private:
 		Renderer m_Renderer;
 
-		GLuint sceneFBO = 0;
-		GLuint sceneColorTex = 0;
-		GLuint sceneDepthRBO = 0;
-		GLFWwindow* windowPtr;
+		GLuint m_sceneFBO = 0;
+		GLuint m_sceneColorTex = 0;
+		GLuint m_sceneDepthRBO = 0;
+		GLFWwindow* m_windowPtr;
 
-		int sceneTexWidth = 1280;
-		int sceneTexHeight = 720;
+		int m_sceneTexWidth = 1280;
+		int m_sceneTexHeight = 720;
 	};
 
 }

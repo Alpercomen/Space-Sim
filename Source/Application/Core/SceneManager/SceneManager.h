@@ -28,9 +28,27 @@ namespace Nyx {
 			return m_entityID;
 		}
 
-		void Draw()
+		void Draw(const Camera& camera)
 		{
+			const auto& transform = ECS::Get().GetComponent<Transform>(m_entityID);
+			if (!transform)
+				return;
 
+			const auto& pos = transform->position;
+			const auto& rot = transform->rotation;
+			const auto& sca = transform->scale;
+
+			glm::mat4 model = glm::translate(Math::Mat4f(1.0f), pos.GetWorld()) * rot.toMatrix() * sca.toMatrix();
+			glm::mat4 view = camera.GetViewMatrix();
+			glm::mat4 projection = camera.GetProjectionMatrix();
+
+			glm::mat4 mvp = projection * view * model;
+
+			if (ECS::Get().HasComponent<Sphere>(m_entityID))
+			{
+				const auto& sphere = ECS::Get().GetComponent<Sphere>(m_entityID);
+				sphere->DrawSphere(mvp);
+			}
 		}
 
 	private:

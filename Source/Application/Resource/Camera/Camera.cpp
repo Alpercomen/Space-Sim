@@ -46,6 +46,11 @@ glm::mat4 Camera::GetViewMatrix() const
     return glm::lookAt(pos.GetWorld(), pos.GetWorld() + GetFront(), GetUp());
 }
 
+glm::mat4 Camera::GetProjectionMatrix() const
+{
+    return glm::perspective(glm::radians(GetZoom()), GetAspectRatio(), 0.1f, 10000.0f);
+}
+
 void Camera::ProcessKeyboardMovement(Camera_Movement direction, float deltaTime)
 {
     auto& cameraIDs = ECS::Get().GetAllComponentIDs<Camera>();

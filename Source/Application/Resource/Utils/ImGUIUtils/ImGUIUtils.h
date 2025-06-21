@@ -24,7 +24,7 @@ namespace ImGUIUtils
 
 	void DrawSimulationControl();
 
-	void DrawWindow(Engine* engine, GLuint sceneTextureID);
+	void DrawWindow(Engine* enginePtr, Scene* scenePtr);
 }
 
 

@@ -142,18 +142,19 @@ void ImGUIUtils::DrawSimulationControl()
     ImGui::End();
 }
 
-void ImGUIUtils::DrawWindow(Engine* engine, GLuint sceneTextureID)
+void ImGUIUtils::DrawWindow(Engine* enginePtr, Scene* scenePtr)
 {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
     ImGui::NewFrame();
 
     ImGUIUtils::InitDockableWindow();
-    ImVec2 textureSize = ImGUIUtils::DrawGameWindow(sceneTextureID);
+    ImVec2 textureSize = ImGUIUtils::DrawGameWindow(enginePtr->GetSceneColorTex());
     ImGUIUtils::DrawSimulationInfo();
     ImGUIUtils::DrawSimulationControl();
 
-    engine->ResizeFBO((int)textureSize.x, (int)textureSize.y);
+    Math::Vec2f textureSizeVec = { (int)textureSize.x, (int)textureSize.y };
+    enginePtr->ResizeFBO(textureSizeVec, scenePtr);
 
     ImGui::Render();
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());

@@ -91,6 +91,23 @@ namespace Nyx
             return mesh;
         }
 
+        void DrawSphere(Math::Mat4f mvp)
+        {
+            m_shader.Use(); // Use Shader
+
+            GLuint mvpLoc = glGetUniformLocation(m_shader.GetID(), "uMVP");
+            glUniformMatrix4fv(mvpLoc, 1, GL_FALSE, glm::value_ptr(mvp));
+
+            GLuint topColorLoc = glGetUniformLocation(m_shader.GetID(), "topColor");
+            glUniform3fv(topColorLoc, 1, glm::value_ptr(m_sphereDesc.topColor));
+
+            GLuint botColorLoc = glGetUniformLocation(m_shader.GetID(), "botColor");
+            glUniform3fv(botColorLoc, 1, glm::value_ptr(m_sphereDesc.botColor));
+
+            glBindVertexArray(m_sphereMesh.vao.m_data);
+            glDrawElements(GL_TRIANGLE_STRIP, m_sphereMesh.ebo.m_indexCount, GL_UNSIGNED_INT, 0);
+        }
+
     private:
         Vector<float32> GenerateVertices(const uint32 X_SEGMENTS, const uint32 Y_SEGMENTS)
         {
