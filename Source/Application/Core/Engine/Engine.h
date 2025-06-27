@@ -25,6 +25,7 @@ namespace Nyx
 		GLuint GetSceneFBO() const { return m_sceneFBO; }
 		GLuint GetSceneColorTex() const { return m_sceneColorTex; }
 		GLuint GetSceneDepthRBO() const { return m_sceneDepthRBO; }
+		Renderer& GetRenderer() { return m_Renderer; }
 
 	private:
 		Renderer m_Renderer;

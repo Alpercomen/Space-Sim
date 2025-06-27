@@ -16,9 +16,21 @@ namespace Nyx
 	class Renderer 
 	{
 	public:
+        bool m_gridEnabled = true;
+
+        Renderer()
+        {
+            
+        }
+
         void DrawScene(Scene& scene)
         {
             const Camera& camera = *ECS::Get().GetComponent<Camera>(scene.GetActiveCameraID());
+
+            if (m_gridEnabled)
+            {
+                m_grid.DrawGrid(camera);
+            }
 
             for (size_t i = 0; i < scene.GetSceneObjectSize(); ++i)
             {
@@ -26,6 +38,9 @@ namespace Nyx
                 object->Draw(camera);
             }
         }
+
+    private:
+        GridMesh m_grid;
 
 	};
 }

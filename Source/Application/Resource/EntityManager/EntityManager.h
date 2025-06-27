@@ -168,6 +168,27 @@ namespace Nyx {
 			return GetPool<T>()->GetEntityIDs();
 		}
 
+		template<typename... T>
+		Vector<EntityID> View()
+		{
+			Vector<EntityID> result;
+
+			// For now we assume the first component type T0 gives us a good pool to iterate
+			if constexpr (sizeof...(T) > 0) {
+				auto* pool = GetPool<std::tuple_element_t<0, std::tuple<T...>>>();
+				if (pool == nullptr)
+					return result;
+
+				for (EntityID id : pool->GetEntityIDs()) {
+					if ((HasComponent<T>(id) && ...)) {
+						result.push_back(id);
+					}
+				}
+			}
+
+			return result;
+		}
+
 	private:
 		template<typename T>
 		ComponentPool<T>* GetPool()

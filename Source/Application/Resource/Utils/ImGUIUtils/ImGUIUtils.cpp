@@ -43,8 +43,10 @@ void ImGUIUtils::InitDockableWindow()
     }
 }
 
-ImVec2 ImGUIUtils::DrawGameWindow(GLuint sceneTextureID)
+ImVec2 ImGUIUtils::DrawGameWindow(Engine* engine)
 {
+    GLuint sceneTextureID = engine->GetSceneColorTex();
+
     ImGui::Begin("Game View");
     ImVec2 textureSize = ImGui::GetContentRegionAvail(); // available ImGui space
     ImGui::Image(
@@ -55,6 +57,21 @@ ImVec2 ImGUIUtils::DrawGameWindow(GLuint sceneTextureID)
         ImVec4(1, 1, 1, 1),  // tint (white)
         ImVec4(0, 0, 0, 0)   // border (none)
     );
+
+    ImVec2 region = ImGui::GetContentRegionAvail();
+    ImVec2 checkboxPos = ImVec2(10.0f, region.y - 30.0f); // 10px from left, 30px from bottom
+
+    ImGui::SetCursorPos(checkboxPos);
+
+    // Transparent style
+    //ImGui::PushStyleColor(ImGuiCol_FrameBg, ImVec4(0, 0, 0, 0)); // no background
+    //ImGui::PushStyleColor(ImGuiCol_FrameBgHovered, ImVec4(0, 0, 0, 0));
+    //ImGui::PushStyleColor(ImGuiCol_FrameBgActive, ImVec4(0, 0, 0, 0));
+    //ImGui::PushStyleColor(ImGuiCol_CheckMark, ImVec4(0.0f, 1.0f, 0.0f, 1.0f)); // optional: green check
+
+    ImGui::Checkbox("Show Grid", &engine->GetRenderer().m_gridEnabled);
+
+    //ImGui::PopStyleColor(4);
     ImGui::End();
 
     return textureSize;
@@ -104,7 +121,7 @@ void ImGUIUtils::DrawSimulationInfo()
             const auto& accVec = rigidbody.acceleration.GetWorld();
 
             ImGui::Text("Vel: %.2f km/h", glm::length(velVec));
-            ImGui::Text("Acc: %.2f km/h", glm::length(accVec));
+            ImGui::Text("Acc: %.2f km/h2", glm::length(accVec));
         }
     }
 
@@ -149,7 +166,7 @@ void ImGUIUtils::DrawWindow(Engine* enginePtr, Scene* scenePtr)
     ImGui::NewFrame();
 
     ImGUIUtils::InitDockableWindow();
-    ImVec2 textureSize = ImGUIUtils::DrawGameWindow(enginePtr->GetSceneColorTex());
+    ImVec2 textureSize = ImGUIUtils::DrawGameWindow(enginePtr);
     ImGUIUtils::DrawSimulationInfo();
     ImGUIUtils::DrawSimulationControl();
 

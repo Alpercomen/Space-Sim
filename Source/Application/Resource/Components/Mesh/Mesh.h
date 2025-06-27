@@ -65,7 +65,7 @@ namespace Nyx
             const uint32 Y_SEGMENTS = circleDesc.res;
 
             Vector<float32> vertices = GenerateVertices(X_SEGMENTS, Y_SEGMENTS);
-            Vector<uint32> indices = GenerateIndices(X_SEGMENTS, Y_SEGMENTS);
+            Vector<uint32> indices = GenerateIndices(X_SEGMENTS, Y_SEGMENTS); 
 
             Mesh mesh;
 

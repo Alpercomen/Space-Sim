@@ -18,7 +18,7 @@ namespace ImGUIUtils
 
 	void InitDockableWindow();
 
-	ImVec2 DrawGameWindow(GLuint sceneTextureID);
+	ImVec2 DrawGameWindow(Engine* engine);
 
 	void DrawSimulationInfo();
 

@@ -15,7 +15,7 @@
 Camera::Camera()
 {
     SetFront(glm::vec3(0.0f, 0.0f, -1.0f));
-    SetMovementSpeed(METERS_PER_UNIT * 100);
+    SetMovementSpeed(METERS_PER_UNIT * 10);
     SetMovementSpeedMultiplier(3.5f);
     SetMouseSensitivity(0.1f);
     SetZoom(45.0f);
@@ -48,7 +48,7 @@ glm::mat4 Camera::GetViewMatrix() const
 
 glm::mat4 Camera::GetProjectionMatrix() const
 {
-    return glm::perspective(glm::radians(GetZoom()), GetAspectRatio(), 0.1f, 10000.0f);
+    return glm::perspective(glm::radians(GetZoom()), GetAspectRatio(), GetNearPlane(), GetFarPlane());
 }
 
 void Camera::ProcessKeyboardMovement(Camera_Movement direction, float deltaTime)

@@ -1,23 +1,17 @@
 #pragma once
 
-#include <Application/Core/Core.h>
 #include <Application/Resource/Components/Mesh/Mesh.h>
+#include <Application/Resource/ShaderProgram/ShaderProgram.h>
+#include <Application/Resource/Components/Components.h>
 
 class GridMesh {
 public:
-    GridMesh(int width, int height, float spacing);
+    GridMesh();
 
-    void UploadToGPU();
-    void Draw(const Math::Mat4f& mvp) const;
-
-    void BendVertices(float time); // for spacetime curvature animation
+    void DrawGrid(const Camera& camera) const;
 
 private:
-    Vector<Math::Vec3f> vertices;
-    Vector<uint32> indices;
-
-    Mesh mesh;
-    Shader shader;
-    int width, height;
-    float spacing;
+    Vector<Math::Vec3f> m_vertices;
+    Mesh m_mesh;
+    Shader m_shader;
 };

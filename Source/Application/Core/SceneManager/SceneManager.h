@@ -5,6 +5,7 @@
 #include <Application/Resource/Components/Components.h>
 #include <Application/Resource/Utils/SpaceUtils/SpaceUtils.h>
 #include <Application/Resource/Components/Mesh/GridMesh/GridMesh.h>
+#include <Application/Constants/Constants.h>
 
 namespace Nyx {
 	using SceneID = uint32;
@@ -39,21 +40,16 @@ namespace Nyx {
 			const auto& rot = transform->rotation;
 			const auto& sca = transform->scale;
 
-			glm::mat4 model = glm::translate(Math::Mat4f(1.0f), pos.GetWorld()) * rot.toMatrix() * sca.toMatrix();
-			glm::mat4 view = camera.GetViewMatrix();
-			glm::mat4 projection = camera.GetProjectionMatrix();
+			Math::Mat4f model = glm::translate(Math::Mat4f(1.0f), pos.GetWorld()) * rot.toMatrix() * sca.toMatrix();
+			Math::Mat4f view = camera.GetViewMatrix();
+			Math::Mat4f projection = camera.GetProjectionMatrix();
 
-			glm::mat4 mvp = projection * view * model;
+			Math::Mat4f mvp = projection * view * model;
 
 			if (ECS::Get().HasComponent<Sphere>(m_entityID))
 			{
 				const auto& sphere = ECS::Get().GetComponent<Sphere>(m_entityID);
 				sphere->DrawSphere(mvp);
-			}
-			else if (ECS::Get().HasComponent<GridComponent>(m_entityID))
-			{
-				const auto& gridComponent = ECS::Get().GetComponent<GridComponent>(m_entityID);
-				gridComponent->grid->Draw(mvp);
 			}
 		}
 
@@ -147,15 +143,8 @@ namespace Nyx {
 			}
 
 			Scene newScene;
-
-
 			m_scenes[sceneID] = newScene;
 			m_activeSceneID = sceneID;
-
-			EntityID gridID = m_scenes[sceneID].CreateEmptyEntity("Grid");
-			ECS::Get().AddComponent(gridID, GridComponent { MakeShared<GridMesh>(100000, 100000, 10.0f) });
-			ECS::Get().AddComponent(gridID, Transform{});
-			ECS::Get().GetComponent<GridComponent>(gridID)->grid->UploadToGPU();
 
 			return sceneID;
 		}
@@ -215,9 +204,9 @@ namespace Nyx {
 			moonDesc.topColor = glm::vec3(0.89, 0.96, 0.96);
 			moonDesc.botColor = glm::vec3(0.30, 0.41, 0.41);
 
-			EntityID earthID = scenePtr->CreatePlanet("Earth", Transform{ Position{}, Rotation{}, Scale{ 25.0 } }, Rigidbody{ 5.972e24 }, earthDesc);
-			EntityID moonID = scenePtr->CreatePlanet("Moon", Transform{ glm::vec3(384.400, 0.0f, 0.0f), Rotation{}, Scale{ 6.0 } }, Rigidbody{ 7.342e22 }, moonDesc);
-			EntityID cameraID = scenePtr->CreateCamera("Camera", Transform{ glm::vec3(0.0f, 0.0f, 100.0f) });
+			EntityID earthID = scenePtr->CreatePlanet("Earth", Transform{ Position{}, Rotation{}, Scale{ 250.0 } }, Rigidbody{ 5.972e24 }, earthDesc);
+			EntityID moonID = scenePtr->CreatePlanet("Moon", Transform{ glm::vec3(3844.00, 0.0f, 0.0f), Rotation{}, Scale{ 60.0 } }, Rigidbody{ 7.342e22 }, moonDesc);
+			EntityID cameraID = scenePtr->CreateCamera("Camera", Transform{ glm::vec3(0.0f, 0.0f, 1000.0f) });
 
 			InitializeCircularOrbit(moonID, earthID);
 		}

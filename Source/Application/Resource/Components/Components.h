@@ -29,9 +29,4 @@ namespace Nyx
 		Acceleration acceleration;
 	};
 
-	struct GridComponent
-	{
-		SharedPtr<GridMesh> grid;
-	};
-
 }
