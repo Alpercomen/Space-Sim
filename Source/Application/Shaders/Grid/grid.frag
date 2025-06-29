@@ -18,7 +18,7 @@ vec4 grid(vec3 fragPos3D, float scale)
     float minimumz = min(derivative.y, 1);
     float minimumx = min(derivative.x, 1);
     float visibility = 1.0 - min(line, 1.0);
-    vec3 baseColor = mix(vec3(0.0), vec3(0.1), visibility); // Dark background, bright grid lines
+    vec3 baseColor = mix(vec3(0.0), vec3(0.3), visibility); // Dark background, bright grid lines
     vec3 color = baseColor;
 
     //z axis
@@ -29,7 +29,9 @@ vec4 grid(vec3 fragPos3D, float scale)
     if (fragPos3D.z > -50 * minimumz && fragPos3D.z < 50 * minimumz)
         color.x = 1.0;
 
-    return vec4(color, 1.0);
+    float alpha = max(max(color.x, color.y), color.z);
+
+    return vec4(color, alpha);
 }
 
 float computeDepth(vec3 pos) {
@@ -59,7 +61,7 @@ void main()
 
     vec4 g1 = grid(fragPos3D, 0.001);
     vec4 g2 = grid(fragPos3D, 0.01);
-    vec3 finalColor = (g1.rgb + g2.rgb) * fading;
+    vec4 finalColor = (g1 + g2) * fading;
 
-    FragColor = vec4(finalColor, 1.0); // Keep alpha 1 if you're not using blending
+    FragColor = vec4(finalColor); // Keep alpha 1 if you're not using blending
 }
